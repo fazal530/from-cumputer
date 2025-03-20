@@ -1,0 +1,48 @@
+uuid: d7a406df-1153-4acb-bafe-e7aad8a24d68
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_desktop_1x
+    - image.style.banner_desktop_2x
+    - image.style.banner_mobile_1x
+    - image.style.banner_mobile_2x
+    - image.style.banner_tablet_1x
+    - image.style.banner_tablet_2x
+  theme:
+    - europatex
+id: banner
+label: Banner
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_desktop_1x
+    breakpoint_id: europatex.responsive.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_desktop_2x
+    breakpoint_id: europatex.responsive.desktop
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_1x
+    breakpoint_id: europatex.responsive.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_2x
+    breakpoint_id: europatex.responsive.tablet
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile_1x
+    breakpoint_id: europatex.responsive.mobile
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile_2x
+    breakpoint_id: europatex.responsive.mobile
+    multiplier: 2x
+breakpoint_group: 'europatex Responsive Image'
+fallback_image_style: banner_mobile_1x

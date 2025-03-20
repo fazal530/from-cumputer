@@ -1,0 +1,8 @@
+uuid: e4921477-ef92-48be-b1be-d74912acea7b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Fire Code'
+vid: fire_code
+description: 'Product Categorization'
+weight: -4

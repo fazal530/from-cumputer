@@ -1,0 +1,21 @@
+uuid: d378fdd5-c5d0-4fe7-bdf5-615f6d15126a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.color
+  module:
+    - text
+id: taxonomy_term.color.default
+targetEntityType: taxonomy_term
+bundle: color
+mode: default
+content:
+  description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,300 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-close {
+  width: 0.7857142857142857em;
+}
+
+.icon-file-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-download {
+  width: 0.9285714285714285em;
+}
+
+.icon-map-marker {
+  width: 0.5714285714285714em;
+}
+
+.icon-chevron-left {
+  width: 0.75em;
+}
+
+.icon-chevron-right {
+  width: 0.6785714285714285em;
+}
+
+.icon-plus-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-minus-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-times-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-check-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-question-circle1 {
+  width: 0.8571428571428571em;
+}
+
+.icon-info-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-times-circle-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-check-circle-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-exclamation-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-twitter-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-facebook-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-thumbs-o-up {
+  width: 0.8571428571428571em;
+}
+
+.icon-thumbs-o-down {
+  width: 0.8571428571428571em;
+}
+
+.icon-linkedin-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-upload {
+  width: 0.9285714285714285em;
+}
+
+.icon-phone1 {
+  width: 0.7857142857142857em;
+}
+
+.icon-phone-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-twitter1 {
+  width: 0.9285714285714285em;
+}
+
+.icon-facebook1 {
+  width: 0.5881428571428571em;
+}
+
+.icon-paperclip {
+  width: 0.7857142857142857em;
+}
+
+.icon-floppy-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-bars {
+  width: 0.8571428571428571em;
+}
+
+.icon-caret-down {
+  width: 0.5714285714285714em;
+}
+
+.icon-caret-up {
+  width: 0.5714285714285714em;
+}
+
+.icon-caret-left {
+  width: 0.39285714285714285em;
+}
+
+.icon-caret-right {
+  width: 0.3214285714285714em;
+}
+
+.icon-linkedin {
+  width: 0.8571428571428571em;
+}
+
+.icon-angle-left1 {
+  width: 0.375em;
+}
+
+.icon-angle-right1 {
+  width: 0.33928571428571425em;
+}
+
+.icon-angle-up1 {
+  width: 0.6428571428571428em;
+}
+
+.icon-angle-down1 {
+  width: 0.6428571428571428em;
+}
+
+.icon-laptop {
+  width: 1.0714285714285714em;
+}
+
+.icon-mobile {
+  width: 0.42857142857142855em;
+}
+
+.icon-folder-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-folder-open-o {
+  width: 1.0652857142857142em;
+}
+
+.icon-keyboard-o {
+  width: 1.0714285714285714em;
+}
+
+.icon-flag-o {
+  width: 1.0357142857142856em;
+}
+
+.icon-calendar-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-fire-extinguisher {
+  width: 0.7807142857142857em;
+}
+
+.icon-compass {
+  width: 0.8571428571428571em;
+}
+
+.icon-youtube-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-youtube1 {
+  width: 0.8571428571428571em;
+}
+
+.icon-instagram1 {
+  width: 0.8571428571428571em;
+}
+
+.icon-vimeo-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-google {
+  width: 0.8398571428571427em;
+}
+
+.icon-file-pdf-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-word-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-excel-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-powerpoint-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-image-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-archive-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-audio-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-movie-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-file-code-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-paper-plane-o {
+  width: 1.0005714285714284em;
+}
+
+.icon-newspaper-o {
+  width: 1.1428571428571428em;
+}
+
+.icon-calendar-plus-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-calendar-minus-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-calendar-times-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-calendar-check-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-map-o {
+  width: 1.1428571428571428em;
+}
+
+.icon-vimeo1 {
+  width: 1.005em;
+}
+
+.icon-blind {
+  width: 0.7902142857142858em;
+}
+
+.icon-user-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-drivers-license-o {
+  width: 1.1428571428571428em;
+}

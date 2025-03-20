@@ -1,0 +1,6 @@
+et_returns.fedex_rma_redirect:
+  path: '/fedex-redirect'
+  defaults:
+    _controller: '\Drupal\et_returns\Controller\FedexRmaRedirect::performRedirect'
+  requirements:
+    _permission: 'access content'

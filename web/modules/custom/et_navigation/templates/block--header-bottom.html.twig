@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ * @see template_preprocess_block()
+ */
+#}
+<li {{ attributes.addClass('nav-item') }}>
+  <button{{ title_attributes.addClass('toggle') }}>{{ label }}</button>
+  <div class="dropdown dropdown-{{ elements['#id']|clean_class }}">
+    <div class="dropdown-inner">
+      {{ content }}
+    </div>
+  </div>
+</li>

@@ -1,0 +1,24 @@
+uuid: e661bc7f-dcb7-487e-84c9-2ad309144285
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tax_exempt
+  module:
+    - user
+id: user.user.field_tax_exempt
+field_name: field_tax_exempt
+entity_type: user
+bundle: user
+label: 'Business tax exempt'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

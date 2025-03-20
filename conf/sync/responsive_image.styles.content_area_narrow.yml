@@ -1,0 +1,24 @@
+uuid: 010690ac-81f5-49f2-a0e4-557b22ac715f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_narrow_1x
+    - image.style.content_narrow_2x
+  theme:
+    - europatex
+id: content_area_narrow
+label: Narrow
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: content_narrow_1x
+    breakpoint_id: europatex.retina
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_narrow_2x
+    breakpoint_id: europatex.retina
+    multiplier: 2x
+breakpoint_group: 'europatex Retina Image'
+fallback_image_style: content_narrow_1x

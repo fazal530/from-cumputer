@@ -1,0 +1,5 @@
+et_product_import.menu:
+  title: 'Import product data'
+  parent: 'commerce.admin_commerce'
+  enabled: 1
+  route_name: et_product_import.form

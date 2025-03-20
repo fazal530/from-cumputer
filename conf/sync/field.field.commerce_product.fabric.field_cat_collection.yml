@@ -1,0 +1,29 @@
+uuid: 00b61a7d-613e-4759-87cc-a733a06cd19f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.storage.commerce_product.field_cat_collection
+    - taxonomy.vocabulary.collection
+id: commerce_product.fabric.field_cat_collection
+field_name: field_cat_collection
+entity_type: commerce_product
+bundle: fabric
+label: Collection
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      collection: collection
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+name: Tiered Price
+type: module
+description: Handle multi-tiered pricing model
+package: Europatex
+
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - commerce_price

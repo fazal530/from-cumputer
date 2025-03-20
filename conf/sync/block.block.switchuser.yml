@@ -1,0 +1,28 @@
+uuid: 8d2d22eb-7ee3-4382-ade4-0880ceab87fe
+langcode: en
+status: false
+dependencies:
+  module:
+    - devel
+    - et_display
+  theme:
+    - gin
+id: switchuser
+theme: gin
+region: content
+weight: 0
+provider: null
+plugin: devel_switch_user
+settings:
+  id: devel_switch_user
+  label: 'Switch user'
+  label_display: visible
+  provider: devel
+  list_size: 12
+  include_anon: false
+  show_form: true
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

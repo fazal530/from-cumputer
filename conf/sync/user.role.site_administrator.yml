@@ -1,0 +1,218 @@
+uuid: 2fc4c176-aceb-4eb9-bae2-4b0825315b8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.email_html
+    - filter.format.wysiwyg
+    - media.type.file
+    - media.type.icon
+    - media.type.image
+    - media.type.video
+    - node.type.basic_page
+    - taxonomy.vocabulary.business_type
+    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.collection
+    - taxonomy.vocabulary.color
+    - taxonomy.vocabulary.fire_code
+    - taxonomy.vocabulary.pricing_level
+    - taxonomy.vocabulary.style
+    - taxonomy.vocabulary.usage
+  module:
+    - admin_toolbar_search
+    - antibot
+    - block
+    - commerce
+    - commerce_checkout
+    - commerce_order
+    - commerce_product
+    - commerce_store
+    - et_product_import
+    - et_stock
+    - file
+    - filter
+    - google_tag
+    - layout_paragraphs
+    - media
+    - menu_link_attributes
+    - metatag
+    - node
+    - paragraphs
+    - path
+    - profile
+    - redirect
+    - roleassign
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+id: site_administrator
+label: 'Site Administrator'
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access checkout'
+  - 'access commerce administration pages'
+  - 'access commerce_order overview'
+  - 'access commerce_product overview'
+  - 'access commerce_store overview'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access profile overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'add commerce_log commerce_order admin comment'
+  - 'administer blocks'
+  - 'administer commerce_order'
+  - 'administer commerce_order_type'
+  - 'administer commerce_product'
+  - 'administer commerce_store'
+  - 'administer google tag manager'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer webform submission'
+  - 'assign roles'
+  - 'bypass node access'
+  - 'change own username'
+  - 'create basic_page content'
+  - 'create customer profile'
+  - 'create default commerce_order'
+  - 'create default commerce_product'
+  - 'create fabric commerce_product'
+  - 'create file media'
+  - 'create finished commerce_product'
+  - 'create icon media'
+  - 'create image media'
+  - 'create media'
+  - 'create terms in business_type'
+  - 'create terms in category'
+  - 'create terms in collection'
+  - 'create terms in color'
+  - 'create terms in fire_code'
+  - 'create terms in pricing_level'
+  - 'create terms in style'
+  - 'create terms in usage'
+  - 'create trim commerce_product'
+  - 'create url aliases'
+  - 'create video media'
+  - 'create webform'
+  - 'delete all revisions'
+  - 'delete any basic_page content'
+  - 'delete any customer profile'
+  - 'delete any default commerce_product'
+  - 'delete any fabric commerce_product'
+  - 'delete any file media'
+  - 'delete any finished commerce_product'
+  - 'delete any icon media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any trim commerce_product'
+  - 'delete any video media'
+  - 'delete basic_page revisions'
+  - 'delete default commerce_order'
+  - 'delete media'
+  - 'delete own basic_page content'
+  - 'delete own customer profile'
+  - 'delete own default commerce_product'
+  - 'delete own fabric commerce_product'
+  - 'delete own file media'
+  - 'delete own finished commerce_product'
+  - 'delete own icon media'
+  - 'delete own image media'
+  - 'delete own trim commerce_product'
+  - 'delete own video media'
+  - 'delete terms in business_type'
+  - 'delete terms in category'
+  - 'delete terms in collection'
+  - 'delete terms in color'
+  - 'delete terms in fire_code'
+  - 'delete terms in pricing_level'
+  - 'delete terms in style'
+  - 'delete terms in usage'
+  - 'edit any basic_page content'
+  - 'edit any file media'
+  - 'edit any icon media'
+  - 'edit any image media'
+  - 'edit any video media'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit layout paragraphs plugin config'
+  - 'edit own basic_page content'
+  - 'edit own file media'
+  - 'edit own icon media'
+  - 'edit own image media'
+  - 'edit own video media'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'edit terms in business_type'
+  - 'edit terms in category'
+  - 'edit terms in collection'
+  - 'edit terms in color'
+  - 'edit terms in fire_code'
+  - 'edit terms in pricing_level'
+  - 'edit terms in style'
+  - 'edit terms in usage'
+  - 'import product data'
+  - 'import stock data'
+  - 'link to any page'
+  - 'manage default commerce_order_item'
+  - 'revert all revisions'
+  - 'revert basic_page revisions'
+  - 'select account cancellation method'
+  - 'skip antibot'
+  - 'update any customer profile'
+  - 'update any default commerce_product'
+  - 'update any fabric commerce_product'
+  - 'update any finished commerce_product'
+  - 'update any media'
+  - 'update any online commerce_store'
+  - 'update any trim commerce_product'
+  - 'update commerce_product_attribute'
+  - 'update default commerce_order'
+  - 'update media'
+  - 'update own customer profile'
+  - 'update own default commerce_product'
+  - 'update own fabric commerce_product'
+  - 'update own finished commerce_product'
+  - 'update own online commerce_store'
+  - 'update own trim commerce_product'
+  - 'use admin toolbar search'
+  - 'use menu link attributes'
+  - 'use text format email_html'
+  - 'use text format wysiwyg'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any customer profile'
+  - 'view any profile'
+  - 'view any webform submission'
+  - 'view basic_page revisions'
+  - 'view commerce_order'
+  - 'view commerce_product_attribute'
+  - 'view commerce_store'
+  - 'view default commerce_order'
+  - 'view default commerce_product'
+  - 'view fabric commerce_product'
+  - 'view finished commerce_product'
+  - 'view online commerce_store'
+  - 'view own unpublished commerce_product'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view own webform submission'
+  - 'view the administration theme'
+  - 'view trim commerce_product'
+  - 'view unpublished paragraphs'
+  - 'view user email addresses'

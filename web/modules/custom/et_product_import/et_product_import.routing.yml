@@ -1,0 +1,7 @@
+et_product_import.form:
+  path: '/admin/commerce/product-import'
+  defaults:
+    _title: 'Import product data'
+    _form: '\Drupal\et_product_import\Form\ProductImportForm'
+  requirements:
+    _permission: 'import product data'

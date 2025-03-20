@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform email wrapper template as HTML.
+ *
+ * @ingroup themeable
+ */
+#}
+<html>
+<head>
+  <title>{{ subject }}</title>
+</head>
+<body>
+{% include '@europatex/email/mail-header.html.twig' %}
+
+<div class="email-body" style="padding: 32px 24px; max-width: 600px; margin: 0 auto; text-align: center;font-family:'futura-pt',Helvetica,Arial,'Lucida Grande',sans-serif;">
+{{ body|raw }}
+</div>
+
+{% include '@europatex/email/mail-footer.html.twig' %}
+</body>
+</html>

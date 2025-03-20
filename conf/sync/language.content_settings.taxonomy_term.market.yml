@@ -1,0 +1,11 @@
+uuid: bb91afbe-a838-4046-b9db-b515b1d847df
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.market
+id: taxonomy_term.market
+target_entity_type_id: taxonomy_term
+target_bundle: market
+default_langcode: site_default
+language_alterable: false

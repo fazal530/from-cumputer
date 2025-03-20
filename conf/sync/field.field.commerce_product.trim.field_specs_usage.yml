@@ -1,0 +1,19 @@
+uuid: 95f061f9-f6ca-432e-8481-08a8e8c31810
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - field.storage.commerce_product.field_specs_usage
+id: commerce_product.trim.field_specs_usage
+field_name: field_specs_usage
+entity_type: commerce_product
+bundle: trim
+label: Usage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

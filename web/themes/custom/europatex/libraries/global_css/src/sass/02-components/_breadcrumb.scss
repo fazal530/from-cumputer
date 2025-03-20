@@ -1,0 +1,22 @@
+/* @partial _breadcrumb.scss */
+
+.breadcrumb-wrapper {
+  margin-bottom: $gutter-fourth;
+}
+
+.breadcrumb-list {
+
+  li {
+    display: inline-block;
+  }
+
+  li + li::before {
+    @include icomoon-styling;
+    content: "\f054";
+    display: inline-block;
+    font-size: calculateRem(10px);
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+    position: static;
+  }
+}

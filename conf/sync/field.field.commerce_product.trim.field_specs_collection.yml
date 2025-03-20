@@ -1,0 +1,19 @@
+uuid: 8953f329-8375-4487-9a27-3427b582d493
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - field.storage.commerce_product.field_specs_collection
+id: commerce_product.trim.field_specs_collection
+field_name: field_specs_collection
+entity_type: commerce_product
+bundle: trim
+label: Collection
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

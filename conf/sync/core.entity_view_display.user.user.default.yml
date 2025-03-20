@@ -1,0 +1,111 @@
+uuid: 4c346407-ad90-4d32-92f6-96a64d78b750
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_billing_address
+    - field.field.user.user.field_business_type
+    - field.field.user.user.field_company_name
+    - field.field.user.user.field_company_website
+    - field.field.user.user.field_fax
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_pricing_level
+    - field.field.user.user.field_tax_exempt
+    - field.field.user.user.field_tax_id
+  module:
+    - address
+    - link
+    - telephone
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  extra_field_et_navigation_logout_link:
+    type: extra_field_et_navigation_logout_link
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_billing_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_business_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_company_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_company_website:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_fax:
+    type: telephone_link
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_phone:
+    type: telephone_link
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tax_exempt:
+    type: boolean
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tax_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  field_pricing_level: true
+  langcode: true
+  search_api_excerpt: true

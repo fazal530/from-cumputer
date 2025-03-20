@@ -1,0 +1,16 @@
+collapsed_checkboxes:
+  js:
+    libraries/collapsed_checkboxes/dist/collapsed-checkboxes.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+facet_links:
+  js:
+    libraries/facet_links/dist/facet-links.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/jquery
+    - core/jquery.once

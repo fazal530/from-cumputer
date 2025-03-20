@@ -1,0 +1,14 @@
+<ul class="facet-list">
+  {% for facet in facets %}
+    <li class="facet facet--{{ facet.title|clean_class }} facet--{% if facet.values|length > 30 %}xlarge{% elseif facet.values|length < 11 %}small{% elseif facet.values|length < 21 %}medium{% else %}large{% endif %}">
+      <span>{{ facet.title }}</span>
+      <ul class="facet-sublist">
+      {% for value in facet.values %}
+        <li>
+          <a href="{{ value.url }}">{{ value.title|replace({'/': '/<wbr>'})|raw }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

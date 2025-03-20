@@ -1,0 +1,13 @@
+// Import Sass mixins, variables, Compass, etc.
+@import "../../global_css/src/sass/00-identity/_base.scss";
+
+//////////////// Mixin for checkout only /////////////////
+@mixin checkout-divider-bottom {
+  border-bottom: 2px dashed lightgray;
+  @include responsive-gutter($property: margin-bottom, $multiplier: 1.5);
+  @include responsive-gutter($property: padding-bottom, $multiplier: 1.5);
+}
+//////////////////////////////////////////////////
+
+@import "./sass/_commerce_checkout.scss";
+@import "./sass/_commerce_review.scss";

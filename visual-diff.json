@@ -1,0 +1,18 @@
+{
+  "master": "https://www.europatex.com",
+  "slack": "#europatex",
+  "urls": [
+    "/",
+    "/user/login",
+    "/products/type/trim/category/button_rosettes/color/gold",
+    "/products/type/trim/01042-col-black",
+    "/faq",
+    "/contact-us"
+  ],
+  "overrides": {
+    "modify": {
+      "psScreenshotExclude": "iframe",
+      "psScreenshotCut": ""
+    }
+  }
+}

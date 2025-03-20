@@ -1,0 +1,93 @@
+uuid: 25854d59-c5ce-45b4-82db-5dd859a618fd
+langcode: en
+status: true
+dependencies: {  }
+id: user
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: users
+label: User
+source:
+  plugin: csv
+  path: modules/custom/et_migrate/data/customers.csv
+  ids:
+    - 'Customer ID'
+  fields:
+    -
+      name: 'Customer ID'
+    -
+      name: E-Mail
+    -
+      name: Password
+    -
+      name: 'Price Level'
+    -
+      name: 'Company Name'
+    -
+      name: Name
+    -
+      name: Phone
+    -
+      name: Address
+    -
+      name: City
+    -
+      name: State
+    -
+      name: 'Zip Code'
+    -
+      name: 'Federal Tax ID'
+process:
+  name:
+    -
+      plugin: str_replace
+      source: E-Mail
+      regex: true
+      search: '/@.*/'
+      replace: ''
+    -
+      plugin: make_unique_entity_field
+      entity_type: user
+      field: name
+  pass:
+    plugin: hash_password
+    source: Password
+  mail: E-Mail
+  status:
+    plugin: default_value
+    default_value: 1
+  roles:
+    plugin: static_map
+    source: 'Price Level'
+    map:
+      'Price Level 1':
+        - customer
+      'Price Level 3':
+        - customer
+      'Price Level 5':
+        - customer
+    default_value: {  }
+  field_company_name: 'Company Name'
+  field_pricing_level:
+    plugin: migration_lookup
+    source: 'Price Level'
+    migration: pricing_level
+    no_stub: true
+  field_phone: Phone
+  field_tax_id: 'Federal Tax ID'
+  field_billing_address/country_code:
+    plugin: default_value
+    default_value: US
+  field_billing_address/address_line1: Address
+  field_billing_address/locality: City
+  field_billing_address/administrative_area:
+    plugin: us_state
+    source: State
+  field_billing_address/postal_code: 'Zip Code'
+destination:
+  plugin: 'entity:user'
+  overwrite_properties:
+    - field_billing_address
+migration_dependencies: null

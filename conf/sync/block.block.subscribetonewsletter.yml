@@ -1,0 +1,26 @@
+uuid: 2541c103-5c76-4fbc-9ae4-f6a55104d588
+langcode: en
+status: true
+dependencies:
+  module:
+    - et_display
+  theme:
+    - europatex
+id: subscribetonewsletter
+theme: europatex
+region: footer_top
+weight: 0
+provider: null
+plugin: newsletter_subscribe
+settings:
+  id: newsletter_subscribe
+  label: 'Join our Mailing List'
+  label_display: visible
+  provider: et_display
+  body: 'Sign up for emails for the latest Europatex news and exclusive discounts!'
+  url: 'http://eepurl.com/iklbPb'
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

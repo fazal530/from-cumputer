@@ -1,0 +1,66 @@
+layout_twocol_33_67:
+  label: 'Two column 33/67'
+  path: layouts/twocol_33_67
+  template: layout--twocol-33-67
+  library: et_display/twocol_33_67
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [top]
+    - [first, second, second]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    bottom:
+      label: Bottom
+
+layout_twocol_67_33:
+  label: 'Two column 67/33'
+  path: layouts/twocol_67_33
+  template: layout--twocol-67-33
+  library: et_display/twocol_67_33
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [top]
+    - [first, first, second]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    bottom:
+      label: Bottom
+
+layout_fourcol:
+  label: 'Four columns'
+  path: layouts/fourcol
+  template: layout--fourcol
+  library: et_display/fourcol
+  category: 'Columns: 4'
+  default_region: first
+  icon_map:
+    - [top]
+    - [first, second, third, fourth]
+    - [bottom]
+  regions:
+    top:
+      label: Top
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth
+    bottom:
+      label: Bottom

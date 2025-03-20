@@ -1,0 +1,252 @@
+@use "sass:math";
+
+// /***************************/
+// /* Helper functions */
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+@function calculateRem($size) {
+  $remSize: math.div($size, 16px);
+  @return #{$remSize}rem;
+}
+
+@function calculateClamp(
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: 1170px
+) {
+  $clamp_parameter_1: calculateRem($minimum);
+  $clamp_parameter_2: strip-units((math.div(($preferred + 0), $preferred_viewport_width)) * 100) * 1vw;
+  $clamp_parameter_3: calculateRem($maximum);
+
+  @return clamp(#{$clamp_parameter_1}, #{$clamp_parameter_2}, #{$clamp_parameter_3});
+}
+
+// /***************************/
+// /* Utility mixins */
+
+// /* The property will be at the preferrred size on 1170 pixel wide viewports by default. */
+@mixin pixelsToResponsiveUnit(
+  $property_name,
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: $viewport-max
+) {
+  // /* Fallback for IE11 */
+  #{$property_name}: calculateRem($preferred);
+  #{$property_name}: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
+}
+
+////////////////////////////////////////////////////////
+// GRID & LAYOUT
+////////////////////////////////////////////////////////
+
+// All purpose gutter mixin
+@mixin responsive-gutter(
+  $property:margin-bottom,
+  $multiplier:1,
+  $mobile-gutter: $gutter-half,
+  $tablet-gutter: $gutter-three-quarter,
+  $desktop-gutter: $gutter) {
+
+    @include pixelsToResponsiveUnit(
+      #{$property},
+      $mobile-gutter * $multiplier,
+      $tablet-gutter * $multiplier,
+      $desktop-gutter * $multiplier
+    );
+}
+
+////////////////////////////////////////////////////////
+// Pairs with 'responsive-grid-item'
+// mixin for a Bootstrap style "negative margin" layout
+@mixin responsive-grid-container(
+  $multiplier:1,
+  $mobile-gutter: $gutter-half,
+  $tablet-gutter: $gutter-three-quarter,
+  $desktop-gutter: $gutter) {
+
+  // Reverse order to deal with negative inputs
+  @include pixelsToResponsiveUnit(
+    margin-right,
+    -(($desktop-gutter*0.5) * $multiplier),
+    -(($tablet-gutter*0.5) * $multiplier),
+    -(($mobile-gutter*0.5) * $multiplier)
+  );
+
+  // Reverse order to deal with negative inputs
+  @include pixelsToResponsiveUnit(
+    margin-left,
+    -(($desktop-gutter*0.5) * $multiplier),
+    -(($tablet-gutter*0.5) * $multiplier),
+    -(($mobile-gutter*0.5) * $multiplier)
+  );
+}
+
+////////////////////////////////////////////////////////
+// Pairs with 'responsive-grid-container'
+// mixin for a Bootstrap style "negative margin" layout
+@mixin responsive-grid-item(
+  $multiplier:1,
+  $mobile-gutter: $gutter-half,
+  $tablet-gutter: $gutter-three-quarter,
+  $desktop-gutter: $gutter) {
+
+  @include pixelsToResponsiveUnit(
+    padding-left,
+    (($mobile-gutter*0.5) * $multiplier),
+    (($tablet-gutter*0.5) * $multiplier),
+    (($desktop-gutter*0.5) * $multiplier)
+  );
+
+  @include pixelsToResponsiveUnit(
+    padding-right,
+    (($mobile-gutter*0.5) * $multiplier),
+    (($tablet-gutter*0.5) * $multiplier),
+    (($desktop-gutter*0.5) * $multiplier)
+   );
+}
+
+@mixin section-space($side: both) {
+  @if ($side == both) {
+
+    @include responsive-gutter(
+      $property:padding-top,
+      $multiplier:1,
+      $mobile-gutter: $section-space-mobile,
+      $tablet-gutter: $section-space-tablet,
+      $desktop-gutter: $section-space-desktop
+    );
+    @include responsive-gutter(
+      $property:padding-bottom,
+      $multiplier:1,
+      $mobile-gutter: $section-space-mobile,
+      $tablet-gutter: $section-space-tablet,
+      $desktop-gutter: $section-space-desktop
+    );
+  }
+
+  @if ($side == top) {
+    @include responsive-gutter(
+      $property:padding-top,
+      $multiplier:1,
+      $mobile-gutter: $section-space-mobile,
+      $tablet-gutter: $section-space-tablet,
+      $desktop-gutter: $section-space-desktop
+    );
+  }
+
+  @if ($side == bottom) {
+    @include responsive-gutter(
+      $property:padding-bottom,
+      $multiplier:1,
+      $mobile-gutter: $section-space-mobile,
+      $tablet-gutter: $section-space-tablet,
+      $desktop-gutter: $section-space-desktop
+    );
+  }
+}
+
+////////////////////////////////////////////////////////
+// TYPOGRAPHY
+////////////////////////////////////////////////////////
+
+// /***************************/
+// /* Fluid text */ //// Maybe need... ?
+
+// Used in responsive text mixins that require pixel input .... Move to variables if using these mixins.
+// $body-font-size-large-pixels: 22px; // Large text in desktop
+// $body-font-size-medium-pixels: 18px; // Desktop
+// $body-font-size-small-pixels: 16px; // Mobile
+// $body-font-size-xsmall-pixels: 14px; // Small text on desktop
+// $body-font-size-xxsmall-pixels: 12px; // xsmall on desktop
+
+// @mixin responsive-xsmall-text {
+//   @include pixelsToResponsiveUnit(font-size, $body-font-size-xxsmall-pixels, $body-font-size-xsmall-pixels, $body-font-size-xsmall-pixels); // 12px-14px
+// }
+
+// @mixin responsive-small-text {
+//   @include pixelsToResponsiveUnit(font-size, $body-font-size-xsmall-pixels, 15px, $body-font-size-small-pixels); // 14px, 15px, 16px
+// }
+
+// @mixin responsive-large-text {
+//   @include pixelsToResponsiveUnit(font-size, 18px, $body-font-size-large-pixels, $body-font-size-large-pixels);
+// }
+
+// @mixin responsive-xlarge-text() {
+//   @include pixelsToResponsiveUnit(font-size, 24px, 26px, 28px);
+// }
+
+// Example use
+// Use (@include h1;) to match font size, margin and line height.
+@mixin h1 {
+  @include pixelsToResponsiveUnit(font-size, $h1-font-size-mobile, $h1-font-size, $h1-font-size);
+  @include responsive-gutter($property:margin-bottom, $multiplier:1);
+
+  @include switch-color-scheme(color, $page-title-color, $page-title-darkmode-color);
+
+  font-family: $header-font;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+@mixin h2 {
+  @include pixelsToResponsiveUnit(font-size, $h2-font-size-mobile, $h2-font-size, $h2-font-size);
+  @include switch-color-scheme(color, $page-title-color, $page-title-darkmode-color);
+
+  font-family: $header-font;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: $vert-gutter*0.5;
+}
+
+@mixin h3 {
+  @include pixelsToResponsiveUnit(font-size, $h3-font-size-mobile, $h3-font-size, $h3-font-size);
+  @include responsive-gutter($property:margin-bottom, $multiplier:0.5);
+  @include switch-color-scheme(color, $page-title-color, $page-title-darkmode-color);
+
+  font-family: $header-font;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: $vert-gutter*0.25;
+}
+
+@mixin h4 {
+  @include switch-color-scheme(color, $page-title-color, $page-title-darkmode-color);
+
+  font-family: $header-font;
+  font-size: calculateRem($h4-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: $vert-gutter*0.25;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin body-font-size {
+  @include pixelsToResponsiveUnit(font-size, 16px, 17px, 18px);
+}
+
+@mixin large-font {
+  @include pixelsToResponsiveUnit(font-size, 16px, 18px, 21px);
+}
+
+@mixin small-font {
+  font-size: 0.875rem;
+}
+
+@mixin kicker {
+  @include small-font;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,440 @@
+uuid: 1aaf823e-5ff6-4ffd-97c6-cd565432cda8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.field.commerce_product.fabric.field_cat_category
+    - field.field.commerce_product.fabric.field_cat_collection
+    - field.field.commerce_product.fabric.field_cat_color
+    - field.field.commerce_product.fabric.field_cat_market
+    - field.field.commerce_product.fabric.field_cat_style
+    - field.field.commerce_product.fabric.field_cat_usage
+    - field.field.commerce_product.fabric.field_minimum_order
+    - field.field.commerce_product.fabric.field_product_image
+    - field.field.commerce_product.fabric.field_specs_abrasion
+    - field.field.commerce_product.fabric.field_specs_category
+    - field.field.commerce_product.fabric.field_specs_cleaning_code
+    - field.field.commerce_product.fabric.field_specs_collection
+    - field.field.commerce_product.fabric.field_specs_color
+    - field.field.commerce_product.fabric.field_specs_content
+    - field.field.commerce_product.fabric.field_specs_direction
+    - field.field.commerce_product.fabric.field_specs_finish
+    - field.field.commerce_product.fabric.field_specs_fire_code
+    - field.field.commerce_product.fabric.field_specs_info
+    - field.field.commerce_product.fabric.field_specs_repeat
+    - field.field.commerce_product.fabric.field_specs_roll_size
+    - field.field.commerce_product.fabric.field_specs_style
+    - field.field.commerce_product.fabric.field_specs_usage
+    - field.field.commerce_product.fabric.field_specs_weight
+    - field.field.commerce_product.fabric.field_specs_width
+  module:
+    - commerce_product
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_specifications:
+      children:
+        - field_specs_cleaning_code
+        - field_specs_finish
+        - field_specs_style
+        - field_specs_usage
+        - field_specs_repeat
+        - field_specs_width
+        - field_specs_abrasion
+        - field_specs_category
+        - field_specs_content
+        - field_specs_direction
+        - field_specs_fire_code
+        - field_specs_color
+        - field_specs_weight
+        - field_specs_collection
+        - field_specs_roll_size
+        - field_specs_info
+      label: Specifications
+      parent_name: group_details
+      region: content
+      weight: 23
+      format_type: html_element
+      format_settings:
+        classes: product-specs
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_preview:
+      children:
+        - group_media
+        - group_share_wrapper
+        - extra_field_et_product_display_disclaimer
+      label: Preview
+      parent_name: group_wrapper
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: product-preview
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_basic_info:
+      children:
+        - group_title_wrapper
+      label: 'Basic Info'
+      parent_name: group_details
+      region: content
+      weight: 21
+      format_type: html_element
+      format_settings:
+        classes: product-info
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_wrapper:
+      children:
+        - group_preview
+        - group_details
+      label: Wrapper
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: product-wrapper
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_details:
+      children:
+        - group_basic_info
+        - group_actions
+        - group_specifications
+        - other_colors_product_detail
+      label: Details
+      parent_name: group_wrapper
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: product-details
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_share_wrapper:
+      children:
+        - extra_field_et_product_display_share_by_mail
+        - extra_field_et_product_display_print_page
+        - extra_field_et_product_display_download_image
+      label: 'Share wrapper'
+      parent_name: group_preview
+      region: content
+      weight: 22
+      format_type: html_element
+      format_settings:
+        classes: product-share
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_title_wrapper:
+      children:
+        - title
+      label: 'Title wrapper'
+      parent_name: group_basic_info
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: page-title
+        show_empty_fields: false
+        id: ''
+        element: h1
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_actions:
+      children:
+        - variations
+        - extra_field_et_product_display_login_prompt
+      label: Actions
+      parent_name: group_details
+      region: content
+      weight: 22
+      format_type: html_element
+      format_settings:
+        classes: product-actions
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_media:
+      children:
+        - extra_field_et_product_display_product_image_lightbox_trigger
+      label: Media
+      parent_name: group_preview
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: product-media
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: commerce_product.fabric.default
+targetEntityType: commerce_product
+bundle: fabric
+mode: default
+content:
+  extra_field_et_product_display_disclaimer:
+    type: extra_field_et_product_display_disclaimer
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  extra_field_et_product_display_download_image:
+    type: extra_field_et_product_display_download_image
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  extra_field_et_product_display_login_prompt:
+    type: extra_field_et_product_display_login_prompt
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  extra_field_et_product_display_print_page:
+    type: extra_field_et_product_display_print_page
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  extra_field_et_product_display_product_image_lightbox_trigger:
+    type: extra_field_et_product_display_product_image_lightbox_trigger
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  extra_field_et_product_display_share_by_mail:
+    type: extra_field_et_product_display_share_by_mail
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_specs_abrasion:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_specs_category:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_specs_cleaning_code:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_specs_collection:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_specs_color:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_specs_content:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_specs_direction:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_specs_finish:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_specs_fire_code:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_specs_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_specs_repeat:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_specs_roll_size:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_specs_style:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_specs_usage:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_specs_weight:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_specs_width:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  other_colors_product_detail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  extra_field_et_product_display_view_full_details: true
+  extra_field_quicklook_button: true
+  extra_field_rdg_title: true
+  field_cat_category: true
+  field_cat_collection: true
+  field_cat_color: true
+  field_cat_market: true
+  field_cat_style: true
+  field_cat_usage: true
+  field_minimum_order: true
+  field_product_image: true
+  langcode: true
+  search_api_excerpt: true
+  stores: true
+  uid: true

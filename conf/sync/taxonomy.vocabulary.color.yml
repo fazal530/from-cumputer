@@ -1,0 +1,8 @@
+uuid: 9cc83f90-68ae-4f24-9f4e-a55988f00463
+langcode: en
+status: true
+dependencies: {  }
+name: Color
+vid: color
+description: 'Product Categorization'
+weight: -5

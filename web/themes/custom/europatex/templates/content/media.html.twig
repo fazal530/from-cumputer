@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ */
+#}
+{%
+  set mediaClasses = [
+    'media',
+    'media-type--' ~ media.bundle()|clean_class,
+    view_mode ? 'display--' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(mediaClasses) }}>
+  {{ title_suffix.contextual_links }}
+  {% if content %}
+    {{ content }}
+  {% endif %}
+</article>

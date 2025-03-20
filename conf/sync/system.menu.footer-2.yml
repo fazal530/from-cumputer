@@ -1,0 +1,8 @@
+uuid: 6eb64490-0707-4c88-8516-0292bf42f0a8
+langcode: en
+status: true
+dependencies: {  }
+id: footer-2
+label: 'Footer Menu 2'
+description: 'The second menu in the footer'
+locked: false

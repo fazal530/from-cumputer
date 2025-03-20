@@ -1,0 +1,84 @@
+/* @partial forms */
+%label {
+  font-weight: $form-item-label-font-weight;
+  margin: $form-item-label-margin;
+  font-size: $form-item-label-font-size;
+}
+
+/* Wrapper for a form element (or group of form elements) and its label. */
+.form-item {
+
+  /* Pack groups of checkboxes and radio buttons closer together. */
+  .form-checkboxes &,
+  .form-radios & {
+    /* Drupal core uses "0.4em 0". */
+    margin: 0;
+  }
+
+  /* Form items in a table. */
+  tr.odd &,
+  tr.even & {
+    margin: 0;
+  }
+  label {
+    /* The label for a form element */
+    display: block;
+    @extend %label;
+    &.option {
+      display: inline-block;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    &.form-required {
+      /* The part of the label that indicates a required field */
+      &:after {
+        content: "*";
+        display: inline-block;
+        padding-left: 2px;
+        color: $error-color;
+        vertical-align: middle;
+        line-height: 1;
+      }
+    }
+  }
+
+  /* The descriptive help text (separate from the label). */
+  .description {
+    font-size: 0.8125rem; // 13px
+  }
+}
+
+.form-type-checkbox,
+.form-type-radio {
+  position: relative;
+
+  label.option,
+  .description {
+    padding-left: $horiz-gutter;
+    margin-left: 0;
+  }
+}
+
+// Maybe too general
+// form {
+.webform-submission-form {
+  max-width: $measure;
+}
+
+///////////////////// Login and register forms
+
+.user-register-form {
+  max-width: 640px;
+  margin-bottom: ($gutter*2);
+}
+
+.user-login-form {
+  max-width: 640px;
+  margin-bottom: ($gutter*2);
+}
+
+.user-pass {
+  max-width: 640px;
+  margin-bottom: ($gutter*2);
+}

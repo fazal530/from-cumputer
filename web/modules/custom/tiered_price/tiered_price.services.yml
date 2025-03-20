@@ -1,0 +1,6 @@
+services:
+  tiered_price.price_resolver:
+    class: Drupal\tiered_price\TieredPriceResolver
+    arguments: []
+    tags:
+      - { name: commerce_price.price_resolver, priority: 520 }

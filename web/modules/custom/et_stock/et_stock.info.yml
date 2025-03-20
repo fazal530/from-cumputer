@@ -1,0 +1,9 @@
+name: Europatex Stock
+type: module
+description: Import of stock from Excel
+package: Europatex
+
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - migrate_plus:migrate_plus

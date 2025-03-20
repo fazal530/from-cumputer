@@ -1,0 +1,6 @@
+name: Europatex Display
+type: module
+description: General display customization applying to entire site
+package: Europatex
+
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for tiered_price.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function tiered_price_form_user_form_alter(&$form, $form_state, $form_id) {
+  if (!empty($form['field_pricing_level'])) {
+    $form['field_pricing_level']['#access'] = \Drupal::currentUser()->hasPermission('administer users');
+    $form['field_pricing_level']['#cache']['contexts'][] = 'user';
+
+    $form['account']['roles']['customer']['#disabled'] = TRUE;
+    $form['account']['roles']['#options']['customer'] = t('Customer (automatically set based on pricing level)');
+  }
+  if (!empty($form['field_company_name']) && $form_id != 'user_register_form') {
+    $form['field_company_name']['#access'] = \Drupal::currentUser()->hasPermission('administer users');
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function tiered_price_user_presave($entity) {
+  if (empty($entity->field_pricing_level->target_id)) {
+    $entity->removeRole('customer');
+  }
+  else {
+    $entity->addRole('customer');
+  }
+}

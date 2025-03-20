@@ -1,0 +1,8 @@
+uuid: 502d4d59-db4d-4101-aa5f-51410c4450b1
+langcode: en
+status: true
+dependencies: {  }
+id: information
+label: Information
+description: 'Information menu in main navigation area'
+locked: false

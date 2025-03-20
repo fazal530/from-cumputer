@@ -1,0 +1,29 @@
+uuid: f2c59c10-111c-4fb4-826a-b4ba0ce03576
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basic_page.field_content
+    - field.field.node.basic_page.field_hide_page_title
+    - field.field.node.basic_page.field_meta_tags
+    - node.type.basic_page
+  module:
+    - user
+id: node.basic_page.teaser
+targetEntityType: node
+bundle: basic_page
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  extra_field_rdg_title: true
+  field_content: true
+  field_hide_page_title: true
+  field_meta_tags: true
+  langcode: true
+  search_api_excerpt: true

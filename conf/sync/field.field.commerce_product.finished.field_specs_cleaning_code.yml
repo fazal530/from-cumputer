@@ -1,0 +1,19 @@
+uuid: f2467db8-dfa5-43de-a73d-7b40fb96a83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.finished
+    - field.storage.commerce_product.field_specs_cleaning_code
+id: commerce_product.finished.field_specs_cleaning_code
+field_name: field_specs_cleaning_code
+entity_type: commerce_product
+bundle: finished
+label: 'Cleaning Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

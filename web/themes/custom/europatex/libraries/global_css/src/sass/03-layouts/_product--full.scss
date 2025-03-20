@@ -1,0 +1,282 @@
+/////////////////////////////////////////////////////
+// Fabric, Fabric Product,and Trim detail pages
+// /admin/commerce/config/product-types
+/////////////////////////////////
+
+.product-wrapper {
+  @include breakpoint($tablet-small-min) {
+    display: flex;
+    margin: 0 (-$gutter-half);
+  }
+
+  .page-title {
+    line-height: 1;
+    margin-bottom: $gutter;
+  }
+}
+
+.product-preview {
+  @include breakpoint($tablet-small-min) {
+    width: 50%;
+    padding: 0 $gutter-half;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    width: 37%;
+  }
+}
+
+.product-media {
+  margin-bottom: $gutter-half;
+
+  img {
+    width: 100%;
+  }
+
+  .external-link-icon {
+    display: none;
+  }
+}
+
+.product-share {
+  margin-bottom: $gutter-half;
+  display: flex;
+  position: relative;
+
+  .ajax-progress-throbber {
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 1px;
+    background-color: #ffffff;
+    padding: 1px 1px 2px 1px;
+  }
+}
+
+.product-info {
+  margin-bottom: $gutter;
+}
+
+.product-actions {
+  margin-bottom: $gutter;
+
+  // Add to cart wrapper
+  .commerce-order-item-add-to-cart-form {
+    padding: $gutter-half 0;
+    margin: 0;
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+    position: relative;
+
+    @include breakpoint($desktop-min) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form-actions {
+      margin: 0;
+      flex-grow: 2;
+
+      @include breakpoint($desktop-min) {
+        margin: 0 0 0 $gutter-half;
+      }
+    }
+  }
+
+  .ajax-progress-throbber {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.75);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [id="edit-price"] {
+    width: 100%;
+  }
+
+  .field--name-quantity {
+    label {
+      @include visually-hidden;
+    }
+  }
+
+  [id="add-to-cart-messages"] {
+    margin: $gutter-half 0 0 0;
+
+    @include breakpoint($widescreen-min) {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0 0 $gutter-half;
+    }
+  }
+
+  .messages {
+    margin: 0;
+  }
+
+  .status-message {
+    padding: 6px 0;
+  }
+}
+
+.login-prompt {
+  padding: $gutter-half 0;
+  margin: 0;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  text-align: center;
+
+  @include breakpoint($desktop-min) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.login-message {
+  @include large-font;
+
+  font-weight: bold;
+  margin-bottom: $gutter-half;
+
+  @include breakpoint($desktop-min) {
+    padding-right: $gutter;
+    margin-bottom: 0;
+  }
+}
+
+.login-actions {
+
+  @include breakpoint($desktop-min) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  a {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+.product-disclaimer {
+  @include small-font;
+}
+
+.product-details {
+  @include breakpoint($tablet-small-min) {
+    width: 50%;
+    padding: 0 $gutter-half;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    width: 63%;
+  }
+}
+
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+
+  .field {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: $gutter-half;
+  }
+
+  .field__label {
+    text-transform: uppercase;
+  }
+
+  .field-specs-info {
+    display: block;
+    width: 100%;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Other colors.... potential reusable component css
+
+
+////////
+// Product search page view mode
+
+
+.product.display--other {
+  position: relative;
+}
+
+.product-other {
+  padding-top: $gutter;
+  margin: $gutter-half 0;
+  border-top: 1px solid $light-gray;
+
+  h2 {
+    @include h3;
+
+    margin-bottom: $gutter;
+    line-height: 1
+  }
+
+  .field-product-image {
+    margin-bottom: $gutter-fourth;
+  }
+
+  .other-title {
+    font-weight: bold;
+    font-size: $font-size-xxsmall;
+    margin-bottom: 0;
+
+    a:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.product-thumbs {
+  @include clean-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  @include responsive-grid-container;
+}
+
+.product-thumb {
+  width: 50%;
+  @include responsive-grid-item;
+  @include responsive-gutter($property: margin-bottom, $multiplier: 0.5);
+
+  @include breakpoint($desktop-small-min) {
+    width: 33.3333%;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    width: 25%;
+  }
+
+  img {
+    width: 100%;
+  }
+}

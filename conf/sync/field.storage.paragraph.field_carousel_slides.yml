@@ -1,0 +1,20 @@
+uuid: 3ec3e39e-35b5-4dbd-9d09-24156e9d8124
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_carousel_slides
+field_name: field_carousel_slides
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 8
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

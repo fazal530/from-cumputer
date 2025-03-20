@@ -1,0 +1,10 @@
+uuid: df70b4d7-9b4e-46fb-bcef-cd301a813603
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.wide_media
+label: Wide
+targetEntityType: paragraph
+cache: true

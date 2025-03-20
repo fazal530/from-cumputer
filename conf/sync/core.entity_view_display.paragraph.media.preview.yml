@@ -1,0 +1,31 @@
+uuid: fb35ee3d-c90e-41c7-a2ac-35f52a927aa7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.media.field_media
+    - field.field.paragraph.media.paragraph_view_mode
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.media
+  module:
+    - media
+id: paragraph.media.preview
+targetEntityType: paragraph
+bundle: media
+mode: preview
+content:
+  field_media:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true
+  search_api_excerpt: true

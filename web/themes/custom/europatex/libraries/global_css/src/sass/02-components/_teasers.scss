@@ -1,0 +1,95 @@
+// Color swatches
+.swatch {
+  @include kicker;
+
+  border-radius: $ui-border-radius;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  .name {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &.swatch--red {
+    background: $red;
+    color: #fff;
+  }
+
+  &.swatch--orange {
+    background: $orange;
+    color: #fff;
+  }
+
+  &.swatch--yellow {
+    background: $yellow;
+    color: $black;
+  }
+
+  &.swatch--green {
+    background: $green;
+    color: #fff;
+  }
+
+  &.swatch--teal {
+    background: $teal;
+    color: #fff;
+  }
+
+  &.swatch--blue {
+    background: $blue;
+    color: #fff;
+  }
+
+  &.swatch--purple {
+    background: $purple;
+    color: #fff;
+  }
+
+  &.swatch--pink {
+    background: $pink;
+    color: #fff;
+  }
+
+  &.swatch--white {
+    border: 1px solid $light-gray;
+    background: #fff;
+    color: $black;
+
+    @media (prefers-color-scheme: dark) {
+      border: 0;
+    }
+  }
+
+  &.swatch--grey {
+    background: $med-gray;
+    color: #fff;
+  }
+
+  &.swatch--black {
+    background: $black;
+    color: #fff;
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark-gray;
+    }
+  }
+
+  &.swatch--brown {
+    background: $brown;
+    color: #fff;
+  }
+
+  &.swatch--neutral {
+    background: $tan;
+    color: $black;
+  }
+
+  &.swatch--silver {
+    background: $metallic;
+    color: $black;
+  }
+}

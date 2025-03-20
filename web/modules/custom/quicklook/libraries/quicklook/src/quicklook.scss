@@ -1,0 +1,11 @@
+.quicklook {
+  position: relative;
+  width: 100%;
+
+  .close-button {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    cursor: pointer;
+  }
+}

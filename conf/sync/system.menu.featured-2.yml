@@ -1,0 +1,8 @@
+uuid: 80381939-2f0b-4cd1-ada6-4c2639f2db9d
+langcode: en
+status: true
+dependencies: {  }
+id: featured-2
+label: Featured
+description: 'Displays in Trim main menu drop-down'
+locked: false

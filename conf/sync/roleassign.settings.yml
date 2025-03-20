@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: iKucdYPrf1EPMz6Y3s71EADiRcAiwoLTIw9_JoxH-Jg
+roleassign_roles:
+  site_administrator: site_administrator
+  customer: customer
+  developer: '0'

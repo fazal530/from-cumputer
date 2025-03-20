@@ -1,0 +1,15 @@
+uuid: f08f6dc0-4a60-4f64-a02a-c7e732aa6e32
+langcode: en
+status: true
+dependencies: {  }
+name: content_narrow_2x
+label: 'Content area - narrow (HD)'
+effects:
+  da648360-ab8e-4a5f-bdc7-bfea42d071a3:
+    uuid: da648360-ab8e-4a5f-bdc7-bfea42d071a3
+    id: image_scale
+    weight: 1
+    data:
+      width: 1136
+      height: null
+      upscale: false

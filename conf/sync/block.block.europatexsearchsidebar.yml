@@ -1,0 +1,45 @@
+uuid: aed64990-fc0a-4dfe-8189-958f97d31415
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - et_display
+    - et_search
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: psearch-filters
+id: europatexsearchsidebar
+theme: europatex
+region: product_filters
+weight: -12
+provider: null
+plugin: et_search_sidebar
+settings:
+  id: et_search_sidebar
+  label: 'Europatex Search Sidebar'
+  label_display: '0'
+  provider: et_search
+  show_title: 1
+  exclude_empty_facets: 1
+  hide_empty_block: 0
+  facets_to_include:
+    - 'facet_block:product_type'
+    - 'facet_block:category'
+    - 'facet_block:collection'
+    - 'facet_block:color'
+    - 'facet_block:style'
+    - 'facet_block:usage'
+    - 'facet_block:market'
+  add_js_classes: 1
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false
+  et_display_route_name:
+    id: et_display_route_name
+    route_name: view.products.page_1
+    negate: false

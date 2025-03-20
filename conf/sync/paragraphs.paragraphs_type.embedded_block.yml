@@ -1,0 +1,15 @@
+uuid: 09f85a10-4a93-4aac-a80e-1451b2350320
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: embedded_block
+label: 'Embedded Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

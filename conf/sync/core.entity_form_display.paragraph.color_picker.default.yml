@@ -1,0 +1,34 @@
+uuid: a820612b-643d-4bd6-8337-e050f1b557a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.color_picker.field_colors
+    - field.field.paragraph.color_picker.field_headline
+    - paragraphs.paragraphs_type.color_picker
+id: paragraph.color_picker.default
+targetEntityType: paragraph
+bundle: color_picker
+mode: default
+content:
+  field_colors:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_headline:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

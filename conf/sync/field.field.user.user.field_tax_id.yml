@@ -1,0 +1,20 @@
+uuid: d6809d6f-686c-446c-b226-cc17942e544b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tax_id
+  module:
+    - user
+id: user.user.field_tax_id
+field_name: field_tax_id
+entity_type: user
+bundle: user
+label: 'Tax ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

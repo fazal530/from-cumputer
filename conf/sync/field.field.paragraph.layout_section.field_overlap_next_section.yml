@@ -1,0 +1,23 @@
+uuid: 853f23e9-5e8a-4493-b922-5ca21ed92674
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overlap_next_section
+    - paragraphs.paragraphs_type.layout_section
+id: paragraph.layout_section.field_overlap_next_section
+field_name: field_overlap_next_section
+entity_type: paragraph
+bundle: layout_section
+label: 'Overlap Next Section'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

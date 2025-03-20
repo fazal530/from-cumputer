@@ -1,0 +1,6 @@
+name: Europatex Checkout
+type: module
+description: Checkout customizations
+package: Europatex
+
+core_version_requirement: ^9 || ^10

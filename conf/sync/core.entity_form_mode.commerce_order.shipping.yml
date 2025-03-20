@@ -1,0 +1,10 @@
+uuid: 6c096501-d933-4783-9299-caa9373edca6
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+id: commerce_order.shipping
+label: Shipping
+targetEntityType: commerce_order
+cache: true

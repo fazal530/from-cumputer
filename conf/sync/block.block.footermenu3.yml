@@ -1,0 +1,34 @@
+uuid: 64dd19bd-7bc5-4eeb-8385-31b9878f454c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-3
+  module:
+    - block_class
+    - et_display
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: js-block-collapse
+id: footermenu3
+theme: europatex
+region: footer_top
+weight: -4
+provider: null
+plugin: 'system_menu_block:footer-3'
+settings:
+  id: 'system_menu_block:footer-3'
+  label: 'Get in Touch'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

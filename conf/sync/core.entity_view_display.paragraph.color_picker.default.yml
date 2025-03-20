@@ -1,0 +1,31 @@
+uuid: 50f9b5c3-f5d0-4448-86c4-c941ee704b66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.color_picker.field_colors
+    - field.field.paragraph.color_picker.field_headline
+    - paragraphs.paragraphs_type.color_picker
+id: paragraph.color_picker.default
+targetEntityType: paragraph
+bundle: color_picker
+mode: default
+content:
+  field_colors:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: swatch
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

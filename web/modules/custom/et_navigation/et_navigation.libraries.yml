@@ -1,0 +1,15 @@
+megamenu:
+  js:
+    libraries/megamenu/dist/megamenu.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - et_navigation/accessibleMegamenu
+
+accessibleMegamenu:
+  css:
+    component:
+      libraries/accessibleMegamenu/dist/jquery-accessibleMegaMenu.css: {}
+  js:
+    libraries/accessibleMegamenu/dist/jquery-accessibleMegaMenu.js: {}

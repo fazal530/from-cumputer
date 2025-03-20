@@ -1,0 +1,23 @@
+uuid: 7f939585-10b1-4eba-a026-f3f2915f00dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.embedded_block.field_block
+    - paragraphs.paragraphs_type.embedded_block
+  module:
+    - block_field
+id: paragraph.embedded_block.preview
+targetEntityType: paragraph
+bundle: embedded_block
+mode: preview
+content:
+  field_block:
+    type: block_field_label
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

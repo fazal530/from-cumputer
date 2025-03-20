@@ -1,0 +1,34 @@
+europatex.responsive.mobile:
+  label: Mobile
+  mediaQuery: '(max-width: 479px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: 'europatex Responsive Image'
+
+europatex.responsive.tablet:
+  label: Tablet
+  mediaQuery: '(min-width: 480px) and (max-width: 839px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: 'europatex Responsive Image'
+
+europatex.responsive.desktop:
+  label: Desktop
+  mediaQuery: '(min-width: 840px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: 'europatex Responsive Image'
+
+europatex.retina:
+  label: Retina
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+  group: 'europatex Retina Image'

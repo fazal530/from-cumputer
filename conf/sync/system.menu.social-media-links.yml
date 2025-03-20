@@ -1,0 +1,8 @@
+uuid: 4f2a2733-eff3-42b9-b728-dfd21510c11c
+langcode: en
+status: true
+dependencies: {  }
+id: social-media-links
+label: 'Social Media Links'
+description: 'Social media icons in the footer'
+locked: false

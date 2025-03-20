@@ -1,0 +1,6 @@
+name: Cloudinary
+type: module
+description: Integration with Cloudinary image service
+package: Rapid Development Group
+
+core_version_requirement: ^9 || ^10

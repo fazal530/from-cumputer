@@ -1,0 +1,142 @@
+// /**
+//  * Overrrides / copies from modules/custom/commerce/modules/checkout module
+//  */
+
+///////////////////////////////
+// ALL PANES & PAGES
+///////////////////////////////
+
+.layout-checkout-form {
+  margin-bottom: $gutter;
+}
+
+.checkout-pane {
+  legend {
+    @include h3;
+  }
+}
+
+////////////////////////////
+// ORDER INFORMATION PAGE
+///////////////////////////
+
+.layout-checkout-addresses {
+  @include checkout-divider-bottom;
+
+  .available-profiles {
+    width: auto;
+  }
+
+  [id="edit-et-checkout-shipping-shipping-profile"] {
+    margin-bottom: $gutter;
+  }
+
+  [id="edit-payment-information-payment-method"] {
+    .form-item {
+      margin: 0;
+    }
+  }
+
+  .address {
+    display: inline-block;
+    @include address;
+    margin: 0 0 ($gutter*0.5) 0;
+  }
+}
+
+.checkout-pane-et-checkout-order-comments {
+  margin-bottom: $gutter;
+}
+
+// Desktop layout
+@media screen and (min-width: $tablet-portrait-min), (orientation: landscape) and (min-device-height: $tablet-portrait-min) {
+  .layout-checkout-addresses {
+    .layout-inner {
+      display: flex;
+      @include responsive-grid-container;
+    }
+  }
+
+  .checkout-shipping {
+    width: 50%;
+    @include responsive-grid-item;
+  }
+
+  .checkout-billing {
+    width: 50%;
+    @include responsive-grid-item;
+  }
+}
+
+.layout-checkout-footer .form-actions {
+  text-align: right;
+}
+
+///////////////////////////////
+// REVIEW PAGE
+///////////////////////////////
+
+.checkout-step-review {
+  .form-actions {
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .link--previous {
+    margin-right: $gutter;
+  }
+
+  table {
+    margin-top: 0;
+  }
+}
+
+// Desktop layout
+@media screen and (min-width: $tablet-portrait-min), (orientation: landscape) and (min-device-height: $tablet-portrait-min) {
+  .checkout-step-review {
+    display: flex;
+    flex-wrap: wrap;
+    @include responsive-grid-container;
+
+    .layout-checkout-summary {
+      width: 60%;
+      @include responsive-grid-item;
+    }
+
+    .layout-checkout-review {
+      width: 40%;
+      @include responsive-grid-item;
+    }
+
+    .layout-checkout-footer {
+      width: 100%;
+    }
+  }
+}
+
+////////////////////////////////
+// BILLING INFORMATION PANE (Checkout page)
+///////////////////////////////
+
+.checkout-pane-billing-information {
+  margin-top: 0;
+  margin-bottom: $gutter;
+}
+
+////////////////////////////////
+// ORDER SUMMARY PANE
+///////////////////////////////
+
+.checkout-pane-order-summary {
+  margin-bottom: $gutter;
+}
+
+.order-total-line {
+  padding: 0 $gutter;
+}
+
+.chkout-price {
+  text-align: right;
+}

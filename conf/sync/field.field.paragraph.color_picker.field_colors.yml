@@ -1,0 +1,29 @@
+uuid: ad202ab1-171a-4819-966a-eddc62ebde15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colors
+    - paragraphs.paragraphs_type.color_picker
+    - taxonomy.vocabulary.color
+id: paragraph.color_picker.field_colors
+field_name: field_colors
+entity_type: paragraph
+bundle: color_picker
+label: Colors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      color: color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

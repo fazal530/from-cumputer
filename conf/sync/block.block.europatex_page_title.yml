@@ -1,0 +1,36 @@
+uuid: 5942f769-ffbe-48c5-8e14-707b0f0ab7e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - et_display
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: page-title-wrapper
+    replaced_id: '<none>'
+_core:
+  default_config_hash: fNwDdW063tk_ktzSWzZVeQS9wzvLooVO280BQ9WrsIs
+id: europatex_page_title
+theme: europatex
+region: wayfinding
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 1
+    negate: false

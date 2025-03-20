@@ -1,0 +1,26 @@
+uuid: 35f064e5-e389-43d3-930f-ef2192618fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.wide_media
+    - field.field.paragraph.media.field_media
+    - field.field.paragraph.media.paragraph_view_mode
+    - paragraphs.paragraphs_type.media
+id: paragraph.media.wide_media
+targetEntityType: paragraph
+bundle: media
+mode: wide_media
+content:
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: content_area_wide
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true
+  search_api_excerpt: true

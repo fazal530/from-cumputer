@@ -1,0 +1,5 @@
+Disallow: /products/category/
+Disallow: /products/collection/
+Disallow: /products/style/
+Disallow: /products/usage/
+Disallow: /et_search/

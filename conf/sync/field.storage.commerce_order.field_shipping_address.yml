@@ -1,0 +1,20 @@
+uuid: 3e5230d4-5683-488f-8722-312356760e2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - profile
+id: commerce_order.field_shipping_address
+field_name: field_shipping_address
+entity_type: commerce_order
+type: entity_reference
+settings:
+  target_type: profile
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

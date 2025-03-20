@@ -1,0 +1,67 @@
+@use "sass:math";
+
+// =============================================================================
+// MEDIA QUERY VARIABLES
+// =============================================================================
+
+// Converts breakpoints to ems for better font scaling & accessibility.
+// Variable source: breakpoint
+@include breakpoint-set("to ems", true);
+
+// Set min and max width of the overall layout
+$viewport-min: 320px;
+$viewport-max: 1200px;
+
+$phone-small-max: max-width 374px;
+$phone-small-min: 375px;
+
+// Standard dpi breakpoints
+$phone-max: max-width 479px;
+$phone-min: 480px;
+
+$tablet-small-max: max-width 599px;
+$tablet-small-min: 600px;
+
+$tablet-portrait-max: max-width 767px;
+$tablet-portrait-min: 768px;
+
+$desktop-small-max: max-width 839px;
+$desktop-small-min: 840px;
+
+$desktop-max: max-width 959px;
+$desktop-min: 960px;
+
+// Miscellanous breakpoints
+$product-filter-mobile-max: max-width 839px;
+$tablet-landscape-min: 1024px;
+$tablet-landscape-max: max-width 1023px;
+$desktop-medium-min: 1280px;
+$desktop-medium-max: 1279px;
+$widescreen-max: max-width 1439px;
+$widescreen-min: 1440px;
+$orientation-landscape: "only screen and (orientation: landscape)";
+$orientation-portrait: "only screen and (orientation: portrait)";
+$xwide-min: 1600px;
+$xwide-max: max-width 1599px;
+$gin-toolbar-min: 976px;
+
+// =============================================================================
+// VERTICAL RHTHYM & GRID VARIABLES
+// =============================================================================
+
+// Universal vertical rhthym gutter. Determines baseline gutters
+// as well as block and form element margins,
+// p + p tags, hr tags, blockquote and pre tag padding
+$gutter: 32px;
+$gutter-half: ($gutter*0.5);
+$gutter-fourth: ($gutter*0.25);
+$gutter-three-quarter: (($gutter-half + $gutter) * 0.5);
+
+$horiz-gutter: $gutter;
+$vert-gutter: $gutter;
+
+// Responsive section space
+$section-space-mobile: $vert-gutter*1.5; // 48px
+$section-space-tablet: math.div(($vert-gutter*1.5) + ($vert-gutter*2), 2); // 56px
+$section-space-desktop: $vert-gutter*2; // 64px
+// @warn($section-space-tablet); // Checking variable

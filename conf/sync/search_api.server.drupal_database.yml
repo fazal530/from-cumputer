@@ -1,0 +1,14 @@
+uuid: 835bd350-9220-4a28-ac78-6e413406f02b
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: drupal_database
+name: 'Drupal database'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: partial

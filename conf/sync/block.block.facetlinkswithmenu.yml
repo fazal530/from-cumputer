@@ -1,0 +1,41 @@
+uuid: d28e3ffa-9c1f-41f9-af8c-531f5d6095b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - et_display
+    - et_search
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: menu--full-width
+id: facetlinkswithmenu
+theme: europatex
+region: header_bottom
+weight: -15
+provider: null
+plugin: et_search_facet_links_menu
+settings:
+  id: et_search_facet_links_menu
+  label: Fabrics
+  label_display: visible
+  provider: et_search
+  menu_name: featured
+  active_facets:
+    product_type:
+      - fabric
+  facets_to_include:
+    category: category
+    color: color
+    usage: usage
+    market: market
+    product_type: 0
+    collection: 0
+    style: 0
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

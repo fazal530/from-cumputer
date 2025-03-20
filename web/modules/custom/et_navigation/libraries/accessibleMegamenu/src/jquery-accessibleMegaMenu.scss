@@ -1,0 +1,9 @@
+/* sub-navigation panel */
+.dropdown {
+  display: none;
+}
+
+/* sub-navigation panel open state */
+.dropdown.active {
+  display: block;
+}

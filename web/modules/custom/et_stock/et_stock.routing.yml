@@ -1,0 +1,7 @@
+et_stock.form:
+  path: '/admin/commerce/stock-import'
+  defaults:
+    _title: 'Import stock data'
+    _form: '\Drupal\et_stock\Form\StockImportForm'
+  requirements:
+    _permission: 'import stock data'

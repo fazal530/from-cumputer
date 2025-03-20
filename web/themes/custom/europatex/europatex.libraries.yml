@@ -1,0 +1,61 @@
+# Related docs:
+# https://www.drupal.org/node/2216195
+
+global_css_dev:
+  js:
+    'http://docker.localhost:35729/livereload.js': { type: external }
+  dependencies:
+    - europatex/global_css
+
+global_css:
+  css:
+    theme:
+      "https://use.typekit.net/qjr1xbg.css": { type: external }
+      libraries/global_css/dist/styles.css: {}
+
+global_js:
+  js:
+    libraries/global_js/dist/menu.js: {}
+    libraries/global_js/dist/product-filters.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+global_block_collapse:
+  css:
+    theme:
+      libraries/global_block_collapse/dist/block-collapse.css: {}
+  js:
+    #https://unpkg.com/slide-element@2/dist/index.umd.js: { type: external, minified: true }
+    libraries/global_block_collapse/src/slide-element.min.js: {}
+    libraries/global_block_collapse/dist/block-collapse.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+commerce.checkout:
+  css:
+    theme:
+      libraries/commerce/dist/commerce.checkout.css: {}
+
+commerce.cart:
+  css:
+    theme:
+      libraries/commerce/dist/commerce.cart.css: {}
+
+commerce.share:
+  css:
+    theme:
+      libraries/commerce/dist/commerce.share.css: {}
+
+email:
+  css:
+    theme:
+      libraries/email/dist/email.css: {}
+
+jquery.ui:
+  css:
+    theme:
+      libraries/jquery_ui/dist/jquery-ui-theme.css: {}
+      libraries/jquery_ui/dist/jquery-ui-dialog.css: {}

@@ -1,0 +1,161 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.rapiddg.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.252",
+        "cloudinary/cloudinary_php": "^2.7",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/antibot": "^2.0",
+        "drupal/block_class": "^2.0",
+        "drupal/block_field": "^1.0@RC",
+        "drupal/commerce": "^2.30",
+        "drupal/commerce_pricelist": "^2.4",
+        "drupal/commerce_shipping": "^2.4",
+        "drupal/commerce_stock": "^1.0",
+        "drupal/config_ignore": "^2.4",
+        "drupal/core-composer-scaffold": "^9.2",
+        "drupal/core-project-message": "^9.2",
+        "drupal/core-recommended": "^9.2",
+        "drupal/devel": "^5.1",
+        "drupal/editor_advanced_link": "^2.1",
+        "drupal/eva": "^3.0",
+        "drupal/facets": "^2.0",
+        "drupal/facets_block": "^1.4",
+        "drupal/facets_pretty_paths": "^1.2",
+        "drupal/field_group": "^3.2",
+        "drupal/focal_point": "^1.5",
+        "drupal/gin": "^3.0@beta",
+        "drupal/google_tag": "^1.4",
+        "drupal/layout_paragraphs": "^2.0",
+        "drupal/mailchimp": "^2.0",
+        "drupal/menu_link_attributes": "^1.2",
+        "drupal/metatag": "^1.7",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_source_csv": "^3.5",
+        "drupal/migrate_spreadsheet": "^2.1",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/monolog": "^2.0",
+        "drupal/paragraph_view_mode": "^3.0",
+        "drupal/paragraphs": "^1.14",
+        "drupal/paragraphs_ee": "^2.0",
+        "drupal/pathauto": "^1.8",
+        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/redirect": "^1.6",
+        "drupal/roleassign": "^2.0",
+        "drupal/search_api_solr": "^4.2",
+        "drupal/simple_sitemap": "^4.0",
+        "drupal/svg_image": "^3.0",
+        "drupal/symfony_mailer": "^1.0@alpha",
+        "drupal/taxonomy_machine_name": "^1.0@beta",
+        "drupal/token": "^1.9",
+        "drupal/twig_tweak": "^3.2",
+        "drupal/upgrade_status": "^4.0",
+        "drupal/views_ajax_history": "^1.6",
+        "drupal/views_bulk_operations": "^4.0",
+        "drupal/views_infinite_scroll": "^2.0",
+        "drupal/webform": "^6.1",
+        "drush/drush": "^11.0",
+        "kint-php/kint": "^4.1",
+        "npm-asset/parvus": "^2.1",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "rapiddevelopmentgroup/rdg_external_links": "^1.0",
+        "rapiddevelopmentgroup/rdg_title": "^1.0",
+        "rapiddevelopmentgroup/rdg_ui_elements": "^2.0"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.2",
+        "drupal/examples": "^3.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/robots.txt": {
+                    "mode": "append",
+                    "append": "patches/robots-append.txt"
+                }
+            }
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "patches": {
+            "drupal/facets_pretty_paths": {
+                "#3293174: The cache_data table grows fast": "https://www.drupal.org/files/issues/2022-06-28/cache_data_grows_fast-3293174-2.patch"
+            },
+            "drupal/commerce": {
+                "#2924159: Provide a way to customize the order receipt email subject": "https://www.drupal.org/files/issues/2022-08-12/2924159-16.patch"
+            }
+        }
+    }
+}

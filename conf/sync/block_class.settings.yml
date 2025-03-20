@@ -1,0 +1,23 @@
+_core:
+  default_config_hash: Nh2kBYOQBgZ8cyaqvf8VJKnC1gR_rxFsVy-51w7PJkw
+maxlength_block_class_field: 255
+field_type: multiple_textfields
+default_case: standard
+block_classes_stored: '{"":"","menu--full-width":"menu--full-width","global-search":"global-search","breadcrumb-wrapper":"breadcrumb-wrapper","primary-tabs-wrapper":"primary-tabs-wrapper","secondary-tabs-wrapper":"secondary-tabs-wrapper","admin-actions-wrapper":"admin-actions-wrapper","page-title-wrapper":"page-title-wrapper","psearch-filters":"psearch-filters","psearch-keywords":"psearch-keywords","psearch-reset":"psearch-reset","js-block-collapse":"js-block-collapse"}'
+enable_attributes: true
+enable_auto_complete: true
+qty_classes_per_block: 10
+items_per_page: 50
+enable_special_chars: false
+qty_attributes_per_block: 10
+enable_id_replacement: true
+weight_attributes: null
+weight_class: null
+weight_id: null
+filter_html_clean_css_identifier: ''
+maxlength_attributes: 0
+maxlength_id: 255
+id_replacement_stored: '{"europatex_page_title":"\u003Cnone\u003E"}'
+attribute_keys_stored: '[]'
+attribute_value_stored: '[]'
+attributes_inline: '[]'

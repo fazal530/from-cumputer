@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_product_display.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_view().
+ */
+function et_product_display_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  $customer = \Drupal::currentUser()->hasPermission('access checkout');
+  if (!empty($build['variations'])) {
+    $build['variations']['#access'] = $customer;
+  }
+  if (!empty($build['price'])) {
+    $build['price']['#access'] = $customer;
+  }
+  if (!empty($build['extra_field_et_product_display_login_prompt'])) {
+    $build['extra_field_et_product_display_login_prompt']['#access'] = !$customer;
+  }
+  $build['#cache']['context'][] = 'user.permissions';
+}

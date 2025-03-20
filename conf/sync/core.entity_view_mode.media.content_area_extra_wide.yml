@@ -1,0 +1,10 @@
+uuid: 822614b4-5a41-4e57-9518-a4da61b133d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.content_area_extra_wide
+label: 'Extra wide'
+targetEntityType: media
+cache: true

@@ -1,0 +1,32 @@
+uuid: 3f4fde4a-a062-4451-af49-2cfb50db5729
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.wysiwyg
+  module:
+    - antibot
+    - commerce_order
+    - commerce_product
+    - filter
+    - media
+    - profile
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'skip antibot'
+  - 'use text format wysiwyg'
+  - 'view commerce_product'
+  - 'view commerce_product_attribute'
+  - 'view default commerce_product'
+  - 'view media'
+  - 'view own commerce_order'
+  - 'view own customer profile'
+  - 'view own profile'
+  - 'view own unpublished profile'

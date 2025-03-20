@@ -1,0 +1,25 @@
+uuid: 49bb65d7-bc48-4f32-aa8b-d04146c3ca54
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-media-links
+  module:
+    - system
+  theme:
+    - europatex
+id: socialmedialinks
+theme: europatex
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:social-media-links'
+settings:
+  id: 'system_menu_block:social-media-links'
+  label: 'Social Media Links'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

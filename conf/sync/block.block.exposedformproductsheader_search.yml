@@ -1,0 +1,32 @@
+uuid: 7d148374-34b4-489e-a299-9974231dd0d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.products
+  module:
+    - block_class
+    - et_display
+    - views
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: global-search
+id: exposedformproductsheader_search
+theme: europatex
+region: header_search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:products-header_search'
+settings:
+  id: 'views_exposed_filter_block:products-header_search'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Product keyword search'
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

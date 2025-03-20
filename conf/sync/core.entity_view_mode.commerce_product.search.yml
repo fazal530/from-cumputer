@@ -1,0 +1,10 @@
+uuid: 44842ac9-67a3-4d1b-a97a-fad0e4e5f08f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.search
+label: Search
+targetEntityType: commerce_product
+cache: true

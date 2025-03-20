@@ -1,0 +1,19 @@
+uuid: bdf417b7-f001-44df-86e7-00824d0c7176
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.storage.commerce_product.field_specs_fire_code
+id: commerce_product.fabric.field_specs_fire_code
+field_name: field_specs_fire_code
+entity_type: commerce_product
+bundle: fabric
+label: 'Fire Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

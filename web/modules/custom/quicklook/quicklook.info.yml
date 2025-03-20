@@ -1,0 +1,6 @@
+name: Quick Look
+type: module
+description: Provide quick look behavior for views
+package: Rapid Development Group
+
+core_version_requirement: ^9 || ^10

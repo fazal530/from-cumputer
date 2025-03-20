@@ -1,0 +1,58 @@
+uuid: e0869e5b-014c-4031-9bf3-a4236b7d7925
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_payment
+    - et_checkout
+_core:
+  default_config_hash: 5BYvSDemm8xYwB9rMGFuEuGK6FxVheqtXEUxnpKO2N4
+label: Default
+id: default
+plugin: multistep_default
+configuration:
+  display_checkout_progress: true
+  display_checkout_progress_breadcrumb_links: false
+  panes:
+    login:
+      step: login
+      weight: 0
+      allow_guest_checkout: false
+      allow_registration: false
+    et_checkout_shipping:
+      step: order_information
+      weight: 1
+    et_checkout_billing_address:
+      step: _disabled
+      weight: 8
+      message: 'Please contact Customer Service if your billing information has changed.'
+    payment_information:
+      step: order_information
+      weight: 2
+    et_checkout_order_comments:
+      step: order_information
+      weight: 3
+    review:
+      step: review
+      weight: 4
+    order_summary:
+      step: review
+      weight: 5
+      view: commerce_checkout_order_summary
+    payment_process:
+      step: payment
+      weight: 6
+      capture: false
+    completion_message:
+      step: complete
+      weight: 7
+      message:
+        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
+        format: plain_text
+    contact_information:
+      step: _disabled
+      weight: 9
+      double_entry: false
+    completion_register:
+      step: _disabled
+      weight: 10

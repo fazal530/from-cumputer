@@ -1,0 +1,59 @@
+id: profile
+migration_group: users
+label: 'Profile'
+source:
+  plugin: csv
+  path: modules/custom/et_migrate/data/customers.csv
+  ids: ['Customer ID']
+  fields:
+    - {name: 'Customer ID'}
+    - {name: 'E-Mail'}
+    - {name: 'Password'}
+    - {name: 'Price Level'}
+    - {name: 'Company Name'}
+    - {name: 'Name'}
+    - {name: 'Phone'}
+    - {name: 'Address'}
+    - {name: 'City'}
+    - {name: 'State'}
+    - {name: 'Zip Code'}
+    - {name: 'Federal Tax ID'}
+process:
+  type:
+    plugin: default_value
+    default_value: customer
+  status:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: migration_lookup
+    source: 'Customer ID'
+    migration: user
+  is_default:
+    plugin: default_value
+    default_value: 1
+  address/country_code:
+    plugin: default_value
+    default_value: US
+  address/organization: 'Company Name'
+  address/given_name:
+    plugin: str_replace
+    source: 'Name'
+    regex: true
+    search: /(.*) (.*)/
+    replace: $1
+  address/family_name:
+    plugin: str_replace
+    source: 'Name'
+    regex: true
+    search: /(.*) (.*)/
+    replace: $2
+  address/address_line1: 'Address'
+  address/locality: 'City'
+  address/administrative_area:
+    plugin: us_state
+    source: 'State'
+  address/postal_code: 'Zip Code'
+
+destination:
+  plugin: 'entity:profile'

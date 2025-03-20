@@ -1,0 +1,191 @@
+id: product
+migration_group: default
+label: 'Products'
+source:
+  plugin: spreadsheet
+  file: private://import/products.xlsx
+  worksheet: Sheet1
+  origin: A3
+  header_row: 2
+  columns:
+    - 'name'
+    - 'sku'
+    - 'status'
+    - 'type'
+    - 'cat_style'
+    - 'cat_category'
+    - 'cat_collection'
+    - 'cat_usage'
+    - 'cat_color'
+    - 'cat_market'
+    - 'cat_fire_code'
+    - 'minimum_order'
+    - 'specs_content'
+    - 'specs_cleaning_code'
+    - 'specs_finish'
+    - 'specs_style'
+    - 'specs_usage'
+    - 'specs_repeat'
+    - 'specs_width'
+    - 'specs_abrasion'
+    - 'specs_category'
+    - 'specs_direction'
+    - 'specs_fire_code'
+    - 'specs_color'
+    - 'specs_weight'
+    - 'specs_collection'
+    - 'specs_roll_size'
+    - 'specs_info'
+    - 'price_level_1'
+    - 'price_level_3'
+    - 'price_level_5'
+  keys:
+    sku:
+      type: string
+      max_length: 32
+      is_ascii: true
+
+process:
+  type:
+    source: type
+    plugin: static_map
+    map:
+      'Fabric': fabric
+      'Trim': trim
+      'Finished Product': finished
+  title: name
+  status:
+    source: status
+    plugin: static_map
+    map:
+      'Current': 1
+    default_value: 0
+  stores:
+    plugin: default_value
+    default_value: 1
+  field_cat_style:
+    -
+      source: cat_style
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: style
+      value_key: name
+  field_cat_category:
+    -
+      source: cat_category
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: category
+      value_key: name
+  field_cat_collection:
+    -
+      source: cat_collection
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: collection
+      value_key: name
+  field_cat_usage:
+    -
+      source: cat_usage
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: usage
+      value_key: name
+  field_cat_color:
+    -
+      source: cat_color
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: color
+      value_key: name
+  field_cat_market:
+    -
+      source: cat_market
+      plugin: get
+    -
+      plugin: default_value
+      default_value: ''
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: market
+      value_key: name
+  field_cat_fire_code:
+    source: cat_fire_code
+    plugin: entity_lookup
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: fire_code
+    value_key: name
+  field_specs_content: specs_content
+  field_specs_cleaning_code: specs_cleaning_code
+  field_specs_finish: specs_finish
+  field_specs_style: specs_style
+  field_specs_usage: specs_usage
+  field_specs_repeat: specs_repeat
+  field_specs_width: specs_width
+  field_specs_abrasion: specs_abrasion
+  field_specs_category: specs_category
+  field_specs_direction: specs_direction
+  field_specs_fire_code: specs_fire_code
+  field_specs_color: specs_color
+  field_specs_weight: specs_weight
+  field_specs_collection: specs_collection
+  field_specs_roll_size: specs_roll_size
+  field_minimum_order: minimum_order
+  field_specs_info/value: specs_info
+  field_specs_info/format:
+    plugin: default_value
+    default_value: wysiwyg
+
+destination:
+  plugin: 'entity:commerce_product'

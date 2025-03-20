@@ -1,0 +1,8 @@
+uuid: 4e714f5f-5706-4ec9-a863-dc1161e4cf40
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pricing Level'
+vid: pricing_level
+description: ''
+weight: -5

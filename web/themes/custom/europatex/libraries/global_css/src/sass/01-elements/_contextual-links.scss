@@ -1,0 +1,25 @@
+.contextual .trigger {
+  position: relative;
+  right: 6px; /* LTR */
+  float: right; /* LTR */
+  overflow: hidden;
+  margin: 0;
+  padding: 0 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  background-color: #fff;
+}
+
+.contextual-region {
+  .trigger {
+    display: none;
+  }
+
+  &:hover,
+  &:focus-within {
+    .trigger {
+      display: block;
+    }
+  }
+}

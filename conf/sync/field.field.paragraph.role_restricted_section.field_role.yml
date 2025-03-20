@@ -1,0 +1,23 @@
+uuid: 0e51f5e7-e204-45e1-b56b-0cccd2709243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_role
+    - paragraphs.paragraphs_type.role_restricted_section
+id: paragraph.role_restricted_section.field_role
+field_name: field_role
+entity_type: paragraph
+bundle: role_restricted_section
+label: Role
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user_role'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

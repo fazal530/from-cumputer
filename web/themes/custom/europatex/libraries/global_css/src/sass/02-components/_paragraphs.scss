@@ -1,0 +1,457 @@
+// All paragraphs
+.paragraph {
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  &.unpublished {
+    outline: 1px dashed $error-color;
+  }
+}
+
+// Layout sections
+.paragraph-layout-section {
+  margin-top: $vert-gutter*1.5;
+  margin-bottom: $vert-gutter*1.5;
+
+  &:not(.full-width) > .layout-container {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    margin-top: $vert-gutter*2;
+    margin-bottom: $vert-gutter*2;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.full-width.bgrd-texture:last-child {
+    margin-bottom: 0;
+  }
+
+  &.overlap {
+    margin-bottom: -$vert-gutter*3;
+
+    @include breakpoint($tablet-portrait-min) {
+      margin-bottom: -$vert-gutter*3.5;
+    }
+
+    & + .paragraph-layout-section {
+      padding-top: $vert-gutter*2.5;
+
+      @include breakpoint($tablet-portrait-min) {
+        padding-top: $vert-gutter*3;
+      }
+    }
+  }
+
+  &.remove-space--top {
+    margin-top: 0;
+  }
+
+  &.remove-space--bottom {
+    margin-bottom: 0;
+  }
+
+  &.remove-space--top {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Background
+.bgrd-texture {
+  @include switch-color-scheme(background-image, url('./images/bg-pattern.png'), url('./images/bg-pattern--dark.png'));
+  @include section-space;
+
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 12px auto;
+  padding: $gutter;
+}
+
+// Full width sections
+.full-width {
+  @include break-container;
+}
+
+.narrow-width {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($tablet-portrait-min) {
+    max-width: 60%;
+  }
+}
+
+.has-border {
+  @include switch-color-scheme(border-bottom-color, $light-gray, $med-gray);
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+// Banners
+.banner {
+  position: relative;
+
+  .banner__image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .banner__text {
+    background-color: $dark-gray;
+    color: #fff;
+    text-align: center;
+    padding: $gutter;
+
+    .kicker {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: $vert-gutter*0.75;
+      font-style: italic;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    a {
+      @include button(primary);
+      @include switch-color-scheme(background-color, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
+      @include switch-color-scheme(color, $body-font-color, $body-font-color);
+
+      &:hover,
+      &:focus {
+        @include switch-color-scheme(color, $body-font-color, $body-font-color);
+        @include switch-color-scheme(background-color, #fff, #fff);
+      }
+    }
+
+    .slick-initialized & {
+      padding-left: $gutter*2;
+      padding-right: $gutter*2;
+    }
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    .banner__text {
+      background: transparent;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: flex-end;
+
+      .layout-container {
+        padding: 0;
+        width: 100%;
+      }
+
+      .slick-initialized & {
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+    }
+  }
+
+  @include breakpoint($desktop-min) {
+    .banner__text {
+      text-align: left;
+
+      .layout-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .full-width & {
+    .banner__text {
+      padding-left: $gutter*0.5;
+      padding-right: $gutter*0.5;
+
+      .layout-container {
+        @include layout-gutter;
+
+        min-width: 0;
+      }
+
+      @include breakpoint($tablet-portrait-min) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// Homepage banner / ie Carousel
+.path-frontpage {
+
+  @include breakpoint(min-width 1350px) {
+    .banner {
+      .banner__image {
+        max-height: 560px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+
+// Cards
+@mixin inline-card {
+  @include legacy-clearfix;
+
+  display: flex;
+  align-items: center;
+
+  .field-card-image {
+    width: 33.33%;
+    float: left;
+    max-width: 200px;
+  }
+
+  .card__content {
+    width: 66.67%;
+    float: left;
+  }
+}
+
+.card {
+  @include switch-color-scheme(background-color, #fff, $dark-gray);
+
+  border-radius: $ui-border-radius;
+  box-shadow: $ui-box-shadow;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  h3 {
+    @include h4;
+
+    margin: 0;
+
+    a {
+      @include hover-underline;
+
+      color: unset;
+      position: static;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .card__content {
+    padding: $gutter*0.75;
+  }
+
+  .layout--fourcol & {
+    @include breakpoint($viewport-min $desktop-min) {
+      @include inline-card;
+    }
+  }
+
+  .layout--threecol-33-34-33 &,
+  .layout--twocol-67-33 .layout__region--second &,
+  .layout--twocol-33-67 .layout__region--first & {
+    @include breakpoint($viewport-min $tablet-portrait-min) {
+      @include inline-card;
+    }
+  }
+
+  .layout--onecol &,
+  .layout--twocol-67-33 .layout__region--first &,
+  .layout--twocol-33-67 .layout__region--second & {
+    @include breakpoint($viewport-min) {
+      @include inline-card;
+    }
+  }
+}
+
+// Carousels
+.paragraph-carousel {
+  background-color: $dark-gray;
+
+  .full-width & {
+    @include break-container;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    background-color: transparent;
+  }
+}
+
+// Text
+.paragraph-text {
+  .layout--onecol & {
+    max-width: $wide-measure;
+    margin: 0 auto;
+  }
+}
+
+// Color picker
+.paragraph-color-picker {
+  h2 {
+    text-align: center;
+  }
+
+  .field-colors {
+    @include legacy-clearfix;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: -$gutter*0.125;
+    margin-right: -$gutter*0.125;
+
+    > .field__item {
+      width: 33.33%;
+      float: left;
+      padding: $gutter*0.125;
+
+      .swatch {
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+
+        .name {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @include breakpoint($phone-small-min) {
+    .field-colors > .field__item {
+      width: 25%;
+    }
+  }
+
+  @include breakpoint($phone-min) {
+    .field-colors > .field__item {
+      width: 20%;
+    }
+  }
+
+  @include breakpoint($tablet-small-min) {
+    .field-colors > .field__item {
+      width: 16.66%;
+    }
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    .field-colors > .field__item {
+      width: 14.28%;
+    }
+  }
+
+  @include breakpoint($tablet-landscape-min) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      @include h4;
+
+      font-size: $h3-font-size-mobile;
+      text-align: left;
+      margin: 0;
+    }
+
+    .field-colors {
+      height: 96px;
+
+      > .field__item {
+        width: auto;
+
+        .swatch {
+          width: 44px;
+          height: 44px;
+
+          .name {
+            opacity: 0;
+          }
+
+          &:hover,
+          &:focus {
+            width: 88px;
+            height: 88px;
+
+            .name {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint($viewport-max) {
+    .field-colors > .field__item {
+      padding-left: $gutter*0.25;
+      padding-right: $gutter*0.25;
+    }
+  }
+}
+
+
+///////////////////////////////////////////
+// Media
+//////////////////////////////////////////
+
+.paragraph-media {
+  // Ensure images stretch full width of the containing column
+  img {
+    width: 100%;
+  }
+}

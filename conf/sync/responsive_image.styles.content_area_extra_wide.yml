@@ -1,0 +1,24 @@
+uuid: 5745f27e-b8a4-4c41-9bcf-ecbe75c5048a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_extra_wide_1x
+    - image.style.content_extra_wide_2x
+  theme:
+    - europatex
+id: content_area_extra_wide
+label: 'Extra wide'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: content_extra_wide_1x
+    breakpoint_id: europatex.retina
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_extra_wide_2x
+    breakpoint_id: europatex.retina
+    multiplier: 2x
+breakpoint_group: 'europatex Retina Image'
+fallback_image_style: content_extra_wide_1x

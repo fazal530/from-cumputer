@@ -1,0 +1,323 @@
+uuid: cce28161-874d-42c9-9ed1-67153052ba9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.finished
+    - field.field.commerce_product.finished.field_cat_category
+    - field.field.commerce_product.finished.field_cat_collection
+    - field.field.commerce_product.finished.field_cat_color
+    - field.field.commerce_product.finished.field_cat_market
+    - field.field.commerce_product.finished.field_cat_style
+    - field.field.commerce_product.finished.field_cat_usage
+    - field.field.commerce_product.finished.field_minimum_order
+    - field.field.commerce_product.finished.field_product_image
+    - field.field.commerce_product.finished.field_specs_abrasion
+    - field.field.commerce_product.finished.field_specs_category
+    - field.field.commerce_product.finished.field_specs_cleaning_code
+    - field.field.commerce_product.finished.field_specs_collection
+    - field.field.commerce_product.finished.field_specs_color
+    - field.field.commerce_product.finished.field_specs_content
+    - field.field.commerce_product.finished.field_specs_direction
+    - field.field.commerce_product.finished.field_specs_finish
+    - field.field.commerce_product.finished.field_specs_fire_code
+    - field.field.commerce_product.finished.field_specs_info
+    - field.field.commerce_product.finished.field_specs_repeat
+    - field.field.commerce_product.finished.field_specs_roll_size
+    - field.field.commerce_product.finished.field_specs_style
+    - field.field.commerce_product.finished.field_specs_usage
+    - field.field.commerce_product.finished.field_specs_weight
+    - field.field.commerce_product.finished.field_specs_width
+  module:
+    - cloudinary
+    - commerce
+    - field_group
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_categorization:
+      children:
+        - field_cat_style
+        - field_cat_category
+        - field_cat_collection
+        - field_cat_usage
+        - field_cat_color
+        - field_cat_market
+      label: Categorization
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_specs:
+      children:
+        - field_specs_abrasion
+        - field_specs_category
+        - field_specs_cleaning_code
+        - field_specs_collection
+        - field_specs_color
+        - field_specs_content
+        - field_specs_direction
+        - field_specs_finish
+        - field_specs_fire_code
+        - field_specs_repeat
+        - field_specs_roll_size
+        - field_specs_style
+        - field_specs_usage
+        - field_specs_weight
+        - field_specs_width
+        - field_specs_info
+      label: Specs
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: commerce_product.finished.default
+targetEntityType: commerce_product
+bundle: finished
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_category:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_collection:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_color:
+    type: options_select
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_market:
+    type: options_select
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_style:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cat_usage:
+    type: options_select
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_minimum_order:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_image:
+    type: cloudinary_image_upload
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_specs_abrasion:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_category:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_cleaning_code:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_collection:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_color:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_content:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_direction:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_finish:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_fire_code:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_info:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_repeat:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_roll_size:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_style:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_usage:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_weight:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_specs_width:
+    type: number
+    weight: 25
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  stores:
+    type: commerce_entity_select
+    weight: 0
+    region: content
+    settings:
+      hide_single_entity: true
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  variations: true

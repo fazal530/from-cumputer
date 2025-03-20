@@ -1,0 +1,527 @@
+/* @partial _form-elements.scss */
+
+/* Wrapper for a form element (or group of form elements) and its label. */
+.form-item {
+  margin: $form-item-margin;
+
+  /* Form items in a table. */
+  tr.odd &,
+  tr.even & {
+    margin: 0;
+  }
+
+  /* The descriptive help text (separate from the label). */
+  .description {
+    font-size: $form-item-description-font-size;
+    margin-top: 4px;
+  }
+}
+
+fieldset + fieldset,
+fieldset.form-item + fieldset.form-item {
+  margin-top: $vert-gutter;
+}
+
+.form-actions {
+  margin-top: $vert-gutter;
+}
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  @include button(primary);
+}
+
+input[type="submit"] {
+  @include button;
+
+  width: auto;
+  background-color: $primary-color;
+
+  &:hover,
+  &:focus {
+    color: $black;
+    background-color: white;
+  }
+}
+
+// input[value="Delete"],
+// input[value="Remove"] {
+//   @include button(secondary);
+//   &:hover {
+//     background: $secondary-color;
+//   }
+// }
+
+details {
+  margin: $form-item-margin;
+  border: 1px solid $light-gray;
+  padding: $gutter;
+
+  summary {
+    @include h3;
+    margin-bottom: $gutter-half;
+  }
+}
+
+// // TEMPORARY, REMOVE WHEN DONE WITH INITIAL
+// li {
+//   position: relative;
+// }
+
+// form {
+//   p {
+//     position: relative;
+//   }
+// }
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="week"],
+input[type="email"],
+input[type="url"],
+input[type="number"] {
+  @include theme-placeholder;
+}
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="week"],
+input[type="text"] {
+  width: 100%;
+  max-width: $wide-measure;
+}
+
+input[type="number"] {
+  width: $width-small;
+}
+
+/* Correct height of image inputs like inputs found in Paypal forms */
+input[type="image"] {
+  height: auto;
+}
+
+/* Highlight the form elements that caused a form submission error. */
+input.error,
+textarea.error,
+select.error {
+  border: 1px solid $error-color;
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Keep form elements constrained in their containers.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: $input-font-family;
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+}
+
+textarea,
+input,
+select {
+  background: $input-background-color;
+  padding: $input-padding;
+  // Avoiding "all" because Drupal Ajax throbber is effected by background-position transitioning
+  // & iOS7 has trouble painting elements added via ajax
+  transition-property: border, box-shadow, color, background-color;
+  transition-duration: $input-transition-duration;
+  transition-timing-function: ease-in;
+  color: $input-font-color;
+  font-size: 18px;
+  line-height: 1.4;
+  width: 100%;
+  max-width: 100%;
+  /* fixed overflow of input fields in drupal 6 layouts */
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+}
+
+textarea,
+input,
+select {
+  border: 1px solid $input-border-color;
+
+  &:hover,
+  &:focus {
+    border-color: $input-border-color-focus;
+  }
+}
+
+textarea {
+  @include theme-placeholder;
+
+  display: block;
+}
+
+// Fix positioning of throbber after adding height to inputs. Original css found in systems.css
+html.js input.form-autocomplete {
+  background-position: 95% 50%;
+
+  &.ui-autocomplete-loading {
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+  }
+}
+
+html.js input.throbbing {
+  background-position: 99% -15px;
+}
+
+textarea[disabled],
+select[disabled],
+input[disabled] {
+  background-color: white;
+  color: lighten($med-gray, 20%);
+  border: 4px solid $med-gray;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Input placeholder color
+  ========================================================================== */
+
+::-webkit-input-placeholder {
+  color: $placeholder-color;
+
+  &:focus {
+    color: $placeholder-focus-color;
+  }
+}
+
+// Make disappear on focus in iOS... This works in Chrome as opposed to the above focus style
+:focus::-webkit-input-placeholder {
+  color: $placeholder-focus-color;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $placeholder-color;
+  opacity: 1;
+
+  &:focus {
+    color: $placeholder-focus-color;
+  }
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $placeholder-color;
+  opacity: 1;
+
+  &:focus {
+    color: $placeholder-focus-color;
+  }
+}
+
+:-ms-input-placeholder {
+  color: $placeholder-color;
+
+  &:focus {
+    color: $placeholder-focus-color;
+  }
+}
+
+.form-item {
+  position: relative;
+}
+
+// Custom Checkboxes and Radios
+
+.webform-submission-form {
+  .js-form-type-checkbox,
+  .js-form-type-radio {
+    .form-item-wrapper {
+      // @include checkbox-radio($size: small);
+    }
+  }
+}
+
+// webform checkbox classes
+.checkboxes--wrapper {
+  width: 100%;
+}
+
+.js-form-type-checkbox {
+  display: block;
+  width: 100%;
+  margin: $vert-gutter*0.5 0 0;
+
+  @include breakpoint($tablet-landscape-min) {
+    label {
+      font-size: 18px;
+    }
+  }
+
+  @include breakpoint($tablet-landscape-max) {
+    label {
+      font-size: 16px;
+    }
+  }
+}
+
+// select
+.js-form-type-select {
+  .form-item-wrapper {
+    position: relative;
+
+    &::after {
+      pointer-events: none;
+      font-weight: bold;
+      display: block;
+      position: absolute;
+      bottom: 16px;
+      right: $gutter*0.25;
+      line-height: 1;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* Multi Select */
+.disclosable-checkboxes {
+  position: relative;
+
+  // Toggle button
+  .toggle-options {
+    background: $input-background-color;
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    position: relative;
+    text-align: left;
+    padding: $input-padding;
+    padding-top: $gutter*0.25;
+    padding-bottom: $gutter*0.25;
+
+    i {
+      pointer-events: none;
+      font-weight: bold;
+      display: block;
+      position: absolute;
+      bottom: 16px;
+      right: $gutter*0.25;
+      line-height: 1;
+      width: 15px;
+      height: 15px;
+
+      &::after,
+      &::before {
+        content: "";
+        background: $link-color;
+        width: 15px;
+        height: 3px;
+        border-radius: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      &::before {
+        width: 15px;
+        height: 3px;
+      }
+
+      &::after {
+        width: 3px;
+        height: 15px;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      i::after {
+        height: 0;
+      }
+    }
+
+    &.focus-visible {
+      & + * + .current-selections {
+        opacity: 0;
+      }
+    }
+  }
+
+  // Options List
+  .disclosable-checkboxes-options {
+    background: $input-background-color;
+    position: relative;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: $gutter*0.5;
+    // max-height: 300px;
+    // overflow: auto;
+    border-bottom-left-radius: $ui-border-radius;
+    border-bottom-right-radius: $ui-border-radius;
+
+    .form-item {
+      width: 100%;
+      float: none;
+      padding: 0;
+      margin-top: $gutter*0.25;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Selected options
+  .current-selections {
+    background: $input-background-color;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: $gutter;
+    z-index: 5;
+    border-radius: $ui-border-radius;
+    pointer-events: none;
+    padding: $gutter*0.25 0 $gutter*0.25 $gutter*0.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &.empty {
+    .current-selections {
+      display: none;
+    }
+  }
+}
+
+//image uploads
+input[type="file"] {
+  border: 0;
+  padding: $input-padding;
+  width: 100%;
+  max-width: $measure;
+}
+
+// admin Paragraphs
+.field--type-entity-reference-revisions {
+  width: 100%;
+  max-width: $measure;
+
+  .dropbutton-wrapper {
+    margin-top: $vert-gutter;
+    padding-right: $vert-gutter*0.5;
+
+    &.dropbutton-multiple {
+      .dropbutton-widget {
+        padding-right: 50px;
+      }
+    }
+
+    .dropbutton-toggle {
+      width: auto;
+      text-indent: 0;
+      text-align: center;
+
+      button {
+        @include button(secondary);
+
+        text-align: center;
+
+        &:focus {
+          border-color: darken($secondary-color, 10%);
+          background: $secondary-color;
+          color: $primary-color;
+        }
+
+        .dropbutton-arrow {
+          right: auto;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  thead h4 {
+    padding: 0 $vert-gutter;
+  }
+
+  input[value="Remove"] {
+    @include button(error);
+
+    &:hover {
+      background: $error-color;
+    }
+  }
+
+  .js-form-type-textarea {
+    margin-bottom: 0;
+  }
+
+  .js-form-type-textfield {
+    & + .filter-wrapper {
+      margin-top: -$vert-gutter;
+    }
+  }
+}
+
+progress {
+  &[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: $ui-border-radius * 2;
+
+    &::-webkit-progress-bar {
+      background: $secondary-color;
+      border-radius: $ui-border-radius;
+      overflow: hidden;
+    }
+
+    &::-webkit-progress-value {
+      background: $primary-color;
+      // border-radius:
+    }
+  }
+}

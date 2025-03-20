@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set productClass = [
+    'product',
+    product_entity.bundle|clean_class,
+    'display-' ~ view_mode,
+    not product_entity.isPublished() ? 'unpublished',
+  ]
+%}
+<article{{ attributes.addClass(productClass) }}>
+  {% if view_mode == 'full' %}
+    {% if not product_entity.isPublished() %}
+      <div class="unpublished-marker-container"><mark class="unpublished-marker">{{ 'Unpublished'|t }}</mark></div>
+    {% endif %}
+  {% endif %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {{- product|without('variation_attributes', 'variation_title') -}}
+</article>

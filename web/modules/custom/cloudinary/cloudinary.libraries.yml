@@ -1,0 +1,12 @@
+upload:
+  css:
+    component:
+      libraries/upload/dist/upload.css: {}
+  js:
+    "https://upload-widget.cloudinary.com/global/all.js": {}
+    libraries/upload/dist/upload.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+

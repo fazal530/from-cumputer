@@ -1,0 +1,20 @@
+uuid: bc358542-116f-4a24-9d70-375676a6e916
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_minimum_order
+field_name: field_minimum_order
+entity_type: commerce_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

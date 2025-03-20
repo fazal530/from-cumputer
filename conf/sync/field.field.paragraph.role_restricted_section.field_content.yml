@@ -1,0 +1,63 @@
+uuid: 82b39004-2c40-4a0b-aeb3-39a0237fff2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.embedded_block
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.role_restricted_section
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.role_restricted_section.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: role_restricted_section
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+      carousel: carousel
+      embedded_block: embedded_block
+      media: media
+      text: text
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 10
+        enabled: false
+      card:
+        weight: 11
+        enabled: true
+      carousel:
+        weight: 12
+        enabled: true
+      color_picker:
+        weight: 13
+        enabled: false
+      embedded_block:
+        weight: 14
+        enabled: true
+      layout_section:
+        weight: 15
+        enabled: false
+      media:
+        weight: 16
+        enabled: true
+      role_restricted_section:
+        weight: 17
+        enabled: false
+      text:
+        weight: 18
+        enabled: true
+field_type: entity_reference_revisions

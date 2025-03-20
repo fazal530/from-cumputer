@@ -1,0 +1,10 @@
+uuid: d95360cc-fcef-41fd-8c23-fe15b9323a6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.swatch
+label: Swatch
+targetEntityType: taxonomy_term
+cache: true

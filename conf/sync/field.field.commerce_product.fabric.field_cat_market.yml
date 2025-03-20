@@ -1,0 +1,29 @@
+uuid: 3cc10462-65cd-4783-9587-80bcab479bce
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.storage.commerce_product.field_cat_market
+    - taxonomy.vocabulary.market
+id: commerce_product.fabric.field_cat_market
+field_name: field_cat_market
+entity_type: commerce_product
+bundle: fabric
+label: Market
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      market: market
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

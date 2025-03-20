@@ -1,0 +1,19 @@
+uuid: e80a9aea-8dbc-4e41-a8cc-9aa6e15cd3fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner_kicker
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_banner_kicker
+field_name: field_banner_kicker
+entity_type: paragraph
+bundle: banner
+label: Kicker
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

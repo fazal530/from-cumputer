@@ -1,0 +1,11 @@
+uuid: c5d29013-4437-4c41-b635-368bbce20ba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+id: commerce_product.trim
+target_entity_type_id: commerce_product
+target_bundle: trim
+default_langcode: site_default
+language_alterable: false

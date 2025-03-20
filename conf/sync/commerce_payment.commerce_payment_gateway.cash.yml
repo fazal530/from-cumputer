@@ -1,0 +1,19 @@
+uuid: 9212a4bc-50c9-4b77-a431-28eea10ea716
+langcode: en
+status: true
+dependencies: {  }
+id: cash
+label: Cash
+weight: -7
+plugin: manual
+configuration:
+  display_label: Cash
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

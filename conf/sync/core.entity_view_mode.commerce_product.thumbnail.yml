@@ -1,0 +1,10 @@
+uuid: 3931c419-68a3-488e-9470-81dd09b207bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.thumbnail
+label: Thumbnail
+targetEntityType: commerce_product
+cache: true

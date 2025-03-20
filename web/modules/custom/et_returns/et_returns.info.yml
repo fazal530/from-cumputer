@@ -1,0 +1,6 @@
+name: Europatex Returns
+type: module
+description: Product return interface
+package: Europatex
+
+core_version_requirement: ^9 || ^10

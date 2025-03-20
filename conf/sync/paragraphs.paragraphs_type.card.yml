@@ -1,0 +1,15 @@
+uuid: 4df6f84a-a528-4aa7-9d9e-b652a4a2bf51
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: card
+label: Card
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

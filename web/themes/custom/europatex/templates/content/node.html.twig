@@ -1,0 +1,32 @@
+{%
+  set classes = [
+    'type-' ~ node.bundle|clean_class,
+    not node.isPublished() ? 'unpublished',
+    view_mode ? 'display--' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {% if page %}
+    {% if not node.isPublished() %}
+      <div class="unpublished-marker-container"><mark class="unpublished-marker">{{ 'Unpublished'|t }}</mark></div>
+    {% endif %}
+  {% endif %}
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node-inner') }}>
+    {{ content }}
+  </div>
+
+</article>

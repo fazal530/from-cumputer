@@ -1,0 +1,17 @@
+{#
+/**
+ *
+ * Variables:
+ * - body: Email body content.
+ *
+ * @see template_preprocess_email()
+ */
+#}
+
+{% include '@europatex/email/mail-header.html.twig' %}
+
+<div class="email-body" style="padding: 32px 24px; max-width: 600px; margin: 0 auto;font-family:'futura-pt',Helvetica,Arial,'Lucida Grande',sans-serif;">
+  {{ body }}
+</div>
+
+{% include '@europatex/email/mail-footer.html.twig' %}

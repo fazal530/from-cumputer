@@ -1,0 +1,30 @@
+uuid: 23d3dcd4-fa83-413a-b958-b0627d5b67a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: admin-actions-wrapper
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: europatex_local_actions
+theme: europatex
+region: wayfinding
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /products

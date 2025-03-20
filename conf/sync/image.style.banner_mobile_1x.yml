@@ -1,0 +1,17 @@
+uuid: 435975ff-4153-4bb1-822a-12818a1532ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_mobile_1x
+label: 'Banner (Mobile @1x)'
+effects:
+  144cdda8-0b8c-4e37-9a21-f416f1d77327:
+    uuid: 144cdda8-0b8c-4e37-9a21-f416f1d77327
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 300
+      crop_type: focal_point

@@ -1,0 +1,11 @@
+fieldset.checkout-pane {
+  & > legend {
+    @include h2;
+  }
+
+  fieldset legend {
+    font-weight: $form-item-label-font-weight;
+    margin: $form-item-label-margin;
+    font-size: $form-item-label-font-size;
+  }
+}

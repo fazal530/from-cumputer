@@ -1,0 +1,19 @@
+uuid: abd066fc-a4b0-4714-b490-f16627e805e2
+langcode: en
+status: true
+dependencies: {  }
+id: cod
+label: COD
+weight: -6
+plugin: manual
+configuration:
+  display_label: C.O.D.
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

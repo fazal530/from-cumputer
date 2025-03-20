@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_search.
+ */
+
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function et_search_theme($existing, $type, $theme, $path) {
+  return [
+    'et_search_facet_links' => [
+      'variables' => [
+        'facets' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function et_search_block_view_et_search_sidebar_alter(array &$build, BlockPluginInterface $block) {
+  facets_block_block_view_facets_block_alter($build, $block);
+
+  $build['#pre_render'][] = '\Drupal\et_search\MakeCollapsible::preRender';
+
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function et_search_views_pre_render(ViewExecutable $view) {
+  $active_facets = _et_search_get_active_facets();
+  if (empty($active_facets)) {
+    return;
+  }
+  $title = implode(' ', $active_facets);
+  // Set the view title.
+  $view->setTitle($title);
+  // Set the route title.
+  $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+  $route->setDefault('_title', $title);
+}
+
+/**
+ * Gets an array of the active facets.
+ */
+function _et_search_get_active_facets() {
+  /** @var \Drupal\facets\FacetManager\DefaultFacetManager $facetManager */
+  $facetManager = \Drupal::service('facets.manager');
+  $enabled_facets = $facetManager->getEnabledFacets();
+  $items = [];
+  foreach ($enabled_facets as $facet) {
+    $processed = $facetManager->returnProcessedFacet($facet);
+    if ($processed) {
+      $facetManager->build($processed);
+      $results = $processed->getResults();
+      $active = $processed->getActiveItems();
+      foreach ($results as $result) {
+        if (in_array($result->getRawValue(), $active)) {
+          $items[] = $result->getDisplayValue();
+        }
+      }
+    }
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function et_search_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+  if ($form_state->getStorage()['view']->id() == 'products') {
+    if ($form_state->getStorage()['display']['id'] == 'page_1') {
+      $form['#action'] = \Drupal::request()->getPathInfo();
+    }
+    else if ($form_state->getStorage()['display']['id'] == 'header_search') {
+      $form['#action'] = '/products';
+    }
+  }
+}

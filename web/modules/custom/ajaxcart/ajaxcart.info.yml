@@ -1,0 +1,6 @@
+name: Ajax Cart
+type: module
+description: Applies Ajax functionality to add-to-cart buttons
+package: Rapid Development Group
+
+core_version_requirement: ^9 || ^10

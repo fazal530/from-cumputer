@@ -1,0 +1,19 @@
+uuid: 6086ab97-0e10-4731-a4cc-a03a7cd136c7
+langcode: en
+status: true
+dependencies: {  }
+id: credit_card
+label: 'Credit Card'
+weight: -10
+plugin: manual
+configuration:
+  display_label: 'Credit Card'
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

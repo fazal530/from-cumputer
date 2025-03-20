@@ -1,0 +1,17 @@
+uuid: 821178ad-a0e9-42a7-bf91-d5b7d2eb7b61
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_tablet_1x
+label: 'Banner (Tablet @1x)'
+effects:
+  ffc8489f-f518-4fa0-9928-f4a2d41475cd:
+    uuid: ffc8489f-f518-4fa0-9928-f4a2d41475cd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 840
+      height: 450
+      crop_type: focal_point

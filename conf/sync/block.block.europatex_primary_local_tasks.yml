@@ -1,0 +1,32 @@
+uuid: b3039f44-6d27-4462-8754-af3288b0556e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: primary-tabs-wrapper
+_core:
+  default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
+id: europatex_primary_local_tasks
+theme: europatex
+region: wayfinding
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /products

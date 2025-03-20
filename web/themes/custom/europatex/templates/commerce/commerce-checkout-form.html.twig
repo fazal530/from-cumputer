@@ -1,0 +1,25 @@
+{#
+/**
+ * Available variables:
+ * - form: The form.... Panes present dependant on config here: /admin/commerce/config/checkout-flows/manage/default
+ * - form.order_summary
+ * - form.et_checkout_shipping
+ * - form.et_checkout_billing_address
+ * - form.et_checkout_order_comments
+ * - form.contact_information
+ * - form.review
+ * - form.payment_information
+ * - form.payment_process
+ * - form.completion_message
+ * - form.completion_register
+ *
+ * Template suggestions by "step ID". Example: commerce-checkout-form--order-information.html.twig
+ * Other steps: login, order-information, review, payment, complete, sidebar
+ */
+#}
+{%
+  set step = form['#step_id']
+%}
+<div class="layout-checkout-form checkout-step-{{ step }} clearfix">
+  {{ form }}
+</div>

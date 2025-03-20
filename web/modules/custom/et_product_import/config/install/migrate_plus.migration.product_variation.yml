@@ -1,0 +1,90 @@
+id: product_variation
+migration_group: default
+label: 'Product variations'
+source:
+  plugin: spreadsheet
+  file: private://import/products.xlsx
+  worksheet: Sheet1
+  origin: A3
+  header_row: 2
+  columns:
+    - 'name'
+    - 'sku'
+    - 'status'
+    - 'type'
+    - 'cat_style'
+    - 'cat_category'
+    - 'cat_collection'
+    - 'cat_usage'
+    - 'cat_color'
+    - 'cat_market'
+    - 'cat_fire_code'
+    - 'minimum_order'
+    - 'specs_content'
+    - 'specs_cleaning_code'
+    - 'specs_finish'
+    - 'specs_style'
+    - 'specs_usage'
+    - 'specs_repeat'
+    - 'specs_width'
+    - 'specs_abrasion'
+    - 'specs_category'
+    - 'specs_direction'
+    - 'specs_fire_code'
+    - 'specs_color'
+    - 'specs_weight'
+    - 'specs_collection'
+    - 'specs_roll_size'
+    - 'price_level_1'
+    - 'price_level_3'
+    - 'price_level_5'
+  keys:
+    sku:
+      type: string
+      max_length: 32
+      is_ascii: true
+process:
+  type:
+    plugin: default_value
+    default_value: default
+  title: name
+  product_id:
+    -
+      plugin: migration_lookup
+      migration: product
+      source: sku
+  sku: sku
+  status:
+    plugin: default_value
+    default_value: 1
+  price:
+    source: price_level_1
+    plugin: price
+  list_price:
+    source: price_level_1
+    plugin: price
+  price_level_1:
+    -
+      source: price_level_1
+      plugin: price
+      term_lookup: 'Price Level 1'
+  price_level_3:
+    -
+      source: price_level_3
+      plugin: price
+      term_lookup: 'Price Level 3'
+  price_level_5:
+    -
+      source: price_level_5
+      plugin: price
+      term_lookup: 'Price Level 5'
+  field_prices:
+    -
+      plugin: get
+      source:
+        - '@price_level_1'
+        - '@price_level_3'
+        - '@price_level_5'
+
+destination:
+  plugin: 'entity:commerce_product_variation'

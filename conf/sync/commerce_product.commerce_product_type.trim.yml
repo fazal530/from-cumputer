@@ -1,0 +1,14 @@
+uuid: b82583fa-8a7c-4b58-a45b-d39dd8d64b5a
+langcode: en
+status: true
+dependencies: {  }
+id: trim
+label: Trim
+traits: {  }
+locked: false
+description: ''
+variationType: null
+variationTypes:
+  - default
+multipleVariations: true
+injectVariationFields: false

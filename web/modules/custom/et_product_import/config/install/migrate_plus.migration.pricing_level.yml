@@ -1,0 +1,26 @@
+id: pricing_level
+migration_group: default
+label: 'Pricing Levels'
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      name: "Price Level 1"
+    -
+      name: "Price Level 3"
+    -
+      name: "Price Level 5"
+  ids:
+    name:
+      type: string
+process:
+  vid:
+    plugin: default_value
+    default_value: pricing_level
+  name: name
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: 'entity:taxonomy_term'

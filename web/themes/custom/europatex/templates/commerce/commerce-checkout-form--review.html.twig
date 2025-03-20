@@ -1,0 +1,19 @@
+{%
+  set step = form['#step_id']
+%}
+<div class="layout-checkout-form checkout-step-{{ step }} clearfix">
+
+  <div class="layout-checkout-review">
+    {{ form.review }}
+  </div>
+
+  <div class="layout-checkout-summary">
+    {{ form.order_summary }}
+  </div>
+
+  {{ form|without('actions', 'order_summary', 'review') }}
+
+  <div class="layout-checkout-footer">
+    {{ form.actions }}
+  </div>
+</div>

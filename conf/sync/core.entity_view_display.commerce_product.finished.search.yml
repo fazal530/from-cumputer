@@ -1,0 +1,154 @@
+uuid: ada7e3b1-41df-4eb1-ae55-34e1396c15bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.finished
+    - core.entity_view_mode.commerce_product.search
+    - field.field.commerce_product.finished.field_cat_category
+    - field.field.commerce_product.finished.field_cat_collection
+    - field.field.commerce_product.finished.field_cat_color
+    - field.field.commerce_product.finished.field_cat_market
+    - field.field.commerce_product.finished.field_cat_style
+    - field.field.commerce_product.finished.field_cat_usage
+    - field.field.commerce_product.finished.field_minimum_order
+    - field.field.commerce_product.finished.field_product_image
+    - field.field.commerce_product.finished.field_specs_abrasion
+    - field.field.commerce_product.finished.field_specs_category
+    - field.field.commerce_product.finished.field_specs_cleaning_code
+    - field.field.commerce_product.finished.field_specs_collection
+    - field.field.commerce_product.finished.field_specs_color
+    - field.field.commerce_product.finished.field_specs_content
+    - field.field.commerce_product.finished.field_specs_direction
+    - field.field.commerce_product.finished.field_specs_finish
+    - field.field.commerce_product.finished.field_specs_fire_code
+    - field.field.commerce_product.finished.field_specs_info
+    - field.field.commerce_product.finished.field_specs_repeat
+    - field.field.commerce_product.finished.field_specs_roll_size
+    - field.field.commerce_product.finished.field_specs_style
+    - field.field.commerce_product.finished.field_specs_usage
+    - field.field.commerce_product.finished.field_specs_weight
+    - field.field.commerce_product.finished.field_specs_width
+  module:
+    - cloudinary
+    - field_group
+    - quicklook
+third_party_settings:
+  field_group:
+    group_preview:
+      children:
+        - field_product_image
+      label: Preview
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ' teaser-preview'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_title_wrapper:
+      children:
+        - title
+      label: 'Title wrapper'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: teaser-title
+        show_empty_fields: false
+        id: ''
+        element: h4
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_actions:
+      children:
+        - field_specs_width
+      label: Actions
+      parent_name: ''
+      region: hidden
+      weight: 33
+      format_type: html_element
+      format_settings:
+        classes: product-actions
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: commerce_product.finished.search
+targetEntityType: commerce_product
+bundle: finished
+mode: search
+content:
+  field_product_image:
+    type: cloudinary_image_fallback
+    label: hidden
+    settings:
+      transformation: t_europatex_fabric_search
+      fallback_url: 'https://res.cloudinary.com/europatex/image/upload/[transformation]/placeholders/product.jpg'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  title:
+    type: quicklook_trigger
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  created: true
+  extra_field_et_product_display_disclaimer: true
+  extra_field_et_product_display_download_image: true
+  extra_field_et_product_display_login_prompt: true
+  extra_field_et_product_display_print_page: true
+  extra_field_et_product_display_product_image_lightbox_trigger: true
+  extra_field_et_product_display_share_by_mail: true
+  extra_field_et_product_display_view_full_details: true
+  field_cat_category: true
+  field_cat_collection: true
+  field_cat_color: true
+  field_cat_market: true
+  field_cat_style: true
+  field_cat_usage: true
+  field_minimum_order: true
+  field_specs_abrasion: true
+  field_specs_category: true
+  field_specs_cleaning_code: true
+  field_specs_collection: true
+  field_specs_color: true
+  field_specs_content: true
+  field_specs_direction: true
+  field_specs_finish: true
+  field_specs_fire_code: true
+  field_specs_info: true
+  field_specs_repeat: true
+  field_specs_roll_size: true
+  field_specs_style: true
+  field_specs_usage: true
+  field_specs_weight: true
+  field_specs_width: true
+  langcode: true
+  other_colors_product_detail: true
+  search_api_excerpt: true
+  stores: true
+  uid: true
+  variations: true

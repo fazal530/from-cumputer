@@ -1,0 +1,40 @@
+uuid: f746dda4-8027-40bc-90c5-e4caa576cf32
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.field.commerce_product_variation.default.field_prices
+    - field.field.commerce_product_variation.default.field_stock
+id: commerce_product_variation.default.default
+targetEntityType: commerce_product_variation
+bundle: default
+mode: default
+content:
+  field_stock:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_prices: true
+  langcode: true
+  list_price: true
+  price: true
+  product_id: true
+  search_api_excerpt: true
+  sku: true

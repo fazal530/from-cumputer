@@ -1,0 +1,8 @@
+uuid: 499b42d2-423b-47c6-b6de-6f2e8ca28c80
+langcode: en
+status: true
+dependencies: {  }
+name: Pattern
+vid: style
+description: 'Product Categorization'
+weight: -9

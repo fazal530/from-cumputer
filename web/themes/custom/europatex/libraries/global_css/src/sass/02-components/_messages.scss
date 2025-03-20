@@ -1,0 +1,67 @@
+.messages {
+  margin: ($gutter*0.5) 0;
+  border-radius: $ui-border-radius;
+}
+
+// Sometimes messages are in a form. This is for when they are in the pages messages region
+.region-messages {
+  .messages {
+    @include layout-container;
+    @include layout-gutter;
+  }
+}
+
+
+.status-message {
+  @include message;
+
+  padding: $gutter*0.5 0;
+  margin: 0;
+  max-height: 200px;
+  overflow: auto;
+  border-radius: $ui-border-radius;
+  border-style: solid;
+  border-width: 1px;
+  color: $body-font-color;
+
+  a {
+    color: $body-font-color;
+  }
+
+  & + .status-message {
+    margin-top: $gutter*0.5;
+  }
+
+  &.status {
+    border-color: $blue;
+    background-color: lighten($blue, 20%);
+  }
+
+  &.error {
+    border-color: $red;
+    background-color: lighten($red, 20%);
+  }
+
+  &.success {
+    border-color: $green;
+    background-color: lighten($green, 15%);
+  }
+
+  &.warning {
+    border-color: $yellow;
+    background-color: lighten($yellow, 15%);
+  }
+
+  &.alert {
+    border-color: $orange;
+    background-color: lighten($orange, 15%);
+  }
+}
+
+.messages-list {
+  margin-bottom: 0;
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+}

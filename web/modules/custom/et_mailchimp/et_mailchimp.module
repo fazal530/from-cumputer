@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_mailchimp.
+ */
+
+ /**
+ * Implements hook_page_attachments().
+ */
+function et_mailchimp_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if (!$is_admin) {
+    $script = '!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/350074b93d1ca61fbb26a44b2/7fc68b0f854a12d0184ba43c6.js");';
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'id' => 'mcjs',
+        ],
+        '#value' => $script,
+        '#weight' => 50,
+      ],
+      'et_mailchimp'
+    ];
+  }
+}

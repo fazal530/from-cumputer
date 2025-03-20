@@ -1,0 +1,80 @@
+/* @partial _tables.scss */
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+   width: 100%; /* Prevent cramped-looking tables */
+  /* Add vertical rhythm margins. */
+  margin: $vert-gutter 0;
+
+  p:last-child {
+    margin: 0;
+  }
+}
+
+tbody {
+  border-style: $table-tbody-border-style;
+  border-width: $table-tbody-border-width;
+  @include switch-color-scheme(border-color, $table-tbody-border-color, $dark-gray);
+}
+
+th {
+  @include small-font;
+
+  text-align: left; /* LTR */
+  padding: $table-th-padding;
+  background: $dark-gray;
+  color: #fff;
+  border-style: $table-tr-even-border-style;
+  border-width: $table-tr-even-border-width;
+  @include switch-color-scheme(border-color, $table-tbody-border-color, $dark-gray);
+  text-transform: uppercase;
+
+  &:first-child {
+    padding-left: $gutter;
+  }
+
+  &:last-child {
+    padding-right: $gutter;
+  }
+}
+
+td {
+  padding: $table-td-padding;
+  border-style: $table-tr-even-border-style;
+  border-width: $table-tr-even-border-width;
+  @include switch-color-scheme(border-color, $table-tbody-border-color, $dark-gray);
+
+  &:first-child {
+    padding-left: $gutter;
+  }
+
+  &:last-child {
+    padding-right: $gutter;
+  }
+}
+
+
+tr.even,
+tr:nth-child(even) {
+  @include switch-color-scheme(background-color, $table-tr-even-background, $table-tr-even-darkmode-background);
+
+  border-style: $table-tr-even-border-style;
+  border-width: $table-tr-even-border-width;
+  @include switch-color-scheme(border-color, $table-tbody-border-color, $dark-gray);
+
+}
+
+tr.odd,
+tr:nth-child(odd) {
+  @include switch-color-scheme(background-color, $table-tr-odd-background, $table-tr-odd-darkmode-background);
+
+  border-style: $table-tr-odd-border-style;
+  border-width: $table-tr-odd-border-width;
+  @include switch-color-scheme(border-color, $table-tbody-border-color, $dark-gray);
+}
+
+tr.drag {
+  background: $table-tr-drag-background;
+}

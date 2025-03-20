@@ -1,0 +1,6 @@
+name: Europatex Migrate
+type: module
+description: Migrations during initial site population
+package: Europatex
+
+core_version_requirement: ^9 || ^10

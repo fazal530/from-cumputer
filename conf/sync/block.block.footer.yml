@@ -1,0 +1,34 @@
+uuid: 95766fcf-32a5-494d-b875-96a909caf6ea
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - block_class
+    - et_display
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: js-block-collapse
+id: footer
+theme: europatex
+region: footer_top
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Products
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

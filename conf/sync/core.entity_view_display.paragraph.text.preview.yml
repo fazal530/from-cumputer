@@ -1,0 +1,24 @@
+uuid: 380e7ec6-a679-4c50-ba4e-c44c75bfc23a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+id: paragraph.text.preview
+targetEntityType: paragraph
+bundle: text
+mode: preview
+content:
+  field_text:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 255
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

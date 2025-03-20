@@ -1,0 +1,41 @@
+uuid: 8ccee632-6f4b-4787-92ad-cbedcaa5ac74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel.field_carousel_slides
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - rdg_ui_elements
+id: paragraph.carousel.default
+targetEntityType: paragraph
+bundle: carousel
+mode: default
+content:
+  field_carousel_slides:
+    type: rdg_carousel_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      slick_adaptiveHeight: '1'
+      slick_arrowsPlacement: split
+      slick_autoplaySpeed: '5000'
+      slick_draggable: '1'
+      slick_fade: '1'
+      slick_initialSlide: '0'
+      slick_infinite: '1'
+      slick_slidesToScroll: '1'
+      slick_slidesToShow: '1'
+      slick_speed: '300'
+      slick_zIndex: '1000'
+      slick_autoplay: 0
+      slick_centerMode: 0
+      slick_dots: 0
+      slick_initialSlide_random: 0
+      slick_vertical: 0
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

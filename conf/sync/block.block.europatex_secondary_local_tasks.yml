@@ -1,0 +1,32 @@
+uuid: 0e6477f2-8c3d-4408-9d86-732dfee2f550
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: secondary-tabs-wrapper
+_core:
+  default_config_hash: 2L0geP-ixCbCkEpW6BVF6H7vDUZN4ea07_Y9CociQm4
+id: europatex_secondary_local_tasks
+theme: europatex
+region: wayfinding
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /products

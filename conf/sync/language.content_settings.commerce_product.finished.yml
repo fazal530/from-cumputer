@@ -1,0 +1,11 @@
+uuid: c64709fc-cd91-41c7-a6c3-05821cb42811
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.finished
+id: commerce_product.finished
+target_entity_type_id: commerce_product
+target_bundle: finished
+default_langcode: site_default
+language_alterable: false

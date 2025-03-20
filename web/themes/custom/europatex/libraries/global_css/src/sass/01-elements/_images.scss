@@ -1,0 +1,108 @@
+//lazy loading affects
+
+img,
+figure {
+  &.align-center {
+    max-width: 100%;
+  }
+  figcaption {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    background: $secondary-color;
+  }
+  @include breakpoint($tablet-small-min) {
+    &.align-left,
+    &.align-right {
+      max-width: 50% !important;
+    }
+    &.align-left {
+      margin: $vert-gutter*0.5 $vert-gutter*0.5 $vert-gutter*0.5 0;
+      padding-right: $vert-gutter*0.5;
+    }
+    &.align-right {
+      margin: $vert-gutter*0.5 0 $vert-gutter*0.5 $vert-gutter*0.5;
+      padding-left: $vert-gutter*0.5;
+    }
+    &.align-center {
+      margin: $vert-gutter*0.5 auto;
+    }
+  }
+  @include breakpoint($tablet-small-max) {
+    &.align-left,
+    &.align-right {
+      width: 100%;
+      margin: $vert-gutter*0.5 0;
+    }
+  }
+}
+
+figure {
+  @include breakpoint($tablet-landscape-min) {
+    &.align-left,
+    &.align-right {
+      max-width: 33.3333% !important;
+    }
+  }
+}
+
+/* Lazy Loading Animation */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .field-media-image {
+    overflow: hidden;
+
+    img[data-src] {
+      opacity: 0;
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+
+      &.lazyloaded {
+        opacity: 1;
+        animation-name: zoomIn;
+      }
+    }
+  }
+}
+
+// Image zoom
+.lightbox {
+  .parvus-zoom__indicator {
+    background: $dark-gray;
+    opacity: 0;
+    transition: $ui-transition;
+    width: 2rem;
+    height: 2rem;
+    background-color: $dark-gray;
+    background-image: url('./images/icons/white/search--white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1rem auto;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .parvus-zoom__indicator {
+      opacity: 1;
+    }
+  }
+}
+
+.parvus__overlay {
+  @include switch-color-scheme(background-color, rgba(255, 255, 255, 0.85), rgba(0, 0, 0, 0.85));
+}
+
+.parvus__btn {
+  background: $dark-gray;
+
+  &:hover,
+  &:focus {
+    background: $black;
+  }
+}
+
+.parvus__slide .parvus__caption {
+  @include switch-color-scheme(color, $black, #fff);
+}

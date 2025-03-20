@@ -1,0 +1,10 @@
+quicklook:
+  js:
+    libraries/quicklook/dist/quicklook.js: {}
+  css:
+    component:
+      libraries/quicklook/dist/quicklook.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

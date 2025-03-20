@@ -1,0 +1,29 @@
+uuid: 531d17a7-b94b-49b7-99a9-fd3423cfd7a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - field.storage.commerce_product.field_cat_market
+    - taxonomy.vocabulary.market
+id: commerce_product.trim.field_cat_market
+field_name: field_cat_market
+entity_type: commerce_product
+bundle: trim
+label: Market
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      market: market
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

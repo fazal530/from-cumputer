@@ -1,0 +1,11 @@
+uuid: e32e9146-3a20-48a5-bc61-1e2974e9fb06
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.business_type
+id: taxonomy_term.business_type
+target_entity_type_id: taxonomy_term
+target_bundle: business_type
+default_langcode: site_default
+language_alterable: false

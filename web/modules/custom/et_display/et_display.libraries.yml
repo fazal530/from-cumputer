@@ -1,0 +1,14 @@
+twocol_33_67:
+  css:
+    theme:
+      layouts/twocol_33_67/twocol_33_67.css: {}
+
+twocol_67_33:
+  css:
+    theme:
+      layouts/twocol_67_33/twocol_67_33.css: {}
+
+fourcol:
+  css:
+    theme:
+      layouts/fourcol/fourcol.css: {}

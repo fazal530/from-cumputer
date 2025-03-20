@@ -1,0 +1,19 @@
+uuid: c44dc726-a2b6-48c1-9457-71473bab42e0
+langcode: en
+status: true
+dependencies: {  }
+id: money_order
+label: 'Money Order'
+weight: -8
+plugin: manual
+configuration:
+  display_label: 'Money Order'
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

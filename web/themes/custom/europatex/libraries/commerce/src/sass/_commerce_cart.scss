@@ -1,0 +1,63 @@
+
+///////////////////////////////
+// CART FORM / PAGE
+///////////////////////////////
+
+.cart-form {
+  margin-bottom: $gutter;
+
+  table {
+    margin-top: 0;
+  }
+
+  .form-actions {
+    text-align: right;
+  }
+
+  .views-field-edit-sidemark {
+
+    .form-item {
+      margin: 0;
+    }
+  }
+
+  .sidemark-edit-input {
+    border-color: transparent; // $light-gray
+    background-color: transparent; // $xlight-gray
+    @include theme-placeholder($color: $med-gray, $color-focus: #ffffff);
+    font-size: 0.915rem;
+    width: 100%;
+    max-width: 120px;
+    transition: max-width $input-transition-duration ease-in-out;
+
+    &:focus {
+      border-color: $input-border-color;
+      background-color: inherit;
+      max-width: 220px;
+    }
+  }
+
+  tr:nth-child(even) .sidemark-edit-input {
+    @include theme-placeholder($color: $med-gray, $color-focus: $table-tr-even-background);
+  }
+
+  th.views-field-remove-button {
+    color: transparent;
+  }
+}
+
+// <th> & <td>
+.views-field-total-price__number {
+  text-align: right;
+}
+
+input.delete-order-item {
+  padding: 0;
+  letter-spacing: normal;
+  font-weight: normal;
+  color: $error-color;
+  background: none;
+  border: none;
+  outline: none;
+  text-transform: none;
+}

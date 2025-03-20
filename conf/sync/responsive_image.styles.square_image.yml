@@ -1,0 +1,24 @@
+uuid: be73102c-d87e-4798-bf5a-ae8d75a135a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_image_1x
+    - image.style.square_image_2x
+  theme:
+    - europatex
+id: square_image
+label: 'Square Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: square_image_1x
+    breakpoint_id: europatex.retina
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: square_image_2x
+    breakpoint_id: europatex.retina
+    multiplier: 2x
+breakpoint_group: 'europatex Retina Image'
+fallback_image_style: square_image_1x

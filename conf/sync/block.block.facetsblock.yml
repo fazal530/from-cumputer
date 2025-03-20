@@ -1,0 +1,30 @@
+uuid: 03e09392-c1e9-4b9b-a7f2-0e4c8c733e11
+langcode: en
+status: false
+dependencies:
+  module:
+    - facets_block
+  theme:
+    - europatex
+id: facetsblock
+theme: europatex
+region: product_filters
+weight: -9
+provider: null
+plugin: facets_block
+settings:
+  id: facets_block
+  label: 'Facets Block'
+  label_display: visible
+  provider: facets_block
+  show_title: true
+  exclude_empty_facets: true
+  hide_empty_block: false
+  facets_to_include:
+    'facet_block:category': 'facet_block:category'
+    'facet_block:collection': 'facet_block:collection'
+    'facet_block:color': 'facet_block:color'
+    'facet_block:style': 'facet_block:style'
+    'facet_block:usage': 'facet_block:usage'
+  add_js_classes: true
+visibility: {  }

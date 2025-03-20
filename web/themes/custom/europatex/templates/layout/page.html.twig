@@ -1,0 +1,101 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% set content_attribute = create_attribute() %}
+{%
+  set sidebar_classes = [
+    'main',
+    page.sidebar_first or page.product_filters ? 'has-sidebar-first',
+    page.sidebar_second ? 'has-sidebar-second'
+  ]
+%}
+<header class="header" role="banner">
+  <div class="header-inner layout-container">
+    <div class="header__top">
+      <a href="/" class="logo">{{ 'Home'|t }}</a>
+
+      {{ page.header_top }}
+
+      <button id="toggle-menu" class="toggle-menu">
+        <span class="bars">
+          <span class="bar first"></span>
+          <span class="bar middle"></span>
+          <span class="bar last"></span>
+        </span>
+        <span class="text">
+          {{ 'Menu'|t }}
+        </span>
+      </button>
+    </div>
+
+    <div class="header__bottom">
+      {{ page.header_bottom }}
+
+      <button id="toggle-search" class="toggle-search">
+        {{ 'Search'|t }}
+      </button>
+    </div>
+    {{ page.header_search }}
+
+  </div>
+</header>
+
+<div id="page" class="page">
+
+  {{ page.banner }}
+  {{ page.messages }}
+
+  {% if page.wayfinding %}
+    <div class="wayfinding layout-container">
+    {{ page.wayfinding }}
+    </div>
+  {% endif %}
+
+  {{ page.help }}
+
+  <main{{ content_attribute.addClass(sidebar_classes).setAttribute('id', 'main').setAttribute('role', 'main') }}>
+    <div class="main-inner">
+      {% if page.sidebar_first or page.product_filters %}
+        <aside class="layout-sidebar-first" role="complementary">
+          {% if page.product_filters %}
+            <a href="#product-filters" class="button--primary toggle-filters-open js-toggle-filters">+ {{ 'Filters'|t }}</a>
+          {% endif %}
+          {{ page.product_filters }}
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+      <div class="layout-content">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+        {{ page.content }}
+      </div>{# /.layout-content #}
+
+      {% if page.sidebar_second %}
+        <aside class="layout-sidebar-second" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+    </div>
+  </main>
+
+  {{ page.content_bottom }}
+
+  {% if page.footer_top or page.footer_bottom %}
+    <footer class="footer" role="contentinfo">
+      <div class="layout-container">
+        <div class="footer__top">
+          {{ page.footer_top }}
+        </div>
+        <div class="footer__bottom">
+          {{ page.footer_bottom }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}

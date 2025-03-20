@@ -1,0 +1,11 @@
+lightboxGallery:
+  js:
+    "/libraries/parvus/dist/js/parvus.min.js": {}
+    libraries/lightboxGallery/dist/lightbox-gallery.js: {}
+  css:
+    component:
+      "/libraries/parvus/dist/css/parvus.min.css": {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

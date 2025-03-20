@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_checkout.
+ */
+
+use Drupal\commerce_product\Entity\ProductVariation;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function et_checkout_theme_suggestions_commerce_checkout_form(array $variables) {
+  $original = $variables['theme_hook_original'];
+  $suggestions = [];
+  if (isset($variables['form']['#step_id'])) {
+    $suggestions[] = $original . '__' . $variables['form']['#step_id'];
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function et_checkout_form_commerce_order_item_add_to_cart_form_alter(&$form, $form_state, $form_id) {
+  \Drupal::service('et_checkout.minimum_quantity')->alterForm($form, $form_state);
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function et_checkout_views_data_alter(array &$data) {
+  $data['commerce_order_item']['edit_sidemark']['field'] = [
+    'title' => t('Sidemark text field'),
+    'help' => t('Adds a text field for editing the sidemark.'),
+    'id' => 'commerce_order_item_edit_sidemark',
+  ];
+  $data['commerce_order_item']['edit_quantity_minimum']['field'] = [
+    'title' => t('Quantity text field with minimum'),
+    'help' => t('Adds a text field for editing the quantity, enforcing minimum.'),
+    'id' => 'commerce_order_item_edit_quantity_minimum',
+  ];
+}

@@ -1,0 +1,21 @@
+uuid: 6996ce7c-7d18-4b82-8bf9-5f7b975bac0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.storage.commerce_product.field_product_image
+  module:
+    - cloudinary
+id: commerce_product.fabric.field_product_image
+field_name: field_product_image
+entity_type: commerce_product
+bundle: fabric
+label: 'Product Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: cloudinary_image

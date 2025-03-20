@@ -1,0 +1,14 @@
+
+
+.checkout-step-review {
+  .address {
+    display: inline-block;
+    @include address;
+    margin: 0 0 ($gutter*0.5) 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

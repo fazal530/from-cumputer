@@ -1,0 +1,14 @@
+uuid: 4ac32661-f3a4-4c7b-9e99-4498f7a9b4e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.icon
+id: media_type_icon
+entity_type_id: media_type
+entity_id: icon
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

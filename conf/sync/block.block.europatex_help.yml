@@ -1,0 +1,22 @@
+uuid: 751a266f-1f06-4e01-b069-1aef3b4bf5f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - europatex
+_core:
+  default_config_hash: jccFSSVqV0WCDb6NtML1VWAWTtDbZ-zn5YgTRMgMrIM
+id: europatex_help
+theme: europatex
+region: help
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

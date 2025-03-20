@@ -1,0 +1,15 @@
+services:
+  et_stock.order_quantity:
+    class: Drupal\et_stock\OrderQuantity
+    arguments: []
+  logger.channel.et_stock:
+    parent: logger.channel_base
+    arguments: ['et_stock']
+  et_stock.aws:
+    class: Drupal\et_stock\AWS
+    arguments: ['@file_system']
+  et_stock.import_commands:
+    class: Drupal\et_stock\Commands\ImportCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@et_stock.aws']

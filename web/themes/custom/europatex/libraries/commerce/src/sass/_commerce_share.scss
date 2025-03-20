@@ -1,0 +1,54 @@
+.webform-submission-form.webform-submission-share-product-add-form {
+  max-width: none;
+}
+
+// .simple-table {
+//   tbody,
+//   tr,
+//   td {
+//     background: none;
+//     border: none;
+//   }
+
+//   td {
+//     padding: 0 $gutter 0 0;
+//     vertical-align: top;
+//   }
+// }
+
+.layout-share {
+  margin-bottom: $gutter*2;
+  @include breakpoint($tablet-small-min) {
+    display: flex;
+  }
+
+  ul {
+    @include clean-list;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: $gutter-half;
+  }
+
+  .display--share {
+    max-width: 180px;
+  }
+}
+
+.layout-share-form {
+  background-color: $ui-background-color;
+  padding: $gutter;
+
+  @include breakpoint($tablet-small-min) {
+    width: 40%;
+  }
+}
+
+.layout-share-products {
+  padding: 0 $gutter;
+
+  @include breakpoint($tablet-small-min) {
+    width: 60%;
+  }
+}

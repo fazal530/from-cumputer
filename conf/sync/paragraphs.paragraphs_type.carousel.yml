@@ -1,0 +1,15 @@
+uuid: b7b4874d-e8c2-40a4-9a9e-97298d5951f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: carousel
+label: Carousel
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

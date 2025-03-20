@@ -1,0 +1,21 @@
+uuid: 04c59ba7-2aab-49e4-a52e-9fd221d29ea1
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: layout_section
+label: 'Layout Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol: 'Two column'
+      layout_twocol_33_67: 'Two column 33/67'
+      layout_twocol_67_33: 'Two column 67/33'
+      layout_threecol_33_34_33: 'Three column 33/34/33'
+      layout_fourcol: 'Four columns'

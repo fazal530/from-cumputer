@@ -1,0 +1,63 @@
+/* @partial _animation.scss */
+
+// SILENT CLASSES
+// Examples use: @extend %animated;
+%animated {
+  animation-duration: 0.15s;
+  animation-fill-mode: both;
+}
+
+%fade-in {
+  animation-name: fadeIn;
+}
+
+%fade-out {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Mobile Main Menu */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceUpDown {
+  0% {
+    top: -2px;
+  }
+
+  50% {
+    top: 2px;
+  }
+
+  100% {
+    top: -2px;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

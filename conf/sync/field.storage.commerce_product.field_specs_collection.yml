@@ -1,0 +1,21 @@
+uuid: 002fa1c2-df41-425e-88ab-f5a58d374e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_specs_collection
+field_name: field_specs_collection
+entity_type: commerce_product
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

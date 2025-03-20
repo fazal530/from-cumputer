@@ -1,0 +1,48 @@
+id: stock
+migration_group: stock
+label: 'Stock'
+source:
+  plugin: spreadsheet
+  file: private://import/currentInventory.xlsx
+  worksheet: Sheet1
+  origin: C2
+  header_row: 1
+  columns:
+    - Item
+    - SKU#
+    - YDS
+  keys:
+    'SKU#':
+      type: string
+      max_length: 32
+      is_ascii: true
+process:
+  type:
+    plugin: default_value
+    default_value: default
+  variation_id:
+    -
+      source: 'SKU#'
+      plugin: entity_lookup
+      access_check: false
+      entity_type: commerce_product_variation
+      bundle_key: type
+      bundle: default
+      value_key: sku
+    -
+      plugin: skip_on_empty
+      method: row
+  field_stock:
+    -
+      source:
+        - 'YDS'
+      plugin: concat
+    -
+      plugin: str_replace
+      search: ','
+      replace: ''
+
+destination:
+  plugin: 'entity:commerce_product_variation'
+  overwrite_properties:
+    - field_stock

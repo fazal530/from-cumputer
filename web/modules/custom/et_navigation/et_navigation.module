@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_navigation.
+ */
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_theme().
+ */
+function et_navigation_theme() {
+  return [
+    'block__header_bottom' => [
+      'base hook' => 'block',
+    ],
+    'region__header_bottom' => [
+      'base hook' => 'region',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function et_navigation_page_attachments(&$attachments) {
+  $attachments['#attached']['library'][] = 'et_navigation/megamenu';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function et_navigation_theme_suggestions_block(array $variables) {
+  $suggestions = [];
+
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+
+    if ($block) {
+      $suggestions[] = 'block__' . $block->getRegion();
+    }
+  }
+  return $suggestions;
+}

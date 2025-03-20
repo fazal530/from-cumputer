@@ -1,0 +1,23 @@
+uuid: 7d7ab626-4610-4d0f-86f6-b5eecf2dca87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.media
+  module:
+    - paragraph_view_mode
+id: paragraph.media.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: media
+label: 'Display as'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: wide_media
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

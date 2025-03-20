@@ -1,0 +1,44 @@
+%pager__item {
+  list-style-type: none;
+  border-radius: $ui-border-radius;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  transition: padding .15s ease-in;
+}
+
+.pager__item,      /* A list item containing a page number in the list of pages. */
+// .pager-first,     /* The first page's list item. */
+// .pager-previous,  /* The previous page's list item. */
+.pager__item--next,      /* The next page's list item. */
+.pager__item--last,      /* The last page's list item. */
+.pager__item--ellipsis { /* A concatenation of several list items using an ellipsis. */
+
+  a {
+    @extend %pager__item;
+    text-decoration: none;
+    border: 1px solid $link-color;
+    display: block;
+  }
+}
+
+.pager__items { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+  overflow: hidden;
+  clear: both;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 2px;
+    margin-bottom: $gutter-fourth;
+
+    &.is-active {
+
+      a, a:hover, a:focus {
+        background-color: $link-color;
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 77bcc3ec-4f52-4641-bee1-21d099b2adb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.storage.block_content.field_cta_body
+  module:
+    - text
+id: block_content.cta.field_cta_body
+field_name: field_cta_body
+entity_type: block_content
+bundle: cta
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

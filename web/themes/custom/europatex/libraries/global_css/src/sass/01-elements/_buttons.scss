@@ -1,0 +1,235 @@
+/* @partial _buttons.scss */
+
+// Change this mixin @ _mixins.scss as needed.
+// Mixin arguments: button--submit($btn-color: #000000, $btn-radius: $button-border-radius, $btn-padding: $input-padding) {
+button {
+  // @include switch-color-scheme(
+  //   "background",
+  //   $body-bgrd-color,
+  //   $dark-body-bgrd-color
+  // );
+
+  border: 0;
+  border-radius: $ui-border-radius;
+  box-shadow: none;
+  letter-spacing: $letter-spacing;
+
+  &:hover,
+  &:focus {
+    background: $link-color-hover;
+  }
+}
+
+// fallback
+.button--primary,
+.button.primary,
+button.primary,
+.field-cta-button a {
+  @include button(primary);
+}
+
+.button--secondary,
+.button.secondary,
+button.secondary {
+  @include button(secondary);
+}
+
+button[disabled] {
+  cursor: default;
+  background: lighten($med-gray, 20%);
+  color: $dark-gray;
+  pointer-events: none;
+
+  &::before {
+    display: none;
+  }
+}
+
+// Mobile menu toggle buttons
+.toggle-menu {
+  // @include switch-color-scheme(color, $header-bottom-lightmode-color, $header-bottom-darkmode-color);
+  @include small-font;
+  @include clearfix;
+
+  background-color: transparent;
+  border-radius: $ui-border-radius;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: $gutter*0.25;
+  height: 44px;
+
+  .bars {
+    display: block;
+    float: right;
+    order: 2;
+    margin-left: $gutter*0.25;
+    width: 24px;
+  }
+
+  .text {
+    float: left;
+    order: 1;
+  }
+
+  .bar {
+    @include switch-color-scheme(background-color, $dark-gray, #fff);
+
+    width: 24px;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    position: relative;
+
+    + .bar {
+      margin-top: 5px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @include switch-color-scheme(background-color, $light-gray, $black);
+    @include switch-color-scheme(color, $dark-gray, #fff);
+
+    .bar {
+      @include switch-color-scheme(background-color, $dark-gray, #fff);
+    }
+
+    .bar.first {
+      transform: rotate(45deg);
+      width: 12px;
+      top: 11px;
+      left: -4px;
+    }
+
+    .bar.middle {
+      transform: rotate(90deg);
+      width: 16px;
+    }
+
+    .bar.last {
+      transform: rotate(135deg);
+      width: 12px;
+      top: -3px;
+      left: 4px;
+    }
+  }
+
+  .show-nav &#toggle-menu {
+    .bars {
+      height: 13px;
+    }
+
+    .bar {
+      width: 18px;
+
+      &.first {
+        transform: rotate(45deg);
+        top: 4px;
+      }
+
+      &.middle {
+        display: none;
+      }
+
+      &.last {
+        transform: rotate(-45deg);
+        top: -3px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .bar.first {
+        transform: rotate(135deg);
+        width: 12px;
+        top: 3px;
+        left: -4px;
+      }
+
+      .bar.middle {
+        transform: rotate(90deg);
+        width: 16px;
+        display: block;
+      }
+
+      .bar.last {
+        transform: rotate(45deg);
+        width: 12px;
+        top: -11px;
+        left: 4px;
+      }
+    }
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    display: none;
+  }
+}
+
+.toggle-search {
+  background-color: transparent;
+  border-radius: $ui-border-radius;
+  text-align: center;
+  align-items: center;
+
+  &::before {
+    @include switch-color-scheme(background-image, url('./images/search.png'), url('./images/search--white.png'));
+
+    content: "";
+    width: 0.875em;
+    height: 0.875em;
+    display: inline-block;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.25em;
+  }
+
+  &:hover,
+  &:focus {
+    @include switch-color-scheme(background-color, $light-gray, $black);
+    @include switch-color-scheme(color, $dark-gray, #fff);
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    display: flex;
+  }
+
+  @include breakpoint($desktop-min) {
+    font-size: 1.125rem;
+    padding: $gutter*0.25;
+    height: 44px;
+  }
+}
+
+
+/////////////////////////
+// Share links sometimes <button> or <a>
+
+
+.shareit {
+  background: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-right: $gutter-half;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover, &:focus {
+    background: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  span {
+    @include visually-hidden;
+  }
+}

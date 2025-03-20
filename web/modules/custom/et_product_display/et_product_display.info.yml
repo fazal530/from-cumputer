@@ -1,0 +1,6 @@
+name: Europatex Product Display
+type: module
+description: Product-specific display customizations
+package: Europatex
+
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,15 @@
+uuid: e720249e-77c8-4485-bc87-e37541068af6
+langcode: en
+status: true
+dependencies: {  }
+name: content_extra_wide_2x
+label: 'Content area - extra wide (HD)'
+effects:
+  dc543ead-715a-48c5-a865-74fad568e0c8:
+    uuid: dc543ead-715a-48c5-a865-74fad568e0c8
+    id: image_scale
+    weight: 1
+    data:
+      width: 2880
+      height: null
+      upscale: false

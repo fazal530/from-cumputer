@@ -1,0 +1,21 @@
+uuid: a1cb2973-ff20-4c00-b8ac-e85cb91e1db9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 6_PE3lxRmcr3l6u87ZQj7g42tE_3X1kul08lJ8eAmxA
+id: user.register_pending_approval_admin
+configuration:
+  email_body:
+    content:
+      value: "<p>[user:display-name] has applied for an account. <a href=\"[user:edit-url]\">[user:edit-url]</a></p>\r\n"
+      format: email_html
+  email_subject:
+    value: 'New [site:name] customer account awaiting approval: [user:display-name]'
+  email_to:
+    addresses:
+      -
+        value: '<site>'
+        display: ''

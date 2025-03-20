@@ -1,0 +1,6 @@
+uuid: 15f84498-9ae0-448e-8e5c-1864b31d1e0c
+langcode: en
+status: true
+dependencies: {  }
+id: symfony_mailer
+configuration: {  }

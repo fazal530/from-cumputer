@@ -1,0 +1,8 @@
+uuid: eba4c599-05db-45cb-87b9-4e58e5c1d625
+langcode: en
+status: true
+dependencies: {  }
+id: site-information
+label: 'Site Information'
+description: 'Privacy policy, etc. at the bottom of the footer'
+locked: false

@@ -1,0 +1,236 @@
+@use "sass:math";
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+$base-font-size: 16px; // The font size set on the root html element & used in rem() mixin calculations
+$measure: 760px;
+$wide-measure: 960px;
+
+$h1-font-size-mobile: 36px;
+$h1-font-size: 44px;
+
+$h2-font-size-mobile: 28px;
+$h2-font-size: 36px;
+
+$h3-font-size-mobile: 20px;
+$h3-font-size: 24px;
+
+$h4-font-size: 16px;
+
+// Used in general Sass partials for css rules
+$font-size-large: 1.3125rem; // 21px, Large text in desktop
+$font-size-medium: 1.125rem; // 18px, Desktop
+$font-size-small: 1rem; // 16px, Mobile
+$font-size-xsmall: 0.875rem; // 14px, Small text on desktop
+$font-size-xxsmall: 0.75rem; //12px, xsmall on desktop
+
+
+// Common font stacks
+$serif: Georgia, serif;
+$sans-serif: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif;
+$courier: monospace, "Courier New", "DejaVu Sans Mono", sans-serif;
+$icon-font: "icomoon";
+
+
+// =============================================================================
+// COLOR PALLETE
+// =============================================================================
+
+// Neutrals
+$black: #222222;
+$dark-gray: #4E4E4E;
+$med-gray: #7C7C7C;
+$light-gray: #D4D5D6;
+$xlight-gray: #ECEDEF;
+
+// Colors
+$red: #C24E4E;
+$orange: #DA7D51;
+$yellow: #E5A835;
+$green: #749B64;
+$teal: #498784;
+$blue: #607AB1;
+$purple: #8364B6;
+$pink: #C46BA9;
+$brown: #8E5D46;
+$tan: #CEB8A3;
+$metallic: linear-gradient(-45deg, $med-gray 0%, $xlight-gray 50%, $med-gray 100%);
+
+$text-color: $black;
+$header-color: $black;
+$primary-color: $black;
+$secondary-color: $black;
+$accent-color: $black;
+
+
+// =============================================================================
+// GLOBAL VARIABLES
+// =============================================================================
+
+// SHARED FORM VARIABLES
+$ui-border-color: $dark-gray;
+$ui-background-color: $xlight-gray;
+$ui-padding: ($vert-gutter*0.5) ($horiz-gutter*0.5);
+$ui-border-radius: 4px;
+$ui-transition: 0.15s;
+$focus-ring: 2px solid $black;
+$focus-ring-offset: 4px;
+
+// SHARED STATES
+$delete-color: $red; // delete & remove buttons / inputs
+$disabled-background-color: $light-gray;
+$disabled-font-color: $light-gray;
+
+// MESSAGES
+$status-color: $blue;
+$error-color: $red;
+$success-color: $green;
+$warning-color: $yellow;
+$alert-color: $orange;
+
+// =============================================================================
+// ATOM (element) VARIABLES
+// =============================================================================
+
+// TEXT
+$body-font-color: $text-color;
+$body-bgrd-color: #fff;
+$dark-body-font-color: #fff;
+$dark-body-bgrd-color: $black;
+$header-font: $sans-serif;
+$page-title-color: $header-color;
+$page-title-darkmode-color: $dark-body-font-color;
+$block-title-color: $header-color;
+$body-font: $sans-serif;
+$font-monospace: $courier; // <pre>, <code> tags
+$button-font: $sans-serif;
+$letter-spacing: 0.1em;
+
+// LINKS
+$link-color: $dark-gray;
+$link-color-visited: $black;
+$link-color-hover: $black;
+$link-color-focus: $black;
+$link-color-active: $black;
+$link-darkmode-color: $light-gray;
+$link-darkmode-color-visited: #fff;
+$link-darkmode-color-hover: #fff;
+$link-darkmode-color-focus: #fff;
+$link-darkmode-color-active: #fff;
+$link-text-decoration: underline;
+
+// FORM INPUTS, BUTTONS & SUBMITS
+$input-padding: 8px 16px;
+$input-font-family: inherit;
+$input-font-color: $body-font-color;
+$input-font-size: 16px;
+
+$input-background-color: #fff;
+$input-backgroud-color-focus: #fff;
+
+$input-border-color: $ui-border-color;
+$input-border-color-focus: $black;
+$input-border-radius: $ui-border-radius;
+
+$ui-box-shadow: 0 0 8px rgba(0,0,0,0.15);
+
+$input-box-shadow: none;
+$input-box-shadow-focus: $ui-box-shadow;
+$input-transition-duration: 0.1s;
+
+$input-disabled-background-color: $disabled-background-color;
+$input-disabled-font-color: $disabled-font-color;
+
+$width-xsmall: 60px;
+$width-small: 120px;
+$width-medium: 180px;
+$width-large: 240px;
+$width-xlarge: $measure;
+$width-xxlarge: 100%;
+$inline-field-gutter: 0.5rem;
+$inline-field-gutter: 0.5rem;
+
+$placeholder-color: #999999;
+$placeholder-focus-color: $input-background-color;
+
+// BUTTONS
+$button-bgrd: $light-gray;
+$button-color: $dark-gray;
+$button-hover-color: $black;
+$button-border: $dark-gray;
+$button-darkmode-bgrd: $dark-gray;
+$button-darkmode-color: $xlight-gray;
+$button-darkmode-hover-bgrd: $light-gray;
+$button-darkmode-hover-color: $light-gray;
+$button-darkmode-hover-border: $light-gray;
+$button-darkmode-border: $xlight-gray;
+
+$button-border-radius: $ui-border-radius;
+$tab-deselected: #747674;
+
+// BLOCKQUOTES
+$blockquote-border-color: $ui-border-color;
+
+// HORIZONTAL RULE
+$horizontal-rule-border: $light-gray;
+
+// CARDS
+$card-box-shadow-hover: $ui-box-shadow;
+
+// =============================================================================
+// MOLECULE / ORGANISM (module / components) VARIABLES
+// =============================================================================
+
+// MESSAGES
+$success-background: $green;
+$success-border: $green;
+$success-text: $body-font-color;
+$warning-background: $yellow;
+$warning-border: $yellow;
+$warning-text: $body-font-color;
+$error-background: $red;
+$error-border: $red;
+$error-text: $body-font-color;
+
+// PAGER
+$pager-color: transparent;
+$pager-color-hover: transparent;
+
+// FIELDSET
+$legend-font-weight: bold;
+
+// FORM ITEMS
+$form-item-margin: 0 0 ($vert-gutter*0.5);
+$form-item-label-font-weight: bold;
+$form-item-label-font-size: 18px;
+$form-item-label-margin: 0 0 $vert-gutter*0.0834 0;
+$form-item-description-font-size: 14px;
+$form-item-description-color: $dark-gray;
+
+// TABLES
+$table-tbody-border-style: solid;
+$table-tbody-border-width: 1px;
+$table-tbody-border-color: $xlight-gray;
+
+$table-th-border-style: solid;
+$table-th-border-width: 0;
+$table-th-border-color: transparent transparent $ui-border-color transparent;
+
+$table-tr-even-background: $xlight-gray;
+$table-tr-even-darkmode-background: darken($dark-gray, 10%);
+$table-tr-even-border-style: solid;
+$table-tr-even-border-width: 1px;
+$table-tr-even-border-color:  $xlight-gray;
+
+$table-tr-odd-background: transparent;
+$table-tr-odd-darkmode-background: transparent;
+$table-tr-odd-border-style: solid;
+$table-tr-odd-border-width: 1px;
+$table-tr-odd-border-color:  $xlight-gray;
+
+$table-tr-drag-background: $table-tr-odd-border-color;
+$table-td-padding: $horiz-gutter*0.5;
+$table-td-disabled-background: #ccc;
+$table-th-padding: $horiz-gutter*0.25 $horiz-gutter*0.5;

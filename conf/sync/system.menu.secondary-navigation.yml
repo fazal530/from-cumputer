@@ -1,0 +1,8 @@
+uuid: a2f2783c-dfae-4881-b14e-68999e9baaa5
+langcode: en
+status: true
+dependencies: {  }
+id: secondary-navigation
+label: 'Secondary navigation'
+description: 'Top navigation bar, above header'
+locked: false

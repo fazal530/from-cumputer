@@ -1,0 +1,92 @@
+uuid: 6f579318-2be1-435d-ade8-7e8eee906ae8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - core.entity_view_mode.commerce_product.thumbnail
+    - field.field.commerce_product.trim.field_cat_category
+    - field.field.commerce_product.trim.field_cat_collection
+    - field.field.commerce_product.trim.field_cat_color
+    - field.field.commerce_product.trim.field_cat_market
+    - field.field.commerce_product.trim.field_cat_style
+    - field.field.commerce_product.trim.field_cat_usage
+    - field.field.commerce_product.trim.field_minimum_order
+    - field.field.commerce_product.trim.field_product_image
+    - field.field.commerce_product.trim.field_specs_abrasion
+    - field.field.commerce_product.trim.field_specs_category
+    - field.field.commerce_product.trim.field_specs_cleaning_code
+    - field.field.commerce_product.trim.field_specs_collection
+    - field.field.commerce_product.trim.field_specs_color
+    - field.field.commerce_product.trim.field_specs_content
+    - field.field.commerce_product.trim.field_specs_direction
+    - field.field.commerce_product.trim.field_specs_finish
+    - field.field.commerce_product.trim.field_specs_fire_code
+    - field.field.commerce_product.trim.field_specs_info
+    - field.field.commerce_product.trim.field_specs_repeat
+    - field.field.commerce_product.trim.field_specs_roll_size
+    - field.field.commerce_product.trim.field_specs_style
+    - field.field.commerce_product.trim.field_specs_usage
+    - field.field.commerce_product.trim.field_specs_weight
+    - field.field.commerce_product.trim.field_specs_width
+  module:
+    - cloudinary
+id: commerce_product.trim.thumbnail
+targetEntityType: commerce_product
+bundle: trim
+mode: thumbnail
+content:
+  field_product_image:
+    type: cloudinary_image
+    label: hidden
+    settings:
+      transformation: t_media_lib_thumb
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  extra_field_et_product_display_disclaimer: true
+  extra_field_et_product_display_download_image: true
+  extra_field_et_product_display_login_prompt: true
+  extra_field_et_product_display_print_page: true
+  extra_field_et_product_display_product_image_lightbox_trigger: true
+  extra_field_et_product_display_share_by_mail: true
+  extra_field_et_product_display_view_full_details: true
+  field_cat_category: true
+  field_cat_collection: true
+  field_cat_color: true
+  field_cat_market: true
+  field_cat_style: true
+  field_cat_usage: true
+  field_minimum_order: true
+  field_specs_abrasion: true
+  field_specs_category: true
+  field_specs_cleaning_code: true
+  field_specs_collection: true
+  field_specs_color: true
+  field_specs_content: true
+  field_specs_direction: true
+  field_specs_finish: true
+  field_specs_fire_code: true
+  field_specs_info: true
+  field_specs_repeat: true
+  field_specs_roll_size: true
+  field_specs_style: true
+  field_specs_usage: true
+  field_specs_weight: true
+  field_specs_width: true
+  langcode: true
+  other_colors_product_detail: true
+  search_api_excerpt: true
+  stores: true
+  uid: true
+  variations: true

@@ -1,0 +1,21 @@
+// // Identity
+// //
+// // Import Sass mixins, variables, Compass, etc.
+// @import "./sass/00-identity/_base.scss";
+
+// // Elements
+// //
+// // Typography, inputs, links, buttons, tables, etc.
+// @import "./sass/01-elements/_normalize.scss";
+// @import "./sass/01-elements/_links.scss";
+// @import "./sass/01-elements/_lists.scss";
+// @import "./sass/01-elements/_helpers.scss";
+// @import "./sass/01-elements/_typography.scss";
+// @import "./sass/01-elements/_buttons.scss";
+// @import "./sass/01-elements/_tables.scss";
+
+// body.cke_editable_themed {
+//   @include switch-color-scheme(color, $body-font-color, $dark-body-font-color);
+
+//   padding: $horiz-gutter*0.5;
+// }

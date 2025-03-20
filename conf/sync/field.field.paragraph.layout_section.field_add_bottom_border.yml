@@ -1,0 +1,23 @@
+uuid: 609fc4df-2939-4ad5-90ff-645e64088ee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add_bottom_border
+    - paragraphs.paragraphs_type.layout_section
+id: paragraph.layout_section.field_add_bottom_border
+field_name: field_add_bottom_border
+entity_type: paragraph
+bundle: layout_section
+label: 'Add bottom border'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,15 @@
+uuid: 01f3a417-4355-4a91-b6a4-15fee536bced
+langcode: en
+status: true
+dependencies: {  }
+name: content_wide_2x
+label: 'Content area - wide (HD)'
+effects:
+  dda0e154-0e26-4a72-8b20-673b7a15e0bd:
+    uuid: dda0e154-0e26-4a72-8b20-673b7a15e0bd
+    id: image_scale
+    weight: 1
+    data:
+      width: 2272
+      height: null
+      upscale: false

@@ -1,0 +1,27 @@
+uuid: dc98d810-418f-4a43-b752-daaf98519839
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - options
+id: commerce_order.field_shipping_method
+field_name: field_shipping_method
+entity_type: commerce_order
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Standard
+      label: Standard
+    -
+      value: Expedited
+      label: Expedited
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

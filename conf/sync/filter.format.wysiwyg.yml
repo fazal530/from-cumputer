@@ -1,0 +1,28 @@
+uuid: 93623399-e271-45c5-a8fd-2cc477e381db
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+name: WYSIWYG
+format: wysiwyg
+weight: -10
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong> <b> <i> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <p class> <a href hreflang target title rel class id> <center> <pre> <table> <caption> <tbody> <thead> <tfoot> <th colspan> <td colspan> <tr> <div class="responsive-table">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }

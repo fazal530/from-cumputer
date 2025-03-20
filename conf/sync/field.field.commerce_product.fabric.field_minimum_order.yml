@@ -1,0 +1,23 @@
+uuid: 82cca710-0731-4799-b504-2fcb3144d8df
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+    - field.storage.commerce_product.field_minimum_order
+id: commerce_product.fabric.field_minimum_order
+field_name: field_minimum_order
+entity_type: commerce_product
+bundle: fabric
+label: 'Minimum Order'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

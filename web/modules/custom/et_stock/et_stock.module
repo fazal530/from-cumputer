@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_stock.
+ */
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function et_stock_form_commerce_order_item_add_to_cart_form_alter(&$form, $form_state, $form_id) {
+  \Drupal::service('et_stock.order_quantity')->alterForm($form, $form_state);
+}

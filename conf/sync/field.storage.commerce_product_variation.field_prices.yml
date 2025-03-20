@@ -1,0 +1,19 @@
+uuid: 6588e93e-08c7-49a6-a454-d2b8c5c74e2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - tiered_price
+id: commerce_product_variation.field_prices
+field_name: field_prices
+entity_type: commerce_product_variation
+type: tiered_price
+settings: {  }
+module: tiered_price
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

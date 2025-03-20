@@ -1,0 +1,8 @@
+uuid: da2bf556-3ba2-4cce-99ba-07c26ec06569
+langcode: en
+status: true
+dependencies: {  }
+id: featured
+label: Featured
+description: 'Displays in Fabrics main menu drop-down'
+locked: false

@@ -1,0 +1,85 @@
+uuid: 988fd8d1-1dbb-4612-9947-f7bb6468adbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout_section.field_add_background_texture
+    - field.field.paragraph.layout_section.field_add_bottom_border
+    - field.field.paragraph.layout_section.field_full_width
+    - field.field.paragraph.layout_section.field_narrow_width
+    - field.field.paragraph.layout_section.field_overlap_next_section
+    - field.field.paragraph.layout_section.field_remove_space
+    - paragraphs.paragraphs_type.layout_section
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_section_settings:
+      children:
+        - field_full_width
+        - field_narrow_width
+        - field_add_background_texture
+        - field_overlap_next_section
+        - field_add_bottom_border
+        - field_remove_space
+      label: 'Section settings'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: false
+id: paragraph.layout_section.default
+targetEntityType: paragraph
+bundle: layout_section
+mode: default
+content:
+  field_add_background_texture:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_add_bottom_border:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_full_width:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_narrow_width:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_overlap_next_section:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_remove_space:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

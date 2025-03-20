@@ -1,0 +1,10 @@
+uuid: 1ff1a495-75d6-4fc6-996c-2e488433541e
+langcode: en
+status: true
+dependencies: {  }
+id: default
+label: Default
+description: ''
+source_type: ''
+module: null
+shared_configuration: null

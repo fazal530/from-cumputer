@@ -1,0 +1,23 @@
+uuid: 1adc2ec3-4ebc-4725-b9f4-c4c39fc5ba7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - field.storage.commerce_product.field_specs_width
+id: commerce_product.trim.field_specs_width
+field_name: field_specs_width
+entity_type: commerce_product
+bundle: trim
+label: Width
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' inches'
+field_type: decimal

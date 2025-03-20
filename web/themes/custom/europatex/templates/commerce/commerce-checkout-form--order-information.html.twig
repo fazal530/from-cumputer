@@ -1,0 +1,35 @@
+{%
+  set step = form['#step_id']
+%}
+<div class="layout-checkout-form checkout-step-{{ step }} clearfix">
+
+  <div class="layout-checkout-addresses">
+    <div class="layout-inner">
+
+      {% if form.et_checkout_shipping %}
+        <div class="checkout-shipping">
+          {{ form.et_checkout_shipping }}
+        </div>
+      {% endif %}
+
+      {% if form.payment_information %}
+        <div class="checkout-billing">
+          {{ form.payment_information }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  <div class="layout-checkout-comments">
+    <div class="checkout-comments">
+      {{ form.et_checkout_order_comments }}
+    </div>
+  </div>
+
+  {{ form|without('actions', 'et_checkout_shipping', 'et_checkout_order_comments', 'payment_information') }}
+
+  <div class="layout-checkout-footer">
+    {{ form.actions }}
+  </div>
+</div>

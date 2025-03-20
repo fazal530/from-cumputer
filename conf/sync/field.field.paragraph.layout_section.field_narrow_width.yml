@@ -1,0 +1,23 @@
+uuid: 05c3caf2-55bf-42aa-980d-2503b332d72b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_narrow_width
+    - paragraphs.paragraphs_type.layout_section
+id: paragraph.layout_section.field_narrow_width
+field_name: field_narrow_width
+entity_type: paragraph
+bundle: layout_section
+label: 'Narrow width & centered'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

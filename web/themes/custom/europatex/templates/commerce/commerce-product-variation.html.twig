@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ *
+ * Default template for product variations.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product_variation: The rendered product variation fields.
+ *   Use 'product_variation' to print them all, or print a subset such as
+ *   'product_variation.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product_variation|without('title') }}
+ *   @endcode
+ * - product_variation_entity: The product variation entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set productClass = [
+    'product-variation',
+    'display-' ~ elements['#view_mode'],
+    product_variation_entity.bundle|clean_class,
+    not product_variation_entity.isPublished() ? 'unpublished',
+  ]
+%}
+<div{{ attributes.addClass(productClass) }}>
+  {% if elements['#view_mode'] == 'full' %}
+    {% if not product_variation_entity.isPublished() %}
+      <div class="unpublished-marker-container"><mark class="unpublished-marker">{{ 'Unpublished'|t }}</mark></div>
+    {% endif %}
+  {% endif %}
+  {{- product_variation -}}
+</div>

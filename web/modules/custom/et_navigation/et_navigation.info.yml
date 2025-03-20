@@ -1,0 +1,6 @@
+name: Europatex Navigation
+type: module
+description: Navigation customizations
+package: Europatex
+
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,237 @@
+/* @partial _links.scss */
+
+/**
+ * 1. Remove the gray background color from active links in IE 10.
+ */
+a {
+  @include switch-color-scheme(color, $link-color, $link-darkmode-color);
+  transition: all 1s ease-in-out;
+  text-decoration: $link-text-decoration;
+  background-color: transparent;
+  /* 1 */
+  cursor: pointer;
+
+  .external-link-icon {
+    @include switch-color-scheme(color, $dark-gray, $light-gray);
+  }
+
+  &:hover,
+  &:focus {
+    @include switch-color-scheme(color, $link-color-hover, $link-darkmode-color-hover);
+    text-decoration: none;
+
+    .external-link-icon {
+      @include switch-color-scheme(color, $link-color-hover, $link-darkmode-color-hover);
+    }
+  }
+}
+
+*:focus-visible {
+  outline: $focus-ring;
+  outline-offset: $focus-ring-offset;
+}
+
+//skip to main link
+#skip-to-main {
+  &:focus {
+    display: block;
+    text-align: center;
+    padding: $input-padding;
+    background: $secondary-color;
+    font-weight: bold;
+  }
+}
+
+// back to top link
+.back-to-top-link {
+  position: fixed;
+  bottom: $vert-gutter*0.25;
+  right: $vert-gutter*0.25;
+  z-index: 99;
+}
+
+// Social media icons
+%social-icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 18px;
+  background-color: $button-color;
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: $ui-border-radius;
+  text-indent: -9999px;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover-color;
+  }
+}
+
+.external-link-icon {
+  position: relative;
+  padding-right: 1em;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: text-top;
+
+  &::before {
+    content: '\e93a';
+    font-family: $icon-font;
+    font-size: 0.85em;
+    font-weight: 300;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+}
+
+.facebook {
+  @extend %social-icon;
+
+  background-image: url('./images/facebook.png');
+}
+
+.twitter {
+  @extend %social-icon;
+
+  background-image: url('./images/twitter.png');
+  background-size: 18px auto;
+}
+
+.pinterest {
+  @extend %social-icon;
+
+  background-image: url('./images/pinterest.png');
+}
+
+.instagram {
+  @extend %social-icon;
+
+  background-image: url('./images/instagram.png');
+}
+
+.rss {
+  @extend %social-icon;
+
+  background-image: url('./images/rss.png');
+}
+
+.linkedin {
+  @extend %social-icon;
+
+  background-image: url('./images/linkedin.png');
+}
+
+///////////////////////////////////
+// Color facets in menu
+
+$facet-black: #000000;
+$facet-blue: #0b5394;
+$facet-brown: #5c2900;
+$facet-green: #82b26d;
+$facet-grey: #8c8c8c;
+$facet-gold: #d2a840;
+$facet-multi: #000;
+$facet-neutral: #d3c8bb;
+$facet-orange: #e69138;
+$facet-pink: #e583b7;
+$facet-purple: #674ea7;
+$facet-red: #d02525;
+$facet-silver: #e8e8e8;
+$facet-teal: #34adae;
+$facet-white: #ffffff;
+$facet-yellow: #ffE200;
+
+// Color links
+.facet--color {
+  a {
+    position: relative;
+    padding-left: 24px !important;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  a[href*="/color/red"]::before {
+    background: $facet-red;
+  }
+
+  a[href*="/color/pink"]::before {
+    background: $facet-pink;
+  }
+
+  a[href*="/color/orange"]::before {
+    background: $facet-orange;
+  }
+
+  a[href*="/color/multi"]::before {
+    background: $facet-multi;
+    background: linear-gradient(90deg, rgba(92,229,245,1) 15%, rgba(131,58,180,1) 25%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 75%, rgba(236,243,70,1) 85%);
+  }
+
+  a[href*="/color/gold"]::before {
+    background: $facet-gold;
+    background: linear-gradient(90deg, rgba(150,104,26,1) 0%, rgba(210,168,64,1) 50%, rgba(150,104,26,1) 100%);
+  }
+
+  a[href*="/color/yellow"]::before {
+    background: $facet-yellow;
+  }
+
+  a[href*="/color/green"]::before {
+    background: $facet-green;
+  }
+
+  a[href*="/color/teal"]::before {
+    background: $facet-teal;
+  }
+
+  a[href*="/color/blue"]::before {
+    background: $facet-blue;
+  }
+
+  a[href*="/color/purple"]::before {
+    background: $facet-purple;
+  }
+
+  a[href*="/color/silver"]::before {
+    background: $facet-silver;
+    background: linear-gradient(90deg, rgba(125,127,129,1) 0%, rgba(232,232,232,1) 50%, rgba(125,127,129,1) 100%);
+  }
+
+  a[href*="/color/grey"]::before {
+    background: $facet-grey;
+  }
+
+  a[href*="/color/white"]::before {
+    background: $facet-white;
+  }
+
+  a[href*="/color/black"]::before {
+    background: $facet-black;
+  }
+
+  a[href*="/color/brown"]::before {
+    background: $facet-brown;
+  }
+
+  a[href*="/color/neutral"]::before {
+    background: $facet-neutral;
+  }
+}

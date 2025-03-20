@@ -1,0 +1,298 @@
+/* @partial typography */
+
+// Example font-face declaration
+// @font-face {
+//   font-family: 'Example';
+//   src: url('../fonts/example.eot');
+//   src: url('../fonts/example.eot?iefix') format('eot'),
+//     url('../fonts/example.woff') format('woff'),
+//     url('../fonts/example.ttf') format('truetype'),
+//     url('../fonts/example.svg#webfontOkOndcij') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+/**
+ * 1. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+
+html {
+  font-family: $body-font;
+}
+
+body {
+  @include body-font-size;
+
+  // color: $black;
+  line-height: 1.675;
+}
+
+/*  Header Styles
+   ========================================================================== */
+
+.h1,
+h1 {
+  @include h1; // Mixin found in _mixins.scss
+}
+
+h1,
+h2,
+h3,
+h4 {
+  + ul,
+  + ol {
+    margin-top: 0;
+  }
+}
+
+h2,
+.h2 {
+  @include h2; // Mixin found in _mixins.scss
+}
+
+h1.kicker,
+h2.kicker {
+  @include h3;
+
+  color: $primary-color;
+  font-weight: 400;
+  margin-bottom: $vert-gutter;
+
+  span {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primary-color;
+      border-radius: 1px;
+    }
+  }
+
+  & + h2,
+  & + h1 {
+    margin-top: 0;
+  }
+}
+
+h3,
+.h3 {
+  @include h3; // Mixin found in _mixins.scss
+}
+
+h4,
+h5,
+h6,
+.h4 {
+  @include h4; // Mixin found in _mixins.scss
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+/*  Misc
+   ========================================================================== */
+
+mark {
+  background: lighten($error-color, 52%);
+  color: $error-color;
+  border: 1px solid $error-color;
+  font-weight: bold;
+
+  &.unpublished-marker {
+    padding: 4px 6px;
+  }
+}
+
+.node.unpublished,
+.paragraph.unpublished {
+  position: relative;
+}
+
+.unpublished-marker-container {
+  margin: 0 0 $gutter*0.5 0;
+  @include small-font;
+
+  // .display-teaser &,
+  // .display-quicklook_trigger & {
+  //   position: absolute;
+  //   top: $gutter*0.5;
+  //   right: $gutter*0.5;
+  //   z-index: 1;
+  // }
+}
+
+/* Thematic break. */
+hr {
+  height: 1px;
+  border: none;
+  background: $horizontal-rule-border;
+  padding: 0;
+  margin: ($vert-gutter * 2) 0;
+}
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: $vert-gutter 0;
+  border-left: 4px solid $blockquote-border-color;
+  padding: 0 0 0 $vert-gutter;
+  @include large-font;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/*
+ * 1. Contain overflow in all browsers.
+ * 2. Improves readability of pre-formatted text in all browsers
+ */
+
+pre {
+  overflow: auto;
+  /* 1 */
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: $vert-gutter 0;
+  white-space: pre;
+  /* 2 */
+  white-space: pre-wrap;
+  /* 2 */
+  word-wrap: break-word;
+  /* 2 */
+}
+
+p {
+  margin: 0 0 $gutter*0.6666 0;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+
+pre,
+code,
+kbd,
+samp,
+tt,
+var {
+  font-family: $font-monospace;
+  /* The $font-monospace value ends with ", serif". */
+}
+
+code {
+  padding: 0 4px;
+  border: 1px solid $secondary-color;
+  border-radius: 2px;
+  background-color: $light-gray;
+  color: darken($primary-color, 20%);
+}
+
+pre > code,
+pre > code.hljs {
+  border-radius: $ui-border-radius;
+  display: block;
+  padding: $vert-gutter;
+  margin: 0;
+  background-color: $black;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.visually-hidden {
+  margin: 0;
+}
+
+.intro {
+  h2 {
+    @include h1;
+
+    margin-bottom: $vert-gutter*0.5;
+  }
+
+  h3 {
+    @include h4;
+
+    margin-top: 0;
+  }
+}
+
+.large {
+  @include large-font;
+}
+
+.small {
+  @include small-font;
+}
+
+.clear {
+  clear: both;
+}
+
+.kicker {
+  @include kicker;
+}
+
+.hide-title h1 {
+  @include visually-hidden;
+
+  margin: 0;
+}

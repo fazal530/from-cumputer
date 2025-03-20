@@ -1,0 +1,26 @@
+uuid: 3501bc29-1201-47e6-a5b7-b0003277d25b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.carousel.field_carousel_slides
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - entity_reference_revisions
+id: paragraph.carousel.preview
+targetEntityType: paragraph
+bundle: carousel
+mode: preview
+content:
+  field_carousel_slides:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

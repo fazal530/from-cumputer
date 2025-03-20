@@ -1,0 +1,10 @@
+uuid: 4bd1edd8-d0d2-4b59-8a3a-8f62fb598c88
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.extra_wide_media
+label: 'Extra wide (Full width)'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,95 @@
+/* @partial _field.scss */
+.field {
+  &.label-display-inline {
+    .field__label {
+      display: inline-block;
+
+      & ~ * {
+        display: inline-block;
+      }
+    }
+
+    &.commas {
+      .field + .field {
+        &::before {
+          content: ", ";
+          margin-left: -0.25em;
+        }
+      }
+    }
+  }
+
+  &.label-display-above {
+    .field__label {
+      font-size: calculate-rem($form-item-label-font-size);
+      font-weight: $form-item-label-font-weight;
+      margin: $form-item-label-margin;
+    }
+  }
+}
+
+.field__label {
+  font-weight: bold;
+}
+
+// Social media links
+.field-social-media {
+  margin-left: -$horiz-gutter*0.125;
+  margin-right: -$horiz-gutter*0.125;
+
+  > .field__item {
+    display: inline-block;
+    margin-left: $horiz-gutter*0.125;
+    margin-right: $horiz-gutter*0.125;
+  }
+}
+
+// Office hours
+.field-hours {
+  .office-hours-status {
+    // @include switch-color-scheme(color, $link-color, $link-darkmode-color);
+
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .office-hours-status--closed {
+    display: none;
+  }
+
+  .office-hours__item-label {
+    text-transform: uppercase;
+  }
+
+  .office-hours__item.today {
+    // @include switch-color-scheme(color, $link-color, $link-darkmode-color);
+
+    font-weight: bold;
+  }
+}
+
+// Now hiring
+.field-hiring-link {
+  // @include switch-color-scheme(border-color, $alert-lightmode-border-color, $alert-darkmode-border-color);
+  // @include switch-color-scheme(background-color, $alert-lightmode-bgrd, $alert-darkmode-bgrd);
+  // @include switch-color-scheme(color, $alert-lightmode-color, $alert-darkmode-color);
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $ui-border-radius;
+  padding: $horiz-gutter*0.5;
+
+  @include breakpoint($tablet-portrait-min) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  a {
+    @include button(primary);
+  }
+}

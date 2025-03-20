@@ -1,0 +1,30 @@
+uuid: 00615bc5-1d30-4551-bdb5-b576a3985b5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_business_type
+    - taxonomy.vocabulary.business_type
+  module:
+    - user
+id: user.user.field_business_type
+field_name: field_business_type
+entity_type: user
+bundle: user
+label: 'Type of Business'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_type: business_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

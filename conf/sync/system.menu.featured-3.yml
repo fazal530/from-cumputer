@@ -1,0 +1,8 @@
+uuid: 3063a347-18e2-40d6-8292-d385172cca9b
+langcode: en
+status: true
+dependencies: {  }
+id: featured-3
+label: Featured
+description: 'Displays in Finished Products main menu drop-down'
+locked: false

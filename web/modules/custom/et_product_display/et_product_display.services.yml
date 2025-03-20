@@ -1,0 +1,6 @@
+services:
+  et_product_display.product.breadcrumb:
+    class: Drupal\et_product_display\ProductBreadcrumbBuilder
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: breadcrumb_builder, priority: 520 }

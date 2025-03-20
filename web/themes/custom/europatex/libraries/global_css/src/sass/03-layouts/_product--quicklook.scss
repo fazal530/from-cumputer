@@ -1,0 +1,136 @@
+.display--quicklook {
+  @include breakpoint($phone-min) {
+    display: flex;
+  }
+
+  .shareit {
+    i {
+      margin-right: 4px;
+    }
+
+    span {
+      @include visually-hidden-off;
+    }
+  }
+
+  .more-link {
+    margin: $gutter-half 0;
+  }
+}
+
+.quicklook-preview {
+  padding-left: $gutter-half;
+  padding-right: $gutter-half;
+  margin-bottom: $gutter;
+
+  @include breakpoint($phone-min) {
+    width: 53%;
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}
+
+.quicklook-details {
+  padding-right: $gutter-half;
+  padding-left: $gutter-half;
+
+  @include breakpoint($phone-min) {
+    width: 47%;
+    padding-left: 0;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    padding-right: $gutter;
+  }
+}
+
+.quicklook {
+  @include responsive-grid-item;
+  @include responsive-gutter($property: margin-bottom, $multiplier: 1);
+  @include dark-color-scheme(color, $body-font-color);
+  z-index: 5; // So quicklook region overlaps quicklook-selected item's arrow
+
+  h2, a, button {
+    @include dark-color-scheme(color, $body-font-color);
+  }
+
+  .quicklook-trigger {
+    @include switch-color-scheme(color, $body-font-color !important, $dark-body-font-color !important);
+  }
+
+  .close-button {
+    @include close-button;
+
+    right: $gutter-half;
+
+    &::before, &::after {
+      @include dark-color-scheme(background-color, $body-font-color);
+    }
+  }
+
+  .close-button:hover, .close-button:focus {
+    &::before, &::after {
+      background-color: #fff;
+    }
+  }
+
+  .content {
+    padding-top: $gutter-half;
+    padding-bottom: $gutter-half;
+    background-color: $xlight-gray;
+    border-radius: $ui-border-radius;
+
+    @include breakpoint($tablet-portrait-min) {
+      padding-top: $gutter;
+      padding-bottom: $gutter;
+    }
+  }
+}
+
+.quicklook-share {
+  position: relative;
+
+  .ajax-progress-throbber {
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    background-color: $xlight-gray;
+    padding: 1px 1px 2px 1px;
+
+    // .throbber {
+    //   background-color: transparent;
+    //   width: 18px;
+    //   height: 18px;
+    //   border-radius: 9px;
+    //   background-image: url(./images/loading.gif);
+    //   background-size: 16px auto;
+    //   background-position: center;
+    // }
+  }
+}
+
+.quicklook-selected {
+  position: relative;
+
+  &::before {
+    background-color: $xlight-gray;
+    content: "";
+    width: $gutter*0.625;
+    height: $gutter*0.625;
+    display: block;
+    position: absolute;
+    @include responsive-gutter($property: bottom, $multiplier: -1);
+
+    left: 0;
+    right: 0;
+    margin: auto auto $gutter*0.125;
+    transform: rotate(45deg);
+    z-index: 5;
+  }
+}
+

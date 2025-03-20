@@ -1,0 +1,14 @@
+uuid: dedd7a1d-0230-44df-a632-54decd99865e
+langcode: en
+status: true
+dependencies: {  }
+id: fabric
+label: Fabric
+traits: {  }
+locked: false
+description: ''
+variationType: null
+variationTypes:
+  - default
+multipleVariations: true
+injectVariationFields: false

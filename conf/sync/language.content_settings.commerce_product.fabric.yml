@@ -1,0 +1,11 @@
+uuid: 588b975d-128f-42e1-8c00-956fc1f9991d
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.fabric
+id: commerce_product.fabric
+target_entity_type_id: commerce_product
+target_bundle: fabric
+default_langcode: site_default
+language_alterable: false

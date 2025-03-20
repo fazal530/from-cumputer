@@ -1,0 +1,14 @@
+uuid: 663c8b04-aff3-4f52-9481-97d8ba921df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.swatch
+    - taxonomy.vocabulary.color
+id: taxonomy_term.color.swatch
+targetEntityType: taxonomy_term
+bundle: color
+mode: swatch
+content: {  }
+hidden:
+  description: true

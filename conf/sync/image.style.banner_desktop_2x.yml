@@ -1,0 +1,17 @@
+uuid: 61e4da8a-34ef-4424-a84a-fb26cf265922
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_desktop_2x
+label: 'Banner (Desktop @2x)'
+effects:
+  2496d76b-5dbc-4158-b37e-dde21ee689f8:
+    uuid: 2496d76b-5dbc-4158-b37e-dde21ee689f8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2880
+      height: 1200
+      crop_type: focal_point

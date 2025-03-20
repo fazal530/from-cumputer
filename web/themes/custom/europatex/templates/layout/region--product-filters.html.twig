@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+{% if content %}
+  <section{{ attributes.addClass(classes).setAttribute('id', 'product-filters') }}>
+    <header class="product-filter-header">
+      <h2>{{ 'Filter'|t }}</h2>
+      <a href="#psearch-results" class="button--primary toggle-filters-close js-toggle-filters" title="Close filter modal">X</a>
+    </header>
+    {{ content }}
+  </section>
+{% endif %}

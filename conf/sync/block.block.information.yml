@@ -1,0 +1,30 @@
+uuid: 843f037a-8ec3-48be-b40e-c9901727bda9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.information
+  module:
+    - et_display
+    - system
+  theme:
+    - europatex
+id: information
+theme: europatex
+region: header_bottom
+weight: -12
+provider: null
+plugin: 'system_menu_block:information'
+settings:
+  id: 'system_menu_block:information'
+  label: Information
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

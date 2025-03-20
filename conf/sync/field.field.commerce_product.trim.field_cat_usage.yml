@@ -1,0 +1,29 @@
+uuid: a1af3ba6-34ae-4d1a-9eca-c46333a21b74
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.trim
+    - field.storage.commerce_product.field_cat_usage
+    - taxonomy.vocabulary.usage
+id: commerce_product.trim.field_cat_usage
+field_name: field_cat_usage
+entity_type: commerce_product
+bundle: trim
+label: Application
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      usage: usage
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+uuid: 76d557e2-cb81-4a9a-9711-5ad9bee502ef
+langcode: en
+status: true
+dependencies: {  }
+name: content_narrow_1x
+label: 'Content area - narrow (SD)'
+effects:
+  8c4874d6-522f-4274-9f4c-328de2931b7e:
+    uuid: 8c4874d6-522f-4274-9f4c-328de2931b7e
+    id: image_scale
+    weight: 1
+    data:
+      width: 568
+      height: null
+      upscale: false

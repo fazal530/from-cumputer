@@ -1,0 +1,10 @@
+uuid: 420687da-c5ed-4e89-aebc-8d7446d71457
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.share
+label: Share
+targetEntityType: commerce_product
+cache: true

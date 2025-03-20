@@ -1,0 +1,8 @@
+uuid: 154d5340-f27a-4a8d-a1e9-9ee5324e7733
+langcode: en
+status: true
+dependencies: {  }
+name: Material
+vid: category
+description: 'Product Categorization'
+weight: -10

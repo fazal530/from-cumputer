@@ -1,0 +1,10 @@
+uuid: f066f0bb-b271-42fa-b642-4fd9aa5e160e
+langcode: en
+status: true
+dependencies: {  }
+id: stock
+label: Stock
+description: ''
+source_type: ''
+module: null
+shared_configuration: null

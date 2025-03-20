@@ -1,0 +1,39 @@
+uuid: b8a41a54-4b90-42c0-be21-29b0f9569811
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media.field_media
+    - field.field.paragraph.media.paragraph_view_mode
+    - paragraphs.paragraphs_type.media
+  module:
+    - media_library
+    - paragraph_view_mode
+id: paragraph.media.default
+targetEntityType: paragraph
+bundle: media
+mode: default
+content:
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: 1
+    region: content
+    settings:
+      view_modes:
+        default: default
+        extra_wide_media: extra_wide_media
+        narrow_media: narrow_media
+        wide_media: wide_media
+        preview: '0'
+      default_view_mode: wide_media
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

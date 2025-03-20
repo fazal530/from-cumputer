@@ -1,0 +1,22 @@
+uuid: 4d11695a-4f40-4efc-b8ed-f28d04a7b4aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - europatex
+_core:
+  default_config_hash: a0Yyx1GeyKarZ4T_yXQBR_ZFKnXiFLtxAb6gWLd8nr0
+id: europatex_content
+theme: europatex
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

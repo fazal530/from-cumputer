@@ -1,0 +1,14 @@
+uuid: 39009729-53c4-4e05-a67b-51a0442d1aaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - antibot
+    - commerce_checkout
+id: customer
+label: Customer
+weight: 4
+is_admin: null
+permissions:
+  - 'access checkout'
+  - 'skip antibot'

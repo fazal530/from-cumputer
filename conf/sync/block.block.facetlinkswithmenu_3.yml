@@ -1,0 +1,41 @@
+uuid: 923ddfcc-5d39-4d42-b762-d68ebbddadf3
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - et_display
+    - et_search
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: menu--full-width
+id: facetlinkswithmenu_3
+theme: europatex
+region: header_bottom
+weight: -13
+provider: null
+plugin: et_search_facet_links_menu
+settings:
+  id: et_search_facet_links_menu
+  label: 'Finished Products'
+  label_display: visible
+  provider: et_search
+  menu_name: featured-3
+  active_facets:
+    product_type:
+      - finished
+  facets_to_include:
+    category: category
+    color: color
+    product_type: 0
+    collection: 0
+    style: 0
+    usage: 0
+    market: 0
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false

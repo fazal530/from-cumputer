@@ -1,0 +1,4 @@
+services:
+  cloudinary:
+    class: Drupal\cloudinary\Cloudinary
+    arguments: ['@config.factory']

@@ -1,0 +1,8 @@
+uuid: 876dcc31-81f7-4c49-8742-6fcd5bae44d1
+langcode: en
+status: true
+dependencies: {  }
+name: Application
+vid: usage
+description: 'Product Categorization'
+weight: -5

@@ -1,0 +1,39 @@
+uuid: 15693cc2-569d-458e-b6a9-33b39bf0b2e4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta:bfa4afa4-3c96-4259-84db-bf60c7fda470'
+  module:
+    - block_class
+    - block_content
+    - et_display
+    - et_search
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: psearch-reset
+id: productsearchfilteractions_2
+theme: europatex
+region: product_filters
+weight: 0
+provider: null
+plugin: 'block_content:bfa4afa4-3c96-4259-84db-bf60c7fda470'
+settings:
+  id: 'block_content:bfa4afa4-3c96-4259-84db-bf60c7fda470'
+  label: 'Product search filter actions'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false
+  et_display_route_name:
+    id: et_display_route_name
+    route_name: view.products.page_1
+    negate: false

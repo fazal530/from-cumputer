@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for et_display.
+ */
+
+use Drupal\Core\Access\AccessResult;
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function et_display_paragraph_view(&$build, $entity, $display, $view_mode) {
+  if ($entity->getType() == 'role_restricted_section') {
+    $account = \Drupal::currentUser();
+    $allowed_roles = array_map(function($x) {
+      return $x['target_id'];
+    }, $entity->field_role->getValue());
+    $build['field_content']['#access'] = array_intersect($account->getRoles(), $allowed_roles) ? AccessResult::allowed() : AccessResult::forbidden();
+    $build['field_content']['#access']->addCacheContexts(['user.roles']);
+  }
+}

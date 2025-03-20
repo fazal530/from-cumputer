@@ -1,0 +1,342 @@
+.layout-container {
+  @include layout-container;
+  @include layout-gutter;
+}
+
+.region-wayfinding {
+  padding-top: $gutter*1.5;
+  padding-bottom: 0;
+}
+
+.page-title {
+  margin: 0;
+}
+
+// Main content
+.main {
+  padding-top: $vert-gutter;
+  padding-bottom: $vert-gutter;
+
+  .page--basic-page & {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+//////////////////////////////////
+// CONTENT & SIDEBARS
+
+.main {
+  @include layout-container;
+  @include layout-gutter;
+}
+
+.has-sidebar-first {
+
+  .main-inner {
+    @include breakpoint($tablet-small-min) {
+      display: flex;
+      @include grid-container;
+    }
+  }
+
+  .layout-content {
+    @include breakpoint($tablet-small-min) {
+      width: 75%;
+      @include grid-item;
+    }
+   }
+
+  .layout-sidebar-first {
+    @include breakpoint($tablet-small-min) {
+      width: 25%;
+      @include grid-item;
+    }
+  }
+}
+
+.has-sidebar-second {
+  .main-inner {
+    @include breakpoint($tablet-small-min) {
+      display: flex;
+    }
+  }
+
+  .layout-content {
+    @include breakpoint($tablet-small-min) {
+      width: 66.6667%;
+    }
+   }
+
+  .layout-sidebar-second {
+    @include breakpoint($tablet-small-min) {
+      width: 33.3333%;
+    }
+  }
+}
+
+// END CONTENT & SIDEBARS
+///////////////////////////////
+
+// Views
+.four-columns {
+  .view-content {
+    @include legacy-clearfix;
+
+    margin-left: -$horiz-gutter*0.5;
+    margin-right: -$horiz-gutter*0.5;
+    overflow: visible;
+  }
+
+  .views-row {
+    padding: $horiz-gutter*0.25 $horiz-gutter*0.5;
+    width: 100%;
+  }
+
+  @include breakpoint($phone-min) {
+    .views-row {
+      padding: $horiz-gutter*0.5;
+      width: 50%;
+      float: left;
+
+      &:nth-child(2n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @include breakpoint($tablet-landscape-min) {
+    .views-row {
+      width: 25%;
+
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+
+      &:nth-child(4n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @include breakpoint($tablet-landscape-min $widescreen-max) {
+    .show-nav & {
+      .views-row {
+        width: 50%;
+        float: left;
+
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+.equal-heights {
+  .view-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .views-row {
+    height: 100%;
+
+    .node {
+      height: 100%;
+    }
+  }
+
+  @include breakpoint($phone-min) {
+    .view-content {
+      flex-direction: row;
+    }
+
+    .views-row {
+      height: auto;
+    }
+  }
+}
+
+// Field Columns
+.field.three-columns,
+.field.three-columns > .field__items {
+  @include legacy-clearfix;
+
+  margin: -$horiz-gutter*0.5;
+
+  > .field__item {
+    padding: $horiz-gutter*0.5;
+  }
+
+  @include breakpoint($tablet-small-min) {
+    > .field__item {
+      width: 50%;
+      float: left;
+
+      &:nth-child(2n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @include breakpoint($desktop-small-min) {
+    > .field__item {
+      width: 33.33%;
+      float: left;
+
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+
+      &:nth-child(3n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @include breakpoint($widescreen-min) {
+    margin: -$horiz-gutter;
+
+    > .field__item {
+      padding: $horiz-gutter;
+    }
+  }
+}
+
+// Paragraph Layouts
+.layout {
+  margin: -$gutter*0.5;
+
+  > .layout__region {
+    padding: $gutter*0.5;
+  }
+
+  .layout__region--bottom {
+    clear: both;
+  }
+}
+
+.layout--fourcol {
+  @include legacy-clearfix;
+
+  display: block;
+
+  > .layout__region {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  @include breakpoint($tablet-small-min) {
+    > .layout__region--column {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  @include breakpoint($desktop-min) {
+    > .layout__region--column {
+      width: 25%;
+    }
+  }
+}
+
+.layout--twocol {
+  @include legacy-clearfix;
+
+  display: block;
+
+  > .layout__region {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  @include breakpoint($tablet-small-min) {
+    > .layout__region--first {
+      width: 50%;
+      float: left;
+      clear: left;
+    }
+
+    > .layout__region--second {
+      width: 50%;
+      float: right;
+    }
+  }
+}
+
+.layout--threecol-33-34-33 {
+  @include legacy-clearfix;
+
+  display: block;
+
+  > .layout__region {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    > .layout__region--first,
+    > .layout__region--second {
+      width: 33.33%;
+      float: left;
+    }
+
+    > .layout__region--third {
+      width: 33.33%;
+      float: right;
+    }
+  }
+}
+
+.layout--twocol-33-67 {
+  @include legacy-clearfix;
+
+  display: block;
+
+  > .layout__region {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    > .layout__region--first {
+      width: 33.33%;
+      float: left;
+    }
+
+    > .layout__region--second {
+      width: 66.67%;
+      float: right;
+    }
+  }
+}
+
+.layout--twocol-67-33 {
+  @include legacy-clearfix;
+
+  display: block;
+
+  > .layout__region {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  @include breakpoint($tablet-portrait-min) {
+    > .layout__region--first {
+      width: 66.67%;
+      float: left;
+    }
+
+    > .layout__region--second {
+      width: 33.33%;
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+cloudinary.settings:
+  type: config_object
+  label: 'Cloudinary settings'
+  mapping:
+    cloudName:
+      type: string
+      label: 'Cloud name'
+    apiKey:
+      type: string
+      label: 'Cloud name'
+    apiSecret:
+      type: string
+      label: 'Cloud name'

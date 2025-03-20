@@ -1,0 +1,8 @@
+uuid: c4c93c53-440d-47bd-a371-91e37f2d8f8c
+langcode: en
+status: true
+dependencies: {  }
+name: Market
+vid: market
+description: 'Product Categorization'
+weight: 0

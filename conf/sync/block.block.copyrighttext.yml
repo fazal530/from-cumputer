@@ -1,0 +1,20 @@
+uuid: 3f4eb413-e4b7-421f-bef1-2a2ca3ab0cba
+langcode: en
+status: true
+dependencies:
+  module:
+    - et_display
+  theme:
+    - europatex
+id: copyrighttext
+theme: europatex
+region: footer_bottom
+weight: 0
+provider: null
+plugin: et_display_copyright
+settings:
+  id: et_display_copyright
+  label: 'Copyright Text'
+  label_display: '0'
+  provider: et_display
+visibility: {  }

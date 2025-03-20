@@ -1,0 +1,37 @@
+uuid: fb32061e-2536-4126-b372-7cf6fa0661d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.products
+  module:
+    - block_class
+    - et_display
+    - et_search
+    - views
+  theme:
+    - europatex
+third_party_settings:
+  block_class:
+    classes: psearch-keywords
+id: exposedformproductspage_1
+theme: europatex
+region: product_filters
+weight: -11
+provider: null
+plugin: 'views_exposed_filter_block:products-page_1'
+settings:
+  id: 'views_exposed_filter_block:products-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  et_display_hide_page_title:
+    id: et_display_hide_page_title
+    enabled: 0
+    negate: false
+  et_display_route_name:
+    id: et_display_route_name
+    route_name: view.products.page_1
+    negate: false

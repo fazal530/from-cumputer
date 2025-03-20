@@ -1,0 +1,27 @@
+uuid: 35c60f7c-9d4e-4c52-8a5b-0c0469db4229
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.role_restricted_section.field_content
+    - field.field.paragraph.role_restricted_section.field_role
+    - paragraphs.paragraphs_type.role_restricted_section
+  module:
+    - entity_reference_revisions
+id: paragraph.role_restricted_section.default
+targetEntityType: paragraph
+bundle: role_restricted_section
+mode: default
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_role: true
+  search_api_excerpt: true

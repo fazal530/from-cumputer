@@ -1,0 +1,13 @@
+{#
+/**
+ * Review pane
+ */
+#}
+{{ attach_library('europatex/commerce.checkout') }}
+<div class="review-shipping">
+  {{ elements.et_checkout_shipping}}
+</div>
+<div class="review-comments">
+  {{ elements.et_checkout_order_comments}}
+</div>
+{{ elements|without('et_checkout_shipping', 'et_checkout_order_comments') }}

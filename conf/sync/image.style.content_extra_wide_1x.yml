@@ -1,0 +1,15 @@
+uuid: e5244142-2b25-4b63-b158-94a7ac151e22
+langcode: en
+status: true
+dependencies: {  }
+name: content_extra_wide_1x
+label: 'Content area - extra wide (SD)'
+effects:
+  90e19ce1-d6a7-4b64-ae99-3a09a5669fd7:
+    uuid: 90e19ce1-d6a7-4b64-ae99-3a09a5669fd7
+    id: image_scale
+    weight: 1
+    data:
+      width: 1440
+      height: null
+      upscale: false

@@ -1,0 +1,8 @@
+uuid: ef9514cb-90a1-4851-8021-f6aa5ccb2bd6
+langcode: en
+status: true
+dependencies: {  }
+name: Collection
+vid: collection
+description: 'Product Categorization'
+weight: -3

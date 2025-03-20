@@ -1,0 +1,15 @@
+uuid: 7b33f917-1de3-4b46-9c9f-fe21a5a5069a
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: role_restricted_section
+label: 'Role-restricted section'
+icon_uuid: null
+icon_default: null
+description: 'A section that is hidden except for specific roles.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

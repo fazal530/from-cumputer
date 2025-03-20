@@ -1,0 +1,23 @@
+.ajax-progress-fullscreen {
+	background-image: url('./images/loading.gif');
+	background-size: 32px auto;
+  background-position: center;
+  background-color: #fff;
+	width: 64px;
+	height: 64px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 32px;
+}
+
+.ajax-progress-throbber .throbber {
+  @include switch-color-scheme(background-color, transparent, #fff);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-image: url('./images/throbber.gif');
+  background-size: 16px auto;
+  background-position: center;
+}

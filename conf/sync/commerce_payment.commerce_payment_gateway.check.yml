@@ -1,0 +1,19 @@
+uuid: f9470be9-1731-436c-9008-050a5b143b2a
+langcode: en
+status: true
+dependencies: {  }
+id: check
+label: Check
+weight: -9
+plugin: manual
+configuration:
+  display_label: Check
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

@@ -1,0 +1,38 @@
+
+.has-block-collapse {
+  .block-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    &::after {
+      content: "+";
+    }
+
+    &[aria-expanded="true"]::after {
+      content: "-";
+    }
+  }
+
+  // Prevent block collapse when javascript initializes in narrow device and switchs top wide device width
+  // (ie portrait to landscape orientation)... Likely never happens
+  // JS uses max-width 480px so this is set to min-width 481px
+  @media (min-width: 30.0625em) {
+    border: none !important;
+
+    .block-title {
+      cursor: default !important;
+
+      &::after {
+        content: none !important;
+      }
+    }
+
+    .block-content {
+      display: block !important;
+      overflow: visible !important;
+      padding: 16px 0 0 0 !important;
+    }
+  }
+}
+
